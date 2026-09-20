@@ -120,12 +120,31 @@ sequenceDiagram
 
 ---
 
-## Quickstart & Reproduction Guide
+## System Requirements & Prerequisites
 
-### Prerequisites
-- Python 3.10+
-- [Ollama](https://ollama.com) installed and active on `http://localhost:11434`
-- Hardware: Dedicated GPU recommended for local inference (NVIDIA RTX 3060/4060/4070 or equivalent with $\ge 8\text{GB}$ VRAM).
+To execute the local SLM benchmarks, run the full 324-condition multi-domain matrix, or host the interactive telemetry studio, the host environment should meet the following hardware and software specifications:
+
+### Hardware Specifications
+| Component | Minimum Specification | Recommended (Empirical Benchmark Host) | Notes |
+| :--- | :--- | :--- | :--- |
+| **Dedicated GPU** | NVIDIA GPU with $\ge 6\text{ GB}$ VRAM | **NVIDIA GeForce RTX 4070 Mobile (8 GB GDDR6, 140W MGP)** | Ada Lovelace architecture, 256 GB/s memory bandwidth, CUDA Compute 8.9. Required for sub-600 ms SLM decoding. |
+| **Host System Memory** | 16 GB DDR4/DDR5 | **32 GB DDR5-4800 / DDR5-5600** | Required for concurrent LanceDB vector caching and local model context paging. |
+| **Central Processor (CPU)** | 6-Core Modern x86_64 / Apple Silicon | **13th Gen Intel Core i7-13700HX (16 Cores, 24 Threads, up to 5.0 GHz)** | CPU handles Jev sub-millisecond classification inference (< 0.2 ms) with negligible load. |
+| **Storage** | 10 GB Free Storage | **20 GB High-Speed NVMe M.2 SSD** | Sufficient for Ollama model weights (`qwen3:1.7b` ~1.2 GB, `qwen2.5:7b-instruct-q4_k_m` ~4.7 GB). |
+| **Network Interface** | Standard Broadband | **Low-Latency Fiber Internet ($\le 25\text{ ms}$ ping to Google Cloud)** | Required for WAN API roundtrips to Google AI Studio (`gemini-3.8-flash`). |
+
+### Software & Environment Prerequisites
+1. **Operating System:** Windows 11 Enterprise (tested host), Ubuntu 22.04 / 24.04 LTS, or macOS 14+ (Apple Silicon).
+2. **Python Environment:** Python `3.10`, `3.11`, or `3.12`.
+3. **Local Inference Runtime:** [Ollama](https://ollama.com) (version $\ge \text{v0.5.0}$) listening on `http://localhost:11434`.
+4. **GPU Driver & Compute Toolkit:** NVIDIA Display Driver $\ge 550.00$ with CUDA Toolkit `12.4` or `12.6`.
+5. **API Keys & Credentials (configured in `.env`):**
+   - `TYPESAFE_API_KEY`: Developer key for TypeSafe AI SystemOne API (`https://api.typesafe.ai`). *(Note: An automatic offline deterministic classification engine is included for zero-dependency local evaluation).*
+   - `GEMINI_API_KEY`: Google AI Studio API key for Frontier Cloud benchmarking (`gemini-3.8-flash`).
+
+---
+
+## Quickstart & Reproduction Guide
 
 ### 1. Installation
 ```bash

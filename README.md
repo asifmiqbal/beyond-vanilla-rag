@@ -28,6 +28,16 @@ Through an exhaustive, full-factorial benchmark across **324 experimental condit
 
 ---
 
+## Interactive Research Studio UI
+
+The repository includes a turnkey, standalone web cockpit ([`Docs/jev_intent_classifier_studio.html`](Docs/jev_intent_classifier_studio.html)) allowing researchers and engineers to interactively benchmark incoming customer turns across all three regimes in real time:
+
+![Jev Classifier Studio & Live Telemetry UI](Docs/figures/studio_ui_screenshot.png)
+
+*Figure: Interactive 3-regime benchmark studio comparing [1] Vanilla RAG Control ($T_{\text{max}}=180$, unconstrained), [2] + Compiled Regex Trie ($T_{\text{max}}=80$, displaying the $-40.0\%$ grounding recall penalty and truncated tail entities), and [3] + TypeSafe AI Jev (0.18 ms decision model, instant automated NOC dispatch in $< 1\text{ ms}$, and $100\%$ recovered grounding recall with canonical target entity tracking).*
+
+---
+
 ## The 4 Core Research Questions & Empirical Answers
 
 ```mermaid

@@ -1327,6 +1327,11 @@
 
       chatInput.value = queryText;
       renderTargetBadges(targets);
+
+      // Render baseline immediately for instant visual responsiveness
+      const initialTriad = simulateOfflineTriadOrchestration(queryText, AppState.modelTier, AppState.zeroFluff, domain, complexity);
+      renderFullTriadResults(initialTriad);
+
       evaluateMessage(queryText);
     }
 
@@ -1936,12 +1941,7 @@
 
 
 
-    // Reasoning trace toggle (Dual Stream Card)
-    if (dualToggleReasoningBtn) {
-      dualToggleReasoningBtn.addEventListener('click', () => {
-        dualStreamAReasoningContent.classList.toggle('hidden');
-      });
-    }
+
 
     // Evaluate button & Enter Key
     runClassifierBtn.addEventListener('click', () => evaluateMessage(chatInput.value));
@@ -2045,7 +2045,7 @@ print("Audit Verdict:", data["comparison"]["audit"])
     closeModalFooterBtn.addEventListener('click', () => codeModal.classList.add('hidden'));
 
     // Initialize
-    window.onload = function() {
+    function initializeStudio() {
       // Clear legacy project ID if previously stored in localStorage
       if (AppState.geminiApiKey && !AppState.geminiApiKey.startsWith('AIzaSy')) {
         AppState.geminiApiKey = '';
@@ -2066,10 +2066,16 @@ print("Audit Verdict:", data["comparison"]["audit"])
       renderPresets();
       setWireTab('dual');
 
-      // Auto-evaluate first preset
-      chatInput.value = AppState.presets[0].query;
-      evaluateMessage(AppState.presets[0].query);
-    };
+      // Auto-evaluate canonical Fiber Mid domain preset from paper
+      selectDomainPreset('Fiber', 'Mid');
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initializeStudio);
+    } else {
+      initializeStudio();
+    }
+    window.addEventListener('load', initializeStudio);
   </script>
 </body>
 </html>

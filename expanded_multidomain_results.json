@@ -1,0 +1,3854 @@
+{
+  "Fiber_Short_Short": {
+    "domain": "Fiber",
+    "complexity": "Short",
+    "kb_density": "Short",
+    "query": "Fiber line cut outside, red LOS blinking.",
+    "streams": {
+      "S1_1.7B_Ctrl": {
+        "median_ms": 752.4,
+        "mean_ms": 752.4,
+        "std_ms": 5.8,
+        "in_tokens": 244,
+        "out_tokens": 111,
+        "tps": 149.7,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.901,
+        "sample_snippet": "- [FIBER-DOC-1: GPON Drop Restoration SOP | Plan: TELCO-XGSPON-SYMM-10G | APN: internet.telco.us-east | SLA: 24-Hour Resolution SLA] Physica"
+      },
+      "S2_1.7B_Regex": {
+        "median_ms": 549.5,
+        "mean_ms": 549.5,
+        "std_ms": 32.4,
+        "in_tokens": 263,
+        "out_tokens": 80,
+        "tps": 147.8,
+        "grounding_pct": 100.0,
+        "token_efficiency": 1.25,
+        "sample_snippet": "- [FIBER-DOC-1: GPON Drop Restoration SOP | Plan: TELCO-XGSPON-SYMM-10G | APN: internet.telco.us-east | SLA: 24-Hour Resolution SLA] Immedia"
+      },
+      "S3_1.7B_Jev": {
+        "median_ms": 545.1,
+        "mean_ms": 545.1,
+        "std_ms": 5.8,
+        "in_tokens": 263,
+        "out_tokens": 80,
+        "tps": 149.2,
+        "grounding_pct": 100.0,
+        "token_efficiency": 1.25,
+        "sample_snippet": "- [FIBER-DOC-1: GPON Drop Restoration SOP | Plan: TELCO-XGSPON-SYMM-10G | APN: internet.telco.us-east | SLA: 24-Hour Resolution SLA] Emergen"
+      },
+      "S4_7B_Ctrl": {
+        "median_ms": 1563.9,
+        "mean_ms": 1563.9,
+        "std_ms": 7.5,
+        "in_tokens": 241,
+        "out_tokens": 80,
+        "tps": 51.9,
+        "grounding_pct": 33.3,
+        "token_efficiency": 0.416,
+        "sample_snippet": "- Immediate dispatch of an outside plant technician is required for this issue. Please open a ticket with code GPON-OUTAGE-L3. The standard"
+      },
+      "S5_7B_Regex": {
+        "median_ms": 1586.4,
+        "mean_ms": 1586.4,
+        "std_ms": 0.0,
+        "in_tokens": 260,
+        "out_tokens": 80,
+        "tps": 51.1,
+        "grounding_pct": 66.7,
+        "token_efficiency": 0.834,
+        "sample_snippet": "- We will dispatch an emergency outside plant technician to address the fiber line cut. The service will be restored within 24 hours as per"
+      },
+      "S6_7B_Jev": {
+        "median_ms": 1693.5,
+        "mean_ms": 1693.5,
+        "std_ms": 12.2,
+        "in_tokens": 260,
+        "out_tokens": 80,
+        "tps": 47.9,
+        "grounding_pct": 66.7,
+        "token_efficiency": 0.834,
+        "sample_snippet": "- We will dispatch an emergency outside plant technician to address the fiber line cut. The service will be restored within 24 hours as per"
+      },
+      "S7_Gemini_Ctrl": {
+        "median_ms": 2655.6,
+        "mean_ms": 2655.6,
+        "std_ms": 47.7,
+        "in_tokens": 233,
+        "out_tokens": 19.5,
+        "tps": 7.3,
+        "grounding_pct": 0.0,
+        "token_efficiency": 0.0,
+        "sample_snippet": "* Ticket **GPON-OUTAGE-L3** has been opened for emergency outside plant technician dispatch"
+      },
+      "S8_Gemini_Regex": {
+        "median_ms": 1889.3,
+        "mean_ms": 1889.3,
+        "std_ms": 89.8,
+        "in_tokens": 253,
+        "out_tokens": 6.5,
+        "tps": 3.5,
+        "grounding_pct": 0.0,
+        "token_efficiency": 0.0,
+        "sample_snippet": "*   **Ticket Created"
+      },
+      "S9_Gemini_Jev": {
+        "median_ms": 1878.8,
+        "mean_ms": 1878.8,
+        "std_ms": 12.1,
+        "in_tokens": 253,
+        "out_tokens": 6,
+        "tps": 3.2,
+        "grounding_pct": 0.0,
+        "token_efficiency": 0.0,
+        "sample_snippet": "* Emergency Outside Plant (OSP"
+      }
+    }
+  },
+  "Fiber_Short_Mid": {
+    "domain": "Fiber",
+    "complexity": "Short",
+    "kb_density": "Mid",
+    "query": "Fiber line cut outside, red LOS blinking.",
+    "streams": {
+      "S1_1.7B_Ctrl": {
+        "median_ms": 1111.2,
+        "mean_ms": 1111.2,
+        "std_ms": 5.4,
+        "in_tokens": 325,
+        "out_tokens": 168,
+        "tps": 153.1,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.595,
+        "sample_snippet": "- [FIBER-DOC-1: GPON Drop Restoration SOP | Plan: TELCO-XGSPON-SYMM-10G | APN: internet.telco.us-east | SLA: 24-Hour Resolution SLA] Physica"
+      },
+      "S2_1.7B_Regex": {
+        "median_ms": 539.2,
+        "mean_ms": 539.2,
+        "std_ms": 15.6,
+        "in_tokens": 344,
+        "out_tokens": 80,
+        "tps": 152.2,
+        "grounding_pct": 20.0,
+        "token_efficiency": 0.25,
+        "sample_snippet": "- [FIBER-DOC-1: GPON Drop Restoration SOP] Emergency outside plant technician dispatch required under ticket GPON-OUTAGE-L3. Standard repair"
+      },
+      "S3_1.7B_Jev": {
+        "median_ms": 546.6,
+        "mean_ms": 546.6,
+        "std_ms": 31.1,
+        "in_tokens": 344,
+        "out_tokens": 80,
+        "tps": 150.4,
+        "grounding_pct": 20.0,
+        "token_efficiency": 0.25,
+        "sample_snippet": "- [FIBER-DOC-1: GPON Drop Restoration SOP] Emergency outside plant technician dispatch required under ticket GPON-OUTAGE-L3. Standard repair"
+      },
+      "S4_7B_Ctrl": {
+        "median_ms": 1480.7,
+        "mean_ms": 1480.7,
+        "std_ms": 13.7,
+        "in_tokens": 322,
+        "out_tokens": 75,
+        "tps": 51.8,
+        "grounding_pct": 60.0,
+        "token_efficiency": 0.8,
+        "sample_snippet": "- A physical drop severance has occurred, requiring immediate attention from an outside plant technician. Please expect a resolution within"
+      },
+      "S5_7B_Regex": {
+        "median_ms": 1230.5,
+        "mean_ms": 1230.5,
+        "std_ms": 4.5,
+        "in_tokens": 341,
+        "out_tokens": 61.5,
+        "tps": 51.3,
+        "grounding_pct": 40.0,
+        "token_efficiency": 0.65,
+        "sample_snippet": "- A technician will be dispatched immediately to address the fiber line cut. The standard repair SLA is 24 hours.  - If the service outage e"
+      },
+      "S6_7B_Jev": {
+        "median_ms": 1318.2,
+        "mean_ms": 1318.2,
+        "std_ms": 36.2,
+        "in_tokens": 341,
+        "out_tokens": 61.5,
+        "tps": 48.1,
+        "grounding_pct": 40.0,
+        "token_efficiency": 0.65,
+        "sample_snippet": "- A technician will be dispatched immediately to address the fiber line cut. The standard repair SLA is 24 hours.  - If the service outage e"
+      },
+      "S7_Gemini_Ctrl": {
+        "median_ms": 2651.7,
+        "mean_ms": 2651.7,
+        "std_ms": 1081.8,
+        "in_tokens": 318,
+        "out_tokens": 72,
+        "tps": 36.1,
+        "grounding_pct": 50.0,
+        "token_efficiency": 0.694,
+        "sample_snippet": "* Emergency outside plant technician dispatch has been initiated under ticket **GPON-OUTAGE"
+      },
+      "S8_Gemini_Regex": {
+        "median_ms": 2952.8,
+        "mean_ms": 2952.8,
+        "std_ms": 1499.1,
+        "in_tokens": 338,
+        "out_tokens": 125.5,
+        "tps": 49.7,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.797,
+        "sample_snippet": "* Emergency outside plant technician dispatch has been initiated under ticket **GPON-OUTAGE-L3** to repair the physical drop severance for p"
+      },
+      "S9_Gemini_Jev": {
+        "median_ms": 1871.9,
+        "mean_ms": 1871.9,
+        "std_ms": 140.4,
+        "in_tokens": 338,
+        "out_tokens": 71.5,
+        "tps": 40.1,
+        "grounding_pct": 50.0,
+        "token_efficiency": 0.699,
+        "sample_snippet": "* **Dispatched Service Ticket:** An emergency outside plant technician dispatch has been created under ticket `GPON-OUTAGE-L3` to repair the"
+      }
+    }
+  },
+  "Fiber_Short_Long": {
+    "domain": "Fiber",
+    "complexity": "Short",
+    "kb_density": "Long",
+    "query": "Fiber line cut outside, red LOS blinking.",
+    "streams": {
+      "S1_1.7B_Ctrl": {
+        "median_ms": 1110.0,
+        "mean_ms": 1110.0,
+        "std_ms": 3.2,
+        "in_tokens": 325,
+        "out_tokens": 168,
+        "tps": 152.4,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.425,
+        "sample_snippet": "- [FIBER-DOC-1: GPON Drop Restoration SOP | Plan: TELCO-XGSPON-SYMM-10G | APN: internet.telco.us-east | SLA: 24-Hour Resolution SLA] Physica"
+      },
+      "S2_1.7B_Regex": {
+        "median_ms": 535.5,
+        "mean_ms": 535.5,
+        "std_ms": 13.2,
+        "in_tokens": 344,
+        "out_tokens": 80,
+        "tps": 151.6,
+        "grounding_pct": 14.3,
+        "token_efficiency": 0.179,
+        "sample_snippet": "- [FIBER-DOC-1: GPON Drop Restoration SOP] Emergency outside plant technician dispatch required under ticket GPON-OUTAGE-L3. Standard repair"
+      },
+      "S3_1.7B_Jev": {
+        "median_ms": 531.5,
+        "mean_ms": 531.5,
+        "std_ms": 8.3,
+        "in_tokens": 344,
+        "out_tokens": 80,
+        "tps": 152.8,
+        "grounding_pct": 14.3,
+        "token_efficiency": 0.179,
+        "sample_snippet": "- [FIBER-DOC-1: GPON Drop Restoration SOP] Emergency outside plant technician dispatch required under ticket GPON-OUTAGE-L3. Standard repair"
+      },
+      "S4_7B_Ctrl": {
+        "median_ms": 1476.5,
+        "mean_ms": 1476.5,
+        "std_ms": 7.7,
+        "in_tokens": 322,
+        "out_tokens": 75,
+        "tps": 51.6,
+        "grounding_pct": 42.9,
+        "token_efficiency": 0.572,
+        "sample_snippet": "- A physical drop severance has occurred, requiring immediate attention from an outside plant technician. Please expect a resolution within"
+      },
+      "S5_7B_Regex": {
+        "median_ms": 1224.2,
+        "mean_ms": 1224.2,
+        "std_ms": 2.3,
+        "in_tokens": 341,
+        "out_tokens": 62,
+        "tps": 51.5,
+        "grounding_pct": 28.6,
+        "token_efficiency": 0.461,
+        "sample_snippet": "- A technician will be dispatched immediately to address the fiber line cut. The standard repair SLA is 24 hours.  - If the service outage e"
+      },
+      "S6_7B_Jev": {
+        "median_ms": 1304.1,
+        "mean_ms": 1304.1,
+        "std_ms": 34.6,
+        "in_tokens": 341,
+        "out_tokens": 62,
+        "tps": 48.4,
+        "grounding_pct": 28.6,
+        "token_efficiency": 0.461,
+        "sample_snippet": "- A technician will be dispatched immediately to address the fiber line cut. The standard repair SLA is 24 hours.  - If the service outage e"
+      },
+      "S7_Gemini_Ctrl": {
+        "median_ms": 1725.3,
+        "mean_ms": 1725.3,
+        "std_ms": 115.8,
+        "in_tokens": 318,
+        "out_tokens": 136,
+        "tps": 78.8,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.525,
+        "sample_snippet": "* **Dispatch & Ticketing:** Ticket `GPON-OUTAGE-L3` has been generated to dispatch an emergency outside plant technician for physical drop r"
+      },
+      "S8_Gemini_Regex": {
+        "median_ms": 1787.6,
+        "mean_ms": 1787.6,
+        "std_ms": 156.9,
+        "in_tokens": 338,
+        "out_tokens": 143.5,
+        "tps": 80.8,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.498,
+        "sample_snippet": "* **Emergency Dispatch**: A physical line cut requires an outside plant technician, dispatched under ticket code **GPON-OUTAGE-L3**. * **Acc"
+      },
+      "S9_Gemini_Jev": {
+        "median_ms": 2658.7,
+        "mean_ms": 2658.7,
+        "std_ms": 1084.4,
+        "in_tokens": 338,
+        "out_tokens": 125,
+        "tps": 51.0,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.571,
+        "sample_snippet": "* Emergency outside plant technician dispatch has been initiated under ticket **GPON-OUTAGE-L3** to restore the physical drop line. * **Serv"
+      }
+    }
+  },
+  "Fiber_Mid_Short": {
+    "domain": "Fiber",
+    "complexity": "Mid",
+    "kb_density": "Short",
+    "query": "My fiber optic drop cable was severed by utility workers outside my house. The Optical Terminal has a blinking red LOS light and internet is completely down.",
+    "streams": {
+      "S1_1.7B_Ctrl": {
+        "median_ms": 822.2,
+        "mean_ms": 822.2,
+        "std_ms": 10.5,
+        "in_tokens": 263,
+        "out_tokens": 121.5,
+        "tps": 150.4,
+        "grounding_pct": 66.7,
+        "token_efficiency": 0.549,
+        "sample_snippet": "- [FIBER-DOC-1] Physical drop severance requires emergency outside plant technician dispatch under ticket GPON-OUTAGE-L3.   - [FIBER-DOC-1]"
+      },
+      "S2_1.7B_Regex": {
+        "median_ms": 537.1,
+        "mean_ms": 537.1,
+        "std_ms": 7.2,
+        "in_tokens": 282,
+        "out_tokens": 80,
+        "tps": 152.1,
+        "grounding_pct": 33.3,
+        "token_efficiency": 0.416,
+        "sample_snippet": "- [FIBER-DOC-1] Physical drop severance requires emergency outside plant technician dispatch under ticket GPON-OUTAGE-L3.   - [SLA] Standard"
+      },
+      "S3_1.7B_Jev": {
+        "median_ms": 527.5,
+        "mean_ms": 527.5,
+        "std_ms": 19.4,
+        "in_tokens": 282,
+        "out_tokens": 80,
+        "tps": 154.9,
+        "grounding_pct": 33.3,
+        "token_efficiency": 0.416,
+        "sample_snippet": "- [FIBER-DOC-1] Physical drop severance requires emergency outside plant technician dispatch under ticket GPON-OUTAGE-L3.   - [SLA] Standard"
+      },
+      "S4_7B_Ctrl": {
+        "median_ms": 1631.8,
+        "mean_ms": 1631.8,
+        "std_ms": 327.6,
+        "in_tokens": 260,
+        "out_tokens": 82.5,
+        "tps": 51.5,
+        "grounding_pct": 50.0,
+        "token_efficiency": 0.606,
+        "sample_snippet": "- We will dispatch an emergency outside plant technician to address the severed fiber optic drop cable under ticket GPON-OUTAGE-L3. The stan"
+      },
+      "S5_7B_Regex": {
+        "median_ms": 1595.0,
+        "mean_ms": 1595.0,
+        "std_ms": 22.6,
+        "in_tokens": 279,
+        "out_tokens": 80,
+        "tps": 51.1,
+        "grounding_pct": 83.3,
+        "token_efficiency": 1.041,
+        "sample_snippet": "- We will dispatch an emergency outside plant technician to address the severed fiber optic drop cable. The repair is subject to a 24-hour S"
+      },
+      "S6_7B_Jev": {
+        "median_ms": 1656.0,
+        "mean_ms": 1656.0,
+        "std_ms": 6.7,
+        "in_tokens": 279,
+        "out_tokens": 80,
+        "tps": 49.2,
+        "grounding_pct": 83.3,
+        "token_efficiency": 1.041,
+        "sample_snippet": "- We will dispatch an emergency outside plant technician to address the severed fiber optic drop cable. The repair is subject to a 24-hour S"
+      },
+      "S7_Gemini_Ctrl": {
+        "median_ms": 1704.1,
+        "mean_ms": 1704.1,
+        "std_ms": 54.2,
+        "in_tokens": 253,
+        "out_tokens": 111.5,
+        "tps": 65.2,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.897,
+        "sample_snippet": "* **Ticket Issued**: Emergency outside plant technician dispatch logged under ticket `GPON-OUTAGE-L3`. * **Account Plan Code**: `TELCO-XGSPO"
+      },
+      "S8_Gemini_Regex": {
+        "median_ms": 1697.9,
+        "mean_ms": 1697.9,
+        "std_ms": 65.6,
+        "in_tokens": 273,
+        "out_tokens": 132.5,
+        "tps": 78.3,
+        "grounding_pct": 83.3,
+        "token_efficiency": 0.629,
+        "sample_snippet": "* **Dispatched Ticket:** Outside plant emergency repair ticket `GPON-OUTAGE-L3` has been generated for a physical drop restoration. * **Serv"
+      },
+      "S9_Gemini_Jev": {
+        "median_ms": 1693.2,
+        "mean_ms": 1693.2,
+        "std_ms": 103.9,
+        "in_tokens": 273,
+        "out_tokens": 119,
+        "tps": 70.5,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.84,
+        "sample_snippet": "* **Dispatch Ticket:** Emergency outside plant technician dispatch logged under ticket `GPON-OUTAGE-L3`. * **Associated Account Details:**"
+      }
+    }
+  },
+  "Fiber_Mid_Mid": {
+    "domain": "Fiber",
+    "complexity": "Mid",
+    "kb_density": "Mid",
+    "query": "My fiber optic drop cable was severed by utility workers outside my house. The Optical Terminal has a blinking red LOS light and internet is completely down.",
+    "streams": {
+      "S1_1.7B_Ctrl": {
+        "median_ms": 705.1,
+        "mean_ms": 705.1,
+        "std_ms": 130.0,
+        "in_tokens": 344,
+        "out_tokens": 106,
+        "tps": 153.1,
+        "grounding_pct": 70.0,
+        "token_efficiency": 0.66,
+        "sample_snippet": "- [FIBER-DOC-1] Physical drop severance requires emergency outside plant technician dispatch under ticket GPON-OUTAGE-L3. Standard repair SL"
+      },
+      "S2_1.7B_Regex": {
+        "median_ms": 502.8,
+        "mean_ms": 502.8,
+        "std_ms": 14.8,
+        "in_tokens": 363,
+        "out_tokens": 75,
+        "tps": 153.3,
+        "grounding_pct": 40.0,
+        "token_efficiency": 0.533,
+        "sample_snippet": "- [FIBER-DOC-1] Emergency dispatch required for physical drop severance under ticket GPON-OUTAGE-L3.   - [FIBER-DOC-2] Automatic SLA outage"
+      },
+      "S3_1.7B_Jev": {
+        "median_ms": 512.0,
+        "mean_ms": 512.0,
+        "std_ms": 30.8,
+        "in_tokens": 363,
+        "out_tokens": 75,
+        "tps": 151.2,
+        "grounding_pct": 40.0,
+        "token_efficiency": 0.533,
+        "sample_snippet": "- [FIBER-DOC-1] Emergency dispatch required for physical drop severance under ticket GPON-OUTAGE-L3.   - [FIBER-DOC-2] Automatic SLA outage"
+      },
+      "S4_7B_Ctrl": {
+        "median_ms": 1588.1,
+        "mean_ms": 1588.1,
+        "std_ms": 12.9,
+        "in_tokens": 341,
+        "out_tokens": 80,
+        "tps": 51.5,
+        "grounding_pct": 40.0,
+        "token_efficiency": 0.5,
+        "sample_snippet": "- Your issue will be handled under the GPON-OUTAGE-L3 ticket category. We will dispatch an emergency outside plant technician to restore you"
+      },
+      "S5_7B_Regex": {
+        "median_ms": 1600.5,
+        "mean_ms": 1600.5,
+        "std_ms": 32.5,
+        "in_tokens": 360,
+        "out_tokens": 80,
+        "tps": 51.2,
+        "grounding_pct": 80.0,
+        "token_efficiency": 1.0,
+        "sample_snippet": "- We will dispatch an emergency outside plant technician to restore your GPON drop within 24 hours as per the 24-Hour Resolution SLA. - Once"
+      },
+      "S6_7B_Jev": {
+        "median_ms": 1678.5,
+        "mean_ms": 1678.5,
+        "std_ms": 37.8,
+        "in_tokens": 360,
+        "out_tokens": 80,
+        "tps": 49.0,
+        "grounding_pct": 80.0,
+        "token_efficiency": 1.0,
+        "sample_snippet": "- We will dispatch an emergency outside plant technician to restore your GPON drop within 24 hours as per the 24-Hour Resolution SLA. - Once"
+      },
+      "S7_Gemini_Ctrl": {
+        "median_ms": 2011.3,
+        "mean_ms": 2011.3,
+        "std_ms": 565.3,
+        "in_tokens": 338,
+        "out_tokens": 69.5,
+        "tps": 41.4,
+        "grounding_pct": 50.0,
+        "token_efficiency": 0.719,
+        "sample_snippet": "* An emergency outside plant technician dispatch has been initiated under ticket **GPON-OUT"
+      },
+      "S8_Gemini_Regex": {
+        "median_ms": 1733.3,
+        "mean_ms": 1733.3,
+        "std_ms": 25.3,
+        "in_tokens": 358,
+        "out_tokens": 135.5,
+        "tps": 78.2,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.738,
+        "sample_snippet": "* **Emergency Dispatch**: An emergency outside plant technician dispatch has been initiated under ticket **GPON-OUTAGE-L3** to splice and re"
+      },
+      "S9_Gemini_Jev": {
+        "median_ms": 4842.1,
+        "mean_ms": 4842.1,
+        "std_ms": 151.6,
+        "in_tokens": 358,
+        "out_tokens": 128,
+        "tps": 26.4,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.781,
+        "sample_snippet": "* An emergency outside plant technician dispatch has been created under ticket code **GPON-OUTAGE-L3** to repair the severed physical drop."
+      }
+    }
+  },
+  "Fiber_Mid_Long": {
+    "domain": "Fiber",
+    "complexity": "Mid",
+    "kb_density": "Long",
+    "query": "My fiber optic drop cable was severed by utility workers outside my house. The Optical Terminal has a blinking red LOS light and internet is completely down.",
+    "streams": {
+      "S1_1.7B_Ctrl": {
+        "median_ms": 613.0,
+        "mean_ms": 613.0,
+        "std_ms": 9.1,
+        "in_tokens": 344,
+        "out_tokens": 92,
+        "tps": 151.9,
+        "grounding_pct": 28.6,
+        "token_efficiency": 0.311,
+        "sample_snippet": "- [FIBER-DOC-1] Physical drop severance requires emergency outside plant technician dispatch under ticket GPON-OUTAGE-L3. Standard repair SL"
+      },
+      "S2_1.7B_Regex": {
+        "median_ms": 490.9,
+        "mean_ms": 490.9,
+        "std_ms": 1.0,
+        "in_tokens": 363,
+        "out_tokens": 75,
+        "tps": 155.2,
+        "grounding_pct": 28.6,
+        "token_efficiency": 0.381,
+        "sample_snippet": "- [FIBER-DOC-1] Emergency dispatch required for physical drop severance under ticket GPON-OUTAGE-L3.   - [FIBER-DOC-2] Automatic SLA outage"
+      },
+      "S3_1.7B_Jev": {
+        "median_ms": 490.6,
+        "mean_ms": 490.6,
+        "std_ms": 7.4,
+        "in_tokens": 363,
+        "out_tokens": 75,
+        "tps": 155.2,
+        "grounding_pct": 28.6,
+        "token_efficiency": 0.381,
+        "sample_snippet": "- [FIBER-DOC-1] Emergency dispatch required for physical drop severance under ticket GPON-OUTAGE-L3.   - [FIBER-DOC-2] Automatic SLA outage"
+      },
+      "S4_7B_Ctrl": {
+        "median_ms": 1571.0,
+        "mean_ms": 1571.0,
+        "std_ms": 6.2,
+        "in_tokens": 341,
+        "out_tokens": 80,
+        "tps": 51.6,
+        "grounding_pct": 28.6,
+        "token_efficiency": 0.358,
+        "sample_snippet": "- Your issue will be handled under the GPON-OUTAGE-L3 ticket category. We will dispatch an emergency outside plant technician to restore you"
+      },
+      "S5_7B_Regex": {
+        "median_ms": 1581.7,
+        "mean_ms": 1581.7,
+        "std_ms": 2.3,
+        "in_tokens": 360,
+        "out_tokens": 80,
+        "tps": 51.2,
+        "grounding_pct": 57.1,
+        "token_efficiency": 0.714,
+        "sample_snippet": "- We will dispatch an emergency outside plant technician to restore your GPON drop within 24 hours as per the 24-Hour Resolution SLA. - Once"
+      },
+      "S6_7B_Jev": {
+        "median_ms": 1668.1,
+        "mean_ms": 1668.1,
+        "std_ms": 20.7,
+        "in_tokens": 360,
+        "out_tokens": 80,
+        "tps": 48.5,
+        "grounding_pct": 57.1,
+        "token_efficiency": 0.714,
+        "sample_snippet": "- We will dispatch an emergency outside plant technician to restore your GPON drop within 24 hours as per the 24-Hour Resolution SLA. - Once"
+      },
+      "S7_Gemini_Ctrl": {
+        "median_ms": 2802.9,
+        "mean_ms": 2802.9,
+        "std_ms": 926.0,
+        "in_tokens": 338,
+        "out_tokens": 121,
+        "tps": 45.4,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.59,
+        "sample_snippet": "* Emergency outside plant technician dispatch is required under ticket code **GPON-OUTAGE-L3** to restore the physical drop severance for pl"
+      },
+      "S8_Gemini_Regex": {
+        "median_ms": 1717.0,
+        "mean_ms": 1717.0,
+        "std_ms": 246.4,
+        "in_tokens": 358,
+        "out_tokens": 121.5,
+        "tps": 71.5,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.588,
+        "sample_snippet": "* Emergency outside plant technician dispatch has been initiated under ticket **GPON-OUTAGE-L3** to repair the physical drop cable for plan"
+      },
+      "S9_Gemini_Jev": {
+        "median_ms": 1848.0,
+        "mean_ms": 1848.0,
+        "std_ms": 50.8,
+        "in_tokens": 358,
+        "out_tokens": 128,
+        "tps": 69.2,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.558,
+        "sample_snippet": "* **Emergency Dispatch Ticket:** An outside plant technician has been routed under ticket `GPON-OUTAGE-L3` for physical drop restoration. *"
+      }
+    }
+  },
+  "Fiber_Long_Short": {
+    "domain": "Fiber",
+    "complexity": "Long",
+    "kb_density": "Short",
+    "query": "I am writing regarding my fiber internet service which went completely dead about 45 minutes ago after municipal excavation crews dug up the sidewalk in front of my driveway. They visibly severed the thick black fiber drop cable. On my ONT terminal inside the garage, the Power light is solid green, but the LOS indicator is rapidly blinking red. I run a home business and urgently need this repaired or escalated to an outside plant field technician. My account is in good standing.",
+    "streams": {
+      "S1_1.7B_Ctrl": {
+        "median_ms": 901.9,
+        "mean_ms": 901.9,
+        "std_ms": 8.5,
+        "in_tokens": 327,
+        "out_tokens": 138,
+        "tps": 155.1,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.725,
+        "sample_snippet": "- [FIBER-DOC-1: GPON Drop Restoration SOP | Plan: TELCO-XGSPON-SYMM-10G | APN: internet.telco.us-east | SLA: 24-Hour Resolution SLA] Physica"
+      },
+      "S2_1.7B_Regex": {
+        "median_ms": 538.7,
+        "mean_ms": 538.7,
+        "std_ms": 13.0,
+        "in_tokens": 346,
+        "out_tokens": 80,
+        "tps": 152.4,
+        "grounding_pct": 100.0,
+        "token_efficiency": 1.25,
+        "sample_snippet": "- [FIBER-DOC-1: GPON Drop Restoration SOP | Plan: TELCO-XGSPON-SYMM-10G | APN: internet.telco.us-east | SLA: 24-Hour Resolution SLA] Physica"
+      },
+      "S3_1.7B_Jev": {
+        "median_ms": 564.5,
+        "mean_ms": 564.5,
+        "std_ms": 50.3,
+        "in_tokens": 346,
+        "out_tokens": 80,
+        "tps": 145.3,
+        "grounding_pct": 100.0,
+        "token_efficiency": 1.25,
+        "sample_snippet": "- [FIBER-DOC-1: GPON Drop Restoration SOP | Plan: TELCO-XGSPON-SYMM-10G | APN: internet.telco.us-east | SLA: 24-Hour Resolution SLA] Physica"
+      },
+      "S4_7B_Ctrl": {
+        "median_ms": 2858.8,
+        "mean_ms": 2858.8,
+        "std_ms": 515.2,
+        "in_tokens": 324,
+        "out_tokens": 145.5,
+        "tps": 51.5,
+        "grounding_pct": 83.3,
+        "token_efficiency": 0.573,
+        "sample_snippet": "- Your issue falls under the GPON-OUTAGE-L3 ticket category for physical drop severance. We will dispatch an outside plant field technician"
+      },
+      "S5_7B_Regex": {
+        "median_ms": 1600.5,
+        "mean_ms": 1600.5,
+        "std_ms": 19.7,
+        "in_tokens": 343,
+        "out_tokens": 80,
+        "tps": 51.0,
+        "grounding_pct": 83.3,
+        "token_efficiency": 1.041,
+        "sample_snippet": "- Your issue will be escalated to an emergency outside plant technician for immediate repair. The service will be restored within 24 hours a"
+      },
+      "S6_7B_Jev": {
+        "median_ms": 1682.3,
+        "mean_ms": 1682.3,
+        "std_ms": 11.0,
+        "in_tokens": 343,
+        "out_tokens": 80,
+        "tps": 48.7,
+        "grounding_pct": 83.3,
+        "token_efficiency": 1.041,
+        "sample_snippet": "- Your issue will be escalated to an emergency outside plant technician for immediate repair. The service will be restored within 24 hours a"
+      },
+      "S7_Gemini_Ctrl": {
+        "median_ms": 1942.4,
+        "mean_ms": 1942.4,
+        "std_ms": 63.3,
+        "in_tokens": 316,
+        "out_tokens": 143,
+        "tps": 73.7,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.699,
+        "sample_snippet": "* **Ticket Dispatch**: An emergency outside plant technician dispatch has been created under ticket code **GPON-OUTAGE-L3** to splice and re"
+      },
+      "S8_Gemini_Regex": {
+        "median_ms": 1872.1,
+        "mean_ms": 1872.1,
+        "std_ms": 147.8,
+        "in_tokens": 336,
+        "out_tokens": 159,
+        "tps": 84.2,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.629,
+        "sample_snippet": "* **Ticket & Escalation:** An emergency outside plant technician dispatch has been created under ticket code **GPON-OUTAGE-L3** to repair th"
+      },
+      "S9_Gemini_Jev": {
+        "median_ms": 1652.0,
+        "mean_ms": 1652.0,
+        "std_ms": 337.5,
+        "in_tokens": 336,
+        "out_tokens": 143.5,
+        "tps": 85.0,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.697,
+        "sample_snippet": "* Emergency outside plant technician dispatch has been initiated under ticket **GPON-OUTAGE-L3** to repair the physically severed drop line."
+      }
+    }
+  },
+  "Fiber_Long_Mid": {
+    "domain": "Fiber",
+    "complexity": "Long",
+    "kb_density": "Mid",
+    "query": "I am writing regarding my fiber internet service which went completely dead about 45 minutes ago after municipal excavation crews dug up the sidewalk in front of my driveway. They visibly severed the thick black fiber drop cable. On my ONT terminal inside the garage, the Power light is solid green, but the LOS indicator is rapidly blinking red. I run a home business and urgently need this repaired or escalated to an outside plant field technician. My account is in good standing.",
+    "streams": {
+      "S1_1.7B_Ctrl": {
+        "median_ms": 1113.3,
+        "mean_ms": 1113.3,
+        "std_ms": 10.7,
+        "in_tokens": 408,
+        "out_tokens": 168,
+        "tps": 152.9,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.595,
+        "sample_snippet": "- [FIBER-DOC-1: GPON Drop Restoration SOP | Plan: TELCO-XGSPON-SYMM-10G | APN: internet.telco.us-east | SLA: 24-Hour Resolution SLA] Physica"
+      },
+      "S2_1.7B_Regex": {
+        "median_ms": 532.0,
+        "mean_ms": 532.0,
+        "std_ms": 15.1,
+        "in_tokens": 427,
+        "out_tokens": 80,
+        "tps": 154.8,
+        "grounding_pct": 60.0,
+        "token_efficiency": 0.75,
+        "sample_snippet": "- [FIBER-DOC-1: GPON Drop Restoration SOP | Plan: TELCO-XGSPON-SYMM-10G | APN: internet.telco.us-east | SLA: 24-Hour Resolution SLA] Physica"
+      },
+      "S3_1.7B_Jev": {
+        "median_ms": 544.0,
+        "mean_ms": 544.0,
+        "std_ms": 23.5,
+        "in_tokens": 427,
+        "out_tokens": 80,
+        "tps": 151.1,
+        "grounding_pct": 60.0,
+        "token_efficiency": 0.75,
+        "sample_snippet": "- [FIBER-DOC-1: GPON Drop Restoration SOP | Plan: TELCO-XGSPON-SYMM-10G | APN: internet.telco.us-east | SLA: 24-Hour Resolution SLA] Physica"
+      },
+      "S4_7B_Ctrl": {
+        "median_ms": 1790.9,
+        "mean_ms": 1790.9,
+        "std_ms": 31.4,
+        "in_tokens": 405,
+        "out_tokens": 90,
+        "tps": 51.6,
+        "grounding_pct": 40.0,
+        "token_efficiency": 0.444,
+        "sample_snippet": "- Your issue will be escalated to an outside plant field technician immediately under ticket GPON-OUTAGE-L3. The standard repair SLA is 24 h"
+      },
+      "S5_7B_Regex": {
+        "median_ms": 1621.3,
+        "mean_ms": 1621.3,
+        "std_ms": 42.8,
+        "in_tokens": 424,
+        "out_tokens": 80,
+        "tps": 50.9,
+        "grounding_pct": 40.0,
+        "token_efficiency": 0.5,
+        "sample_snippet": "- Your issue will be escalated to an emergency outside plant technician for immediate repair. The service will be restored within 24 hours a"
+      },
+      "S6_7B_Jev": {
+        "median_ms": 1716.8,
+        "mean_ms": 1716.8,
+        "std_ms": 53.1,
+        "in_tokens": 424,
+        "out_tokens": 80,
+        "tps": 48.2,
+        "grounding_pct": 40.0,
+        "token_efficiency": 0.5,
+        "sample_snippet": "- Your issue will be escalated to an emergency outside plant technician for immediate repair. The service will be restored within 24 hours a"
+      },
+      "S7_Gemini_Ctrl": {
+        "median_ms": 1690.1,
+        "mean_ms": 1690.1,
+        "std_ms": 39.2,
+        "in_tokens": 401,
+        "out_tokens": 156.5,
+        "tps": 92.7,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.639,
+        "sample_snippet": "* **Escalation & Dispatch:** An emergency outside plant field technician has been scheduled for dispatch under ticket **GPON-OUTAGE-L3** to"
+      },
+      "S8_Gemini_Regex": {
+        "median_ms": 2195.1,
+        "mean_ms": 2195.1,
+        "std_ms": 323.0,
+        "in_tokens": 421,
+        "out_tokens": 7,
+        "tps": 3.2,
+        "grounding_pct": 0.0,
+        "token_efficiency": 0.0,
+        "sample_snippet": "* An emergency outside plant technician dispatch has"
+      },
+      "S9_Gemini_Jev": {
+        "median_ms": 1643.3,
+        "mean_ms": 1643.3,
+        "std_ms": 187.0,
+        "in_tokens": 421,
+        "out_tokens": 83.5,
+        "tps": 47.4,
+        "grounding_pct": 50.0,
+        "token_efficiency": 0.599,
+        "sample_snippet": "* **Ticket Creation & Dispatch:** An emergency outside plant technician dispatch has been generated under ticket **GPON-OUTAGE-L3** to repai"
+      }
+    }
+  },
+  "Fiber_Long_Long": {
+    "domain": "Fiber",
+    "complexity": "Long",
+    "kb_density": "Long",
+    "query": "I am writing regarding my fiber internet service which went completely dead about 45 minutes ago after municipal excavation crews dug up the sidewalk in front of my driveway. They visibly severed the thick black fiber drop cable. On my ONT terminal inside the garage, the Power light is solid green, but the LOS indicator is rapidly blinking red. I run a home business and urgently need this repaired or escalated to an outside plant field technician. My account is in good standing.",
+    "streams": {
+      "S1_1.7B_Ctrl": {
+        "median_ms": 1113.6,
+        "mean_ms": 1113.6,
+        "std_ms": 11.3,
+        "in_tokens": 408,
+        "out_tokens": 168,
+        "tps": 152.4,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.425,
+        "sample_snippet": "- [FIBER-DOC-1: GPON Drop Restoration SOP | Plan: TELCO-XGSPON-SYMM-10G | APN: internet.telco.us-east | SLA: 24-Hour Resolution SLA] Physica"
+      },
+      "S2_1.7B_Regex": {
+        "median_ms": 528.0,
+        "mean_ms": 528.0,
+        "std_ms": 7.1,
+        "in_tokens": 427,
+        "out_tokens": 80,
+        "tps": 153.7,
+        "grounding_pct": 42.9,
+        "token_efficiency": 0.536,
+        "sample_snippet": "- [FIBER-DOC-1: GPON Drop Restoration SOP | Plan: TELCO-XGSPON-SYMM-10G | APN: internet.telco.us-east | SLA: 24-Hour Resolution SLA] Physica"
+      },
+      "S3_1.7B_Jev": {
+        "median_ms": 526.6,
+        "mean_ms": 526.6,
+        "std_ms": 1.0,
+        "in_tokens": 427,
+        "out_tokens": 80,
+        "tps": 154.1,
+        "grounding_pct": 42.9,
+        "token_efficiency": 0.536,
+        "sample_snippet": "- [FIBER-DOC-1: GPON Drop Restoration SOP | Plan: TELCO-XGSPON-SYMM-10G | APN: internet.telco.us-east | SLA: 24-Hour Resolution SLA] Physica"
+      },
+      "S4_7B_Ctrl": {
+        "median_ms": 1759.0,
+        "mean_ms": 1759.0,
+        "std_ms": 11.2,
+        "in_tokens": 405,
+        "out_tokens": 90,
+        "tps": 51.8,
+        "grounding_pct": 28.6,
+        "token_efficiency": 0.318,
+        "sample_snippet": "- Your issue will be escalated to an outside plant field technician immediately under ticket GPON-OUTAGE-L3. The standard repair SLA is 24 h"
+      },
+      "S5_7B_Regex": {
+        "median_ms": 1581.7,
+        "mean_ms": 1581.7,
+        "std_ms": 2.3,
+        "in_tokens": 424,
+        "out_tokens": 80,
+        "tps": 51.2,
+        "grounding_pct": 28.6,
+        "token_efficiency": 0.358,
+        "sample_snippet": "- Your issue will be escalated to an emergency outside plant technician for immediate repair. The service will be restored within 24 hours a"
+      },
+      "S6_7B_Jev": {
+        "median_ms": 1697.7,
+        "mean_ms": 1697.7,
+        "std_ms": 18.0,
+        "in_tokens": 424,
+        "out_tokens": 80,
+        "tps": 47.7,
+        "grounding_pct": 28.6,
+        "token_efficiency": 0.358,
+        "sample_snippet": "- Your issue will be escalated to an emergency outside plant technician for immediate repair. The service will be restored within 24 hours a"
+      },
+      "S7_Gemini_Ctrl": {
+        "median_ms": 2071.0,
+        "mean_ms": 2071.0,
+        "std_ms": 63.3,
+        "in_tokens": 401,
+        "out_tokens": 158.5,
+        "tps": 76.4,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.45,
+        "sample_snippet": "* **Plan & Network Configuration:** Account associated with Plan code `TELCO-XGSPON-SYMM-10G` and APN `internet.telco.us-east`. * **Dispatch"
+      },
+      "S8_Gemini_Regex": {
+        "median_ms": 2022.2,
+        "mean_ms": 2022.2,
+        "std_ms": 97.6,
+        "in_tokens": 421,
+        "out_tokens": 74,
+        "tps": 35.5,
+        "grounding_pct": 35.7,
+        "token_efficiency": 0.482,
+        "sample_snippet": "* **Ticket Escalation:** An emergency outside plant technician dispatch has been initiated under ticket **GPON-OUTAGE-L3** for your plan **T"
+      },
+      "S9_Gemini_Jev": {
+        "median_ms": 1707.5,
+        "mean_ms": 1707.5,
+        "std_ms": 14.0,
+        "in_tokens": 421,
+        "out_tokens": 69,
+        "tps": 40.2,
+        "grounding_pct": 35.7,
+        "token_efficiency": 0.517,
+        "sample_snippet": "* An emergency outside plant field technician dispatch has been initiated under ticket **GPON-OUTAGE-L3** to repair the severed physical dro"
+      }
+    }
+  },
+  "Billing_Short_Short": {
+    "domain": "Billing",
+    "complexity": "Short",
+    "kb_density": "Short",
+    "query": "Why is my bill $45 higher this month?",
+    "streams": {
+      "S1_1.7B_Ctrl": {
+        "median_ms": 509.1,
+        "mean_ms": 509.1,
+        "std_ms": 92.1,
+        "in_tokens": 233,
+        "out_tokens": 77,
+        "tps": 155.5,
+        "grounding_pct": 83.3,
+        "token_efficiency": 1.082,
+        "sample_snippet": "- [BILL-DOC-1: Duplicate Roaming Charge Reversal | Plan: GLOBAL-ROAM-EUR | APN: N/A | SLA: 48-Hour Bank Credit SLA] Duplicate roaming charge"
+      },
+      "S2_1.7B_Regex": {
+        "median_ms": 508.5,
+        "mean_ms": 508.5,
+        "std_ms": 149.6,
+        "in_tokens": 250,
+        "out_tokens": 74.5,
+        "tps": 151.1,
+        "grounding_pct": 83.3,
+        "token_efficiency": 1.118,
+        "sample_snippet": "- [BILL-DOC-1: Duplicate Roaming Charge Reversal] The increase in your bill is due to a duplicate roaming charge that was reversed within 48"
+      },
+      "S3_1.7B_Jev": {
+        "median_ms": 648.2,
+        "mean_ms": 648.2,
+        "std_ms": 35.0,
+        "in_tokens": 250,
+        "out_tokens": 94.5,
+        "tps": 150.4,
+        "grounding_pct": 100.0,
+        "token_efficiency": 1.058,
+        "sample_snippet": "- [BILL-DOC-1: Duplicate Roaming Charge Reversal] The increase in your bill is due to a duplicate roaming charge that was reversed within 48"
+      },
+      "S4_7B_Ctrl": {
+        "median_ms": 987.7,
+        "mean_ms": 987.7,
+        "std_ms": 13.5,
+        "in_tokens": 230,
+        "out_tokens": 49,
+        "tps": 51.3,
+        "grounding_pct": 66.7,
+        "token_efficiency": 1.361,
+        "sample_snippet": "- The increase of $45 on your bill this month is due to a duplicate roaming charge that was mistakenly applied. This charge will be reversed"
+      },
+      "S5_7B_Regex": {
+        "median_ms": 1362.1,
+        "mean_ms": 1362.1,
+        "std_ms": 17.5,
+        "in_tokens": 247,
+        "out_tokens": 68,
+        "tps": 51.3,
+        "grounding_pct": 66.7,
+        "token_efficiency": 0.981,
+        "sample_snippet": "- The increase of $45 in your bill this month is due to a duplicate roaming charge that was mistakenly applied. This charge has been identif"
+      },
+      "S6_7B_Jev": {
+        "median_ms": 1420.2,
+        "mean_ms": 1420.2,
+        "std_ms": 11.0,
+        "in_tokens": 247,
+        "out_tokens": 68,
+        "tps": 49.0,
+        "grounding_pct": 66.7,
+        "token_efficiency": 0.981,
+        "sample_snippet": "- The increase of $45 in your bill this month is due to a duplicate roaming charge that was mistakenly applied. This charge has been identif"
+      },
+      "S7_Gemini_Ctrl": {
+        "median_ms": 1923.4,
+        "mean_ms": 1923.4,
+        "std_ms": 456.2,
+        "in_tokens": 220,
+        "out_tokens": 63,
+        "tps": 34.5,
+        "grounding_pct": 100.0,
+        "token_efficiency": 1.587,
+        "sample_snippet": "* The unexpected charge is associated with duplicate roaming deductions under plan code **GLOBAL-ROAM-EUR**. * An automated correction has b"
+      },
+      "S8_Gemini_Regex": {
+        "median_ms": 1981.6,
+        "mean_ms": 1981.6,
+        "std_ms": 201.6,
+        "in_tokens": 240,
+        "out_tokens": 4,
+        "tps": 2.0,
+        "grounding_pct": 0.0,
+        "token_efficiency": 0.0,
+        "sample_snippet": "* The additional charge"
+      },
+      "S9_Gemini_Jev": {
+        "median_ms": 1731.7,
+        "mean_ms": 1731.7,
+        "std_ms": 106.0,
+        "in_tokens": 240,
+        "out_tokens": 7,
+        "tps": 4.0,
+        "grounding_pct": 0.0,
+        "token_efficiency": 0.0,
+        "sample_snippet": "* The $45 variance"
+      }
+    }
+  },
+  "Billing_Short_Mid": {
+    "domain": "Billing",
+    "complexity": "Short",
+    "kb_density": "Mid",
+    "query": "Why is my bill $45 higher this month?",
+    "streams": {
+      "S1_1.7B_Ctrl": {
+        "median_ms": 909.6,
+        "mean_ms": 909.6,
+        "std_ms": 15.6,
+        "in_tokens": 299,
+        "out_tokens": 139,
+        "tps": 154.8,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.719,
+        "sample_snippet": "- [BILL-DOC-1: Duplicate Roaming Charge Reversal | Plan: GLOBAL-ROAM-EUR | APN: N/A | SLA: 48-Hour Bank Credit SLA] Duplicate roaming charge"
+      },
+      "S2_1.7B_Regex": {
+        "median_ms": 494.4,
+        "mean_ms": 494.4,
+        "std_ms": 5.6,
+        "in_tokens": 316,
+        "out_tokens": 74.5,
+        "tps": 154.7,
+        "grounding_pct": 40.0,
+        "token_efficiency": 0.537,
+        "sample_snippet": "- [BILL-DOC-1] Duplicate roaming charge reversal: The bill reflects a $45 higher amount due to a duplicate roaming charge that was reversed"
+      },
+      "S3_1.7B_Jev": {
+        "median_ms": 595.5,
+        "mean_ms": 595.5,
+        "std_ms": 134.9,
+        "in_tokens": 316,
+        "out_tokens": 87.5,
+        "tps": 150.7,
+        "grounding_pct": 50.0,
+        "token_efficiency": 0.571,
+        "sample_snippet": "- [BILL-DOC-1] Duplicate roaming charge reversal: The bill reflects a $45 higher amount due to a duplicate roaming charge that was reversed"
+      },
+      "S4_7B_Ctrl": {
+        "median_ms": 1553.7,
+        "mean_ms": 1553.7,
+        "std_ms": 3.7,
+        "in_tokens": 296,
+        "out_tokens": 78,
+        "tps": 51.4,
+        "grounding_pct": 80.0,
+        "token_efficiency": 1.026,
+        "sample_snippet": "- The increase of $45 on your bill this month is due to a duplicate roaming charge that was processed. This charge has been identified and w"
+      },
+      "S5_7B_Regex": {
+        "median_ms": 1636.0,
+        "mean_ms": 1636.0,
+        "std_ms": 55.2,
+        "in_tokens": 313,
+        "out_tokens": 82,
+        "tps": 51.1,
+        "grounding_pct": 80.0,
+        "token_efficiency": 0.976,
+        "sample_snippet": "- The increase of $45 in your bill this month is due to a duplicate roaming charge that was processed. This charge has been identified and w"
+      },
+      "S6_7B_Jev": {
+        "median_ms": 1684.7,
+        "mean_ms": 1684.7,
+        "std_ms": 46.5,
+        "in_tokens": 313,
+        "out_tokens": 80,
+        "tps": 48.5,
+        "grounding_pct": 80.0,
+        "token_efficiency": 1.0,
+        "sample_snippet": "- The increase of $45 in your bill this month is due to a duplicate roaming charge that was processed. This charge has been identified and w"
+      },
+      "S7_Gemini_Ctrl": {
+        "median_ms": 2450.1,
+        "mean_ms": 2450.1,
+        "std_ms": 40.5,
+        "in_tokens": 287,
+        "out_tokens": 56.5,
+        "tps": 22.9,
+        "grounding_pct": 60.0,
+        "token_efficiency": 1.062,
+        "sample_snippet": "* **Duplicate Roaming Charge Adjustment:** Plan **GLOBAL-ROAM-EUR** duplicate charges are being reversed to your original payment method wit"
+      },
+      "S8_Gemini_Regex": {
+        "median_ms": 1774.5,
+        "mean_ms": 1774.5,
+        "std_ms": 19.0,
+        "in_tokens": 307,
+        "out_tokens": 96.5,
+        "tps": 54.4,
+        "grounding_pct": 100.0,
+        "token_efficiency": 1.036,
+        "sample_snippet": "* The unexpected charges on your **GLOBAL-ROAM-EUR** plan are duplicate roaming deductions being processed for correction. * A direct revers"
+      },
+      "S9_Gemini_Jev": {
+        "median_ms": 1721.2,
+        "mean_ms": 1721.2,
+        "std_ms": 123.2,
+        "in_tokens": 307,
+        "out_tokens": 53,
+        "tps": 32.4,
+        "grounding_pct": 50.0,
+        "token_efficiency": 0.943,
+        "sample_snippet": "* A"
+      }
+    }
+  },
+  "Billing_Short_Long": {
+    "domain": "Billing",
+    "complexity": "Short",
+    "kb_density": "Long",
+    "query": "Why is my bill $45 higher this month?",
+    "streams": {
+      "S1_1.7B_Ctrl": {
+        "median_ms": 893.5,
+        "mean_ms": 893.5,
+        "std_ms": 1.9,
+        "in_tokens": 299,
+        "out_tokens": 139,
+        "tps": 156.8,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.514,
+        "sample_snippet": "- [BILL-DOC-1: Duplicate Roaming Charge Reversal | Plan: GLOBAL-ROAM-EUR | APN: N/A | SLA: 48-Hour Bank Credit SLA] Duplicate roaming charge"
+      },
+      "S2_1.7B_Regex": {
+        "median_ms": 493.8,
+        "mean_ms": 493.8,
+        "std_ms": 7.3,
+        "in_tokens": 316,
+        "out_tokens": 75,
+        "tps": 154.2,
+        "grounding_pct": 28.6,
+        "token_efficiency": 0.381,
+        "sample_snippet": "- [BILL-DOC-1] Duplicate roaming charge reversal: The bill reflects a $45 higher amount due to a duplicate roaming charge that was reversed"
+      },
+      "S3_1.7B_Jev": {
+        "median_ms": 494.9,
+        "mean_ms": 494.9,
+        "std_ms": 0.8,
+        "in_tokens": 316,
+        "out_tokens": 75,
+        "tps": 153.8,
+        "grounding_pct": 28.6,
+        "token_efficiency": 0.381,
+        "sample_snippet": "- [BILL-DOC-1] Duplicate roaming charge reversal: The bill reflects a $45 higher amount due to a duplicate roaming charge that was reversed"
+      },
+      "S4_7B_Ctrl": {
+        "median_ms": 1534.0,
+        "mean_ms": 1534.0,
+        "std_ms": 7.8,
+        "in_tokens": 296,
+        "out_tokens": 78,
+        "tps": 51.5,
+        "grounding_pct": 57.1,
+        "token_efficiency": 0.732,
+        "sample_snippet": "- The increase of $45 on your bill this month is due to a duplicate roaming charge that was processed. This charge has been identified and w"
+      },
+      "S5_7B_Regex": {
+        "median_ms": 1665.6,
+        "mean_ms": 1665.6,
+        "std_ms": 9.1,
+        "in_tokens": 313,
+        "out_tokens": 84,
+        "tps": 51.1,
+        "grounding_pct": 57.1,
+        "token_efficiency": 0.68,
+        "sample_snippet": "- The increase of $45 in your bill this month is due to a duplicate roaming charge that was processed. This charge has been identified and w"
+      },
+      "S6_7B_Jev": {
+        "median_ms": 1647.9,
+        "mean_ms": 1647.9,
+        "std_ms": 2.3,
+        "in_tokens": 313,
+        "out_tokens": 80,
+        "tps": 49.2,
+        "grounding_pct": 57.1,
+        "token_efficiency": 0.714,
+        "sample_snippet": "- The increase of $45 in your bill this month is due to a duplicate roaming charge that was processed. This charge has been identified and w"
+      },
+      "S7_Gemini_Ctrl": {
+        "median_ms": 2554.3,
+        "mean_ms": 2554.3,
+        "std_ms": 243.4,
+        "in_tokens": 287,
+        "out_tokens": 17.5,
+        "tps": 6.8,
+        "grounding_pct": 14.3,
+        "token_efficiency": 0.817,
+        "sample_snippet": "* Plan **GLOBAL-ROAM-EUR** duplicate roaming deductions are reversed directly to your original"
+      },
+      "S8_Gemini_Regex": {
+        "median_ms": 1812.4,
+        "mean_ms": 1812.4,
+        "std_ms": 202.8,
+        "in_tokens": 307,
+        "out_tokens": 100,
+        "tps": 55.3,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.714,
+        "sample_snippet": "* The excess charge is associated with duplicate roaming deductions under plan code **GLOBAL-ROAM-EUR**. * Duplicate deductions are processe"
+      },
+      "S9_Gemini_Jev": {
+        "median_ms": 1462.8,
+        "mean_ms": 1462.8,
+        "std_ms": 3.3,
+        "in_tokens": 307,
+        "out_tokens": 92,
+        "tps": 62.9,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.776,
+        "sample_snippet": "* Duplicate roaming deductions under plan **GLOBAL-ROAM-EUR** are being reversed to your original payment method under adjustment code **ADJ"
+      }
+    }
+  },
+  "Billing_Mid_Short": {
+    "domain": "Billing",
+    "complexity": "Mid",
+    "kb_density": "Short",
+    "query": "I was charged twice on my credit card for international roaming while traveling in London, and autopay took the second unauthorized deduction of $45 yesterday.",
+    "streams": {
+      "S1_1.7B_Ctrl": {
+        "median_ms": 503.9,
+        "mean_ms": 503.9,
+        "std_ms": 139.4,
+        "in_tokens": 252,
+        "out_tokens": 76,
+        "tps": 154.3,
+        "grounding_pct": 83.3,
+        "token_efficiency": 1.096,
+        "sample_snippet": "- plan: GLOBAL-ROAM-EUR   - apn: N/A   - sla: 48-Hour Bank Credit SLA   - adjustment code: ADJ-ROAM-DUP   - compensation amount: $45   - rev"
+      },
+      "S2_1.7B_Regex": {
+        "median_ms": 601.9,
+        "mean_ms": 601.9,
+        "std_ms": 3.7,
+        "in_tokens": 269,
+        "out_tokens": 90,
+        "tps": 152.5,
+        "grounding_pct": 100.0,
+        "token_efficiency": 1.111,
+        "sample_snippet": "- [BILL-DOC-1: Duplicate Roaming Charge Reversal | Plan: GLOBAL-ROAM-EUR | APN: N/A | SLA: 48-Hour Bank Credit SLA] Duplicate roaming charge"
+      },
+      "S3_1.7B_Jev": {
+        "median_ms": 571.9,
+        "mean_ms": 571.9,
+        "std_ms": 99.6,
+        "in_tokens": 269,
+        "out_tokens": 79,
+        "tps": 140.9,
+        "grounding_pct": 100.0,
+        "token_efficiency": 1.266,
+        "sample_snippet": "- [BILL-DOC-1] Duplicate roaming charge reversal initiated under adjustment code ADJ-ROAM-DUP, effective immediately.   - [SLA-48H] Reversal"
+      },
+      "S4_7B_Ctrl": {
+        "median_ms": 799.8,
+        "mean_ms": 799.8,
+        "std_ms": 12.5,
+        "in_tokens": 249,
+        "out_tokens": 40,
+        "tps": 52.0,
+        "grounding_pct": 66.7,
+        "token_efficiency": 1.667,
+        "sample_snippet": "- Duplicate roaming charges will be reversed within 48 hours via adjustment code ADJ-ROAM-DUP. The amount of $45 will be credited back to yo"
+      },
+      "S5_7B_Regex": {
+        "median_ms": 981.5,
+        "mean_ms": 981.5,
+        "std_ms": 257.4,
+        "in_tokens": 266,
+        "out_tokens": 49.5,
+        "tps": 51.9,
+        "grounding_pct": 66.7,
+        "token_efficiency": 1.347,
+        "sample_snippet": "- Duplicate roaming charges will be reversed within 48 hours to your original credit card. This adjustment is covered under the ADJ-ROAM-DUP"
+      },
+      "S6_7B_Jev": {
+        "median_ms": 857.5,
+        "mean_ms": 857.5,
+        "std_ms": 24.3,
+        "in_tokens": 266,
+        "out_tokens": 40,
+        "tps": 48.4,
+        "grounding_pct": 66.7,
+        "token_efficiency": 1.667,
+        "sample_snippet": "- Duplicate roaming charges for your GLOBAL-ROAM-EUR plan will be reversed within 48 hours to your original credit card. The adjustment code"
+      },
+      "S7_Gemini_Ctrl": {
+        "median_ms": 1724.3,
+        "mean_ms": 1724.3,
+        "std_ms": 25.0,
+        "in_tokens": 239,
+        "out_tokens": 85.5,
+        "tps": 49.5,
+        "grounding_pct": 100.0,
+        "token_efficiency": 1.17,
+        "sample_snippet": "* **Billing Adjustment Code:** ADJ-ROAM-DUP has been applied to reverse the duplicate $45 charge. * **Associated Plan Code:** GLOBAL-ROAM-EU"
+      },
+      "S8_Gemini_Regex": {
+        "median_ms": 1917.6,
+        "mean_ms": 1917.6,
+        "std_ms": 461.1,
+        "in_tokens": 259,
+        "out_tokens": 40.5,
+        "tps": 25.2,
+        "grounding_pct": 50.0,
+        "token_efficiency": 1.235,
+        "sample_snippet": "* **Plan Code:** GLOBAL-ROAM-EUR * **Billing Adjustment Code:** ADJ-ROAM-DUP * **Resolution:** A refund of $45 for the duplicate charge has"
+      },
+      "S9_Gemini_Jev": {
+        "median_ms": 1808.2,
+        "mean_ms": 1808.2,
+        "std_ms": 68.3,
+        "in_tokens": 259,
+        "out_tokens": 30.5,
+        "tps": 16.5,
+        "grounding_pct": 50.0,
+        "token_efficiency": 1.639,
+        "sample_snippet": "* **Plan Code:** GLOBAL-ROAM-EUR * **Billing Adjustment Code:** ADJ-ROAM-DUP * **Resolution SLA:** The duplicate $45 charge will be reversed"
+      }
+    }
+  },
+  "Billing_Mid_Mid": {
+    "domain": "Billing",
+    "complexity": "Mid",
+    "kb_density": "Mid",
+    "query": "I was charged twice on my credit card for international roaming while traveling in London, and autopay took the second unauthorized deduction of $45 yesterday.",
+    "streams": {
+      "S1_1.7B_Ctrl": {
+        "median_ms": 911.0,
+        "mean_ms": 911.0,
+        "std_ms": 11.7,
+        "in_tokens": 318,
+        "out_tokens": 138,
+        "tps": 153.6,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.725,
+        "sample_snippet": "- [BILL-DOC-1: Duplicate Roaming Charge Reversal | Plan: GLOBAL-ROAM-EUR | APN: N/A | SLA: 48-Hour Bank Credit SLA] Duplicate roaming charge"
+      },
+      "S2_1.7B_Regex": {
+        "median_ms": 598.4,
+        "mean_ms": 598.4,
+        "std_ms": 15.9,
+        "in_tokens": 335,
+        "out_tokens": 90,
+        "tps": 153.7,
+        "grounding_pct": 100.0,
+        "token_efficiency": 1.111,
+        "sample_snippet": "- [BILL-DOC-1] Duplicate roaming charge reversal initiated under adjustment code ADJ-ROAM-DUP. The reversal will be applied directly to the"
+      },
+      "S3_1.7B_Jev": {
+        "median_ms": 628.2,
+        "mean_ms": 628.2,
+        "std_ms": 8.3,
+        "in_tokens": 335,
+        "out_tokens": 90,
+        "tps": 146.5,
+        "grounding_pct": 90.0,
+        "token_efficiency": 1.0,
+        "sample_snippet": "- [BILL-DOC-1] Duplicate roaming charge reversal initiated under adjustment code ADJ-ROAM-DUP. The reversal will be processed within 48 hour"
+      },
+      "S4_7B_Ctrl": {
+        "median_ms": 1185.2,
+        "mean_ms": 1185.2,
+        "std_ms": 22.3,
+        "in_tokens": 315,
+        "out_tokens": 60,
+        "tps": 52.0,
+        "grounding_pct": 80.0,
+        "token_efficiency": 1.333,
+        "sample_snippet": "- Duplicate roaming charges will be reversed within 48 hours to your original credit card under adjustment code ADJ-ROAM-DUP. - You will als"
+      },
+      "S5_7B_Regex": {
+        "median_ms": 1297.2,
+        "mean_ms": 1297.2,
+        "std_ms": 21.4,
+        "in_tokens": 332,
+        "out_tokens": 65,
+        "tps": 51.4,
+        "grounding_pct": 80.0,
+        "token_efficiency": 1.231,
+        "sample_snippet": "- Duplicate roaming charges have been identified. The first charge will be reversed within 48 hours to your original payment method under ad"
+      },
+      "S6_7B_Jev": {
+        "median_ms": 1157.7,
+        "mean_ms": 1157.7,
+        "std_ms": 67.6,
+        "in_tokens": 332,
+        "out_tokens": 54.5,
+        "tps": 48.8,
+        "grounding_pct": 70.0,
+        "token_efficiency": 1.284,
+        "sample_snippet": "- Duplicate roaming charges have been identified. The first charge will be reversed within 48 hours to your original payment method. For the"
+      },
+      "S7_Gemini_Ctrl": {
+        "median_ms": 1887.4,
+        "mean_ms": 1887.4,
+        "std_ms": 17.5,
+        "in_tokens": 306,
+        "out_tokens": 121,
+        "tps": 64.1,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.826,
+        "sample_snippet": "* **Duplicate Charge Reversal**: A full reversal of the unauthorized roaming deduction has been initiated to your original payment method un"
+      },
+      "S8_Gemini_Regex": {
+        "median_ms": 1837.9,
+        "mean_ms": 1837.9,
+        "std_ms": 383.9,
+        "in_tokens": 326,
+        "out_tokens": 94,
+        "tps": 52.2,
+        "grounding_pct": 100.0,
+        "token_efficiency": 1.064,
+        "sample_snippet": "* The duplicate roaming charge reversal has been submitted under adjustment code **ADJ-ROAM-DUP** for plan **GLOBAL-ROAM-EUR**. * The full d"
+      },
+      "S9_Gemini_Jev": {
+        "median_ms": 1529.1,
+        "mean_ms": 1529.1,
+        "std_ms": 172.6,
+        "in_tokens": 326,
+        "out_tokens": 93.5,
+        "tps": 61.5,
+        "grounding_pct": 100.0,
+        "token_efficiency": 1.07,
+        "sample_snippet": "* **Duplicate Charge Reversal:** The duplicate roaming deduction has been processed for reversal back to your original payment method within"
+      }
+    }
+  },
+  "Billing_Mid_Long": {
+    "domain": "Billing",
+    "complexity": "Mid",
+    "kb_density": "Long",
+    "query": "I was charged twice on my credit card for international roaming while traveling in London, and autopay took the second unauthorized deduction of $45 yesterday.",
+    "streams": {
+      "S1_1.7B_Ctrl": {
+        "median_ms": 903.1,
+        "mean_ms": 903.1,
+        "std_ms": 6.1,
+        "in_tokens": 318,
+        "out_tokens": 138,
+        "tps": 154.1,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.517,
+        "sample_snippet": "- [BILL-DOC-1: Duplicate Roaming Charge Reversal | Plan: GLOBAL-ROAM-EUR | APN: N/A | SLA: 48-Hour Bank Credit SLA] Duplicate roaming charge"
+      },
+      "S2_1.7B_Regex": {
+        "median_ms": 588.4,
+        "mean_ms": 588.4,
+        "std_ms": 0.3,
+        "in_tokens": 335,
+        "out_tokens": 90,
+        "tps": 154.9,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.793,
+        "sample_snippet": "- [BILL-DOC-1] Duplicate roaming charge reversal initiated under adjustment code ADJ-ROAM-DUP. The reversal will be applied directly to the"
+      },
+      "S3_1.7B_Jev": {
+        "median_ms": 592.6,
+        "mean_ms": 592.6,
+        "std_ms": 12.5,
+        "in_tokens": 335,
+        "out_tokens": 90,
+        "tps": 153.8,
+        "grounding_pct": 57.1,
+        "token_efficiency": 0.634,
+        "sample_snippet": "- [BILL-DOC-1] Duplicate roaming charge reversal initiated under adjustment code ADJ-ROAM-DUP. The reversal will be processed within 48 hour"
+      },
+      "S4_7B_Ctrl": {
+        "median_ms": 1181.3,
+        "mean_ms": 1181.3,
+        "std_ms": 11.2,
+        "in_tokens": 315,
+        "out_tokens": 60,
+        "tps": 51.6,
+        "grounding_pct": 57.1,
+        "token_efficiency": 0.952,
+        "sample_snippet": "- Duplicate roaming charges will be reversed within 48 hours to your original credit card under adjustment code ADJ-ROAM-DUP. - You will als"
+      },
+      "S5_7B_Regex": {
+        "median_ms": 1290.8,
+        "mean_ms": 1290.8,
+        "std_ms": 1.2,
+        "in_tokens": 332,
+        "out_tokens": 65,
+        "tps": 51.2,
+        "grounding_pct": 57.1,
+        "token_efficiency": 0.878,
+        "sample_snippet": "- Duplicate roaming charges have been identified. The first charge will be reversed within 48 hours to your original payment method under ad"
+      },
+      "S6_7B_Jev": {
+        "median_ms": 1125.7,
+        "mean_ms": 1125.7,
+        "std_ms": 24.7,
+        "in_tokens": 332,
+        "out_tokens": 54,
+        "tps": 48.9,
+        "grounding_pct": 42.9,
+        "token_efficiency": 0.794,
+        "sample_snippet": "- Duplicate roaming charges have been identified. The first charge will be reversed within 48 hours to your original payment method. For the"
+      },
+      "S7_Gemini_Ctrl": {
+        "median_ms": 1896.0,
+        "mean_ms": 1896.0,
+        "std_ms": 236.4,
+        "in_tokens": 306,
+        "out_tokens": 108,
+        "tps": 57.2,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.661,
+        "sample_snippet": "* **Duplicate Charge Reversal:** The duplicate roaming deduction has been flagged under adjustment code **ADJ-ROAM-DUP** for your **GLOBAL-R"
+      },
+      "S8_Gemini_Regex": {
+        "median_ms": 1786.0,
+        "mean_ms": 1786.0,
+        "std_ms": 83.7,
+        "in_tokens": 326,
+        "out_tokens": 91,
+        "tps": 50.9,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.785,
+        "sample_snippet": "* A full refund for the duplicate roaming charge will be reversed to your original payment method within the 48-Hour Bank Credit SLA under a"
+      },
+      "S9_Gemini_Jev": {
+        "median_ms": 1566.0,
+        "mean_ms": 1566.0,
+        "std_ms": 382.7,
+        "in_tokens": 326,
+        "out_tokens": 92,
+        "tps": 59.5,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.776,
+        "sample_snippet": "* The duplicate roaming charge of $45 will be reversed directly to your original payment method within the 48-Hour Bank Credit SLA under adj"
+      }
+    }
+  },
+  "Billing_Long_Short": {
+    "domain": "Billing",
+    "complexity": "Long",
+    "kb_density": "Short",
+    "query": "I am extremely frustrated with my latest invoice statement. I returned from a business trip to the UK last week and specifically purchased a single 7-day international data pass for $35. However, my checking account was hit with two separate charges of $45 and $35 under billing code ROAM-EUR-DATA, causing an overdraft. AutoPay already executed this morning without my approval. I demand an immediate reversal of the duplicate $45 charge and a waiver of any dispute fees.",
+    "streams": {
+      "S1_1.7B_Ctrl": {
+        "median_ms": 1136.8,
+        "mean_ms": 1136.8,
+        "std_ms": 56.1,
+        "in_tokens": 323,
+        "out_tokens": 173,
+        "tps": 154.1,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.578,
+        "sample_snippet": "- [BILL-DOC-1: Duplicate Roaming Charge Reversal | Plan: GLOBAL-ROAM-EUR | APN: N/A | SLA: 48-Hour Bank Credit SLA] - Duplicate roaming char"
+      },
+      "S2_1.7B_Regex": {
+        "median_ms": 606.8,
+        "mean_ms": 606.8,
+        "std_ms": 19.0,
+        "in_tokens": 340,
+        "out_tokens": 90,
+        "tps": 151.7,
+        "grounding_pct": 100.0,
+        "token_efficiency": 1.111,
+        "sample_snippet": "- [BILL-DOC-1: Duplicate Roaming Charge Reversal | Plan: GLOBAL-ROAM-EUR | APN: N/A | SLA: 48-Hour Bank Credit SLA] - Immediate reversal of"
+      },
+      "S3_1.7B_Jev": {
+        "median_ms": 639.8,
+        "mean_ms": 639.8,
+        "std_ms": 84.6,
+        "in_tokens": 340,
+        "out_tokens": 90,
+        "tps": 144.8,
+        "grounding_pct": 100.0,
+        "token_efficiency": 1.111,
+        "sample_snippet": "- [BILL-DOC-1: Duplicate Roaming Charge Reversal] duplicate roaming charge of $45 reversed immediately via adjustment code ADJ-ROAM-DUP   -"
+      },
+      "S4_7B_Ctrl": {
+        "median_ms": 1304.7,
+        "mean_ms": 1304.7,
+        "std_ms": 19.3,
+        "in_tokens": 320,
+        "out_tokens": 66,
+        "tps": 51.8,
+        "grounding_pct": 66.7,
+        "token_efficiency": 1.011,
+        "sample_snippet": "- Duplicate roaming charges of $45 will be reversed within 48 hours via adjustment code ADJ-ROAM-DUP, directly to your original payment meth"
+      },
+      "S5_7B_Regex": {
+        "median_ms": 1282.2,
+        "mean_ms": 1282.2,
+        "std_ms": 18.0,
+        "in_tokens": 337,
+        "out_tokens": 64,
+        "tps": 51.2,
+        "grounding_pct": 66.7,
+        "token_efficiency": 1.042,
+        "sample_snippet": "- Duplicate roaming charges of $45 have been identified and will be reversed within 48 hours via adjustment code ADJ-ROAM-DUP, directly to y"
+      },
+      "S6_7B_Jev": {
+        "median_ms": 1411.5,
+        "mean_ms": 1411.5,
+        "std_ms": 125.1,
+        "in_tokens": 337,
+        "out_tokens": 67.5,
+        "tps": 49.2,
+        "grounding_pct": 66.7,
+        "token_efficiency": 0.988,
+        "sample_snippet": "- Duplicate roaming charges of $45 have been identified and will be reversed within 48 hours via adjustment code ADJ-ROAM-DUP, directly to y"
+      },
+      "S7_Gemini_Ctrl": {
+        "median_ms": 1882.8,
+        "mean_ms": 1882.8,
+        "std_ms": 71.0,
+        "in_tokens": 310,
+        "out_tokens": 98.5,
+        "tps": 52.5,
+        "grounding_pct": 100.0,
+        "token_efficiency": 1.015,
+        "sample_snippet": "* **Adjustment Processing:** The duplicate $45 roaming charge has been queued for a direct refund to your original payment method under bill"
+      },
+      "S8_Gemini_Regex": {
+        "median_ms": 1780.6,
+        "mean_ms": 1780.6,
+        "std_ms": 321.9,
+        "in_tokens": 330,
+        "out_tokens": 99,
+        "tps": 57.0,
+        "grounding_pct": 100.0,
+        "token_efficiency": 1.01,
+        "sample_snippet": "* **Adjustment Processing:** The duplicate roaming deduction will be credited back to your original payment method within the 48-Hour Bank C"
+      },
+      "S9_Gemini_Jev": {
+        "median_ms": 1785.5,
+        "mean_ms": 1785.5,
+        "std_ms": 135.8,
+        "in_tokens": 330,
+        "out_tokens": 62,
+        "tps": 36.6,
+        "grounding_pct": 50.0,
+        "token_efficiency": 0.806,
+        "sample_snippet": "* **Adjustment Execution:** The unauthorized duplicate charge of $45 will be refunded to your original payment method under adjustment code"
+      }
+    }
+  },
+  "Billing_Long_Mid": {
+    "domain": "Billing",
+    "complexity": "Long",
+    "kb_density": "Mid",
+    "query": "I am extremely frustrated with my latest invoice statement. I returned from a business trip to the UK last week and specifically purchased a single 7-day international data pass for $35. However, my checking account was hit with two separate charges of $45 and $35 under billing code ROAM-EUR-DATA, causing an overdraft. AutoPay already executed this morning without my approval. I demand an immediate reversal of the duplicate $45 charge and a waiver of any dispute fees.",
+    "streams": {
+      "S1_1.7B_Ctrl": {
+        "median_ms": 505.5,
+        "mean_ms": 505.5,
+        "std_ms": 118.3,
+        "in_tokens": 389,
+        "out_tokens": 77,
+        "tps": 156.2,
+        "grounding_pct": 80.0,
+        "token_efficiency": 1.039,
+        "sample_snippet": "- duplicate roaming charge reversal: reverse the $45 charge under adjustment code ADJ-ROAM-DUP   - compensation credit: receive a $15 courte"
+      },
+      "S2_1.7B_Regex": {
+        "median_ms": 606.9,
+        "mean_ms": 606.9,
+        "std_ms": 6.8,
+        "in_tokens": 406,
+        "out_tokens": 90,
+        "tps": 152.0,
+        "grounding_pct": 80.0,
+        "token_efficiency": 0.889,
+        "sample_snippet": "- [BILL-DOC-1: Duplicate Roaming Charge Reversal | Plan: GLOBAL-ROAM-EUR | APN: N/A | SLA: 48-Hour Bank Credit SLA] - Duplicate roaming char"
+      },
+      "S3_1.7B_Jev": {
+        "median_ms": 587.9,
+        "mean_ms": 587.9,
+        "std_ms": 18.5,
+        "in_tokens": 406,
+        "out_tokens": 90,
+        "tps": 156.9,
+        "grounding_pct": 100.0,
+        "token_efficiency": 1.111,
+        "sample_snippet": "- [BILL-DOC-1: Duplicate Roaming Charge Reversal] Immediate reversal of duplicate roaming charge of $45 under adjustment code ADJ-ROAM-DUP."
+      },
+      "S4_7B_Ctrl": {
+        "median_ms": 1457.8,
+        "mean_ms": 1457.8,
+        "std_ms": 33.9,
+        "in_tokens": 386,
+        "out_tokens": 73,
+        "tps": 51.6,
+        "grounding_pct": 80.0,
+        "token_efficiency": 1.096,
+        "sample_snippet": "- Duplicate roaming charges of $45 will be reversed within 48 hours to your original payment method under adjustment code ADJ-ROAM-DUP. - Yo"
+      },
+      "S5_7B_Regex": {
+        "median_ms": 1466.0,
+        "mean_ms": 1466.0,
+        "std_ms": 38.3,
+        "in_tokens": 403,
+        "out_tokens": 73,
+        "tps": 51.5,
+        "grounding_pct": 80.0,
+        "token_efficiency": 1.096,
+        "sample_snippet": "- Duplicate roaming charges of $45 will be reversed within 48 hours to your original payment method under adjustment code ADJ-ROAM-DUP. - Yo"
+      },
+      "S6_7B_Jev": {
+        "median_ms": 1575.6,
+        "mean_ms": 1575.6,
+        "std_ms": 55.4,
+        "in_tokens": 403,
+        "out_tokens": 73,
+        "tps": 48.2,
+        "grounding_pct": 80.0,
+        "token_efficiency": 1.096,
+        "sample_snippet": "- Duplicate roaming charges of $45 will be reversed within 48 hours to your original payment method under adjustment code ADJ-ROAM-DUP. - Yo"
+      },
+      "S7_Gemini_Ctrl": {
+        "median_ms": 4320.5,
+        "mean_ms": 4320.5,
+        "std_ms": 2699.0,
+        "in_tokens": 377,
+        "out_tokens": 39,
+        "tps": 8.1,
+        "grounding_pct": 40.0,
+        "token_efficiency": 1.026,
+        "sample_snippet": "* **Adjustment Code:** The duplicate charge has been queued for a direct refund under adjustment code **ADJ-ROAM-DUP** associated with plan"
+      },
+      "S8_Gemini_Regex": {
+        "median_ms": 1740.6,
+        "mean_ms": 1740.6,
+        "std_ms": 42.7,
+        "in_tokens": 397,
+        "out_tokens": 135,
+        "tps": 77.6,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.741,
+        "sample_snippet": "* **Duplicate Charge Reversal:** The erroneous $45 charge under plan code `GLOBAL-ROAM-EUR` has been flagged for reversal under adjustment c"
+      },
+      "S9_Gemini_Jev": {
+        "median_ms": 4523.9,
+        "mean_ms": 4523.9,
+        "std_ms": 4449.0,
+        "in_tokens": 397,
+        "out_tokens": 141,
+        "tps": 61.5,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.709,
+        "sample_snippet": "* **Duplicate Charge Reversal:** The duplicate charge under plan code `GLOBAL-ROAM-EUR` has been flagged for reversal to your original payme"
+      }
+    }
+  },
+  "Billing_Long_Long": {
+    "domain": "Billing",
+    "complexity": "Long",
+    "kb_density": "Long",
+    "query": "I am extremely frustrated with my latest invoice statement. I returned from a business trip to the UK last week and specifically purchased a single 7-day international data pass for $35. However, my checking account was hit with two separate charges of $45 and $35 under billing code ROAM-EUR-DATA, causing an overdraft. AutoPay already executed this morning without my approval. I demand an immediate reversal of the duplicate $45 charge and a waiver of any dispute fees.",
+    "streams": {
+      "S1_1.7B_Ctrl": {
+        "median_ms": 426.0,
+        "mean_ms": 426.0,
+        "std_ms": 8.7,
+        "in_tokens": 389,
+        "out_tokens": 65,
+        "tps": 155.5,
+        "grounding_pct": 57.1,
+        "token_efficiency": 0.878,
+        "sample_snippet": "- duplicate roaming charge reversal: reverse the $45 charge under adjustment code ADJ-ROAM-DUP   - compensation credit: receive a $15 courte"
+      },
+      "S2_1.7B_Regex": {
+        "median_ms": 603.0,
+        "mean_ms": 603.0,
+        "std_ms": 2.3,
+        "in_tokens": 406,
+        "out_tokens": 90,
+        "tps": 151.2,
+        "grounding_pct": 42.9,
+        "token_efficiency": 0.477,
+        "sample_snippet": "- [BILL-DOC-1: Duplicate Roaming Charge Reversal | Plan: GLOBAL-ROAM-EUR | APN: N/A | SLA: 48-Hour Bank Credit SLA] - Duplicate roaming char"
+      },
+      "S3_1.7B_Jev": {
+        "median_ms": 588.5,
+        "mean_ms": 588.5,
+        "std_ms": 13.4,
+        "in_tokens": 406,
+        "out_tokens": 90,
+        "tps": 154.9,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.793,
+        "sample_snippet": "- [BILL-DOC-1: Duplicate Roaming Charge Reversal] Immediate reversal of duplicate roaming charge of $45 under adjustment code ADJ-ROAM-DUP."
+      },
+      "S4_7B_Ctrl": {
+        "median_ms": 1438.8,
+        "mean_ms": 1438.8,
+        "std_ms": 5.9,
+        "in_tokens": 386,
+        "out_tokens": 73,
+        "tps": 51.5,
+        "grounding_pct": 57.1,
+        "token_efficiency": 0.782,
+        "sample_snippet": "- Duplicate roaming charges of $45 will be reversed within 48 hours to your original payment method under adjustment code ADJ-ROAM-DUP. - Yo"
+      },
+      "S5_7B_Regex": {
+        "median_ms": 1442.7,
+        "mean_ms": 1442.7,
+        "std_ms": 12.4,
+        "in_tokens": 403,
+        "out_tokens": 73,
+        "tps": 51.3,
+        "grounding_pct": 57.1,
+        "token_efficiency": 0.782,
+        "sample_snippet": "- Duplicate roaming charges of $45 will be reversed within 48 hours to your original payment method under adjustment code ADJ-ROAM-DUP. - Yo"
+      },
+      "S6_7B_Jev": {
+        "median_ms": 1535.0,
+        "mean_ms": 1535.0,
+        "std_ms": 26.2,
+        "in_tokens": 403,
+        "out_tokens": 73,
+        "tps": 48.3,
+        "grounding_pct": 57.1,
+        "token_efficiency": 0.782,
+        "sample_snippet": "- Duplicate roaming charges of $45 will be reversed within 48 hours to your original payment method under adjustment code ADJ-ROAM-DUP. - Yo"
+      },
+      "S7_Gemini_Ctrl": {
+        "median_ms": 2877.4,
+        "mean_ms": 2877.4,
+        "std_ms": 120.3,
+        "in_tokens": 377,
+        "out_tokens": 19.5,
+        "tps": 6.8,
+        "grounding_pct": 14.3,
+        "token_efficiency": 0.733,
+        "sample_snippet": "* The duplicate charge reversal has been submitted under adjustment code **ADJ-ROAM-DUP"
+      },
+      "S8_Gemini_Regex": {
+        "median_ms": 1676.8,
+        "mean_ms": 1676.8,
+        "std_ms": 185.4,
+        "in_tokens": 397,
+        "out_tokens": 138,
+        "tps": 83.2,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.517,
+        "sample_snippet": "* **Duplicate Charge Reversal:** The erroneous $45 roaming charge has been queued for reversal to your original payment method under adjustm"
+      },
+      "S9_Gemini_Jev": {
+        "median_ms": 1555.6,
+        "mean_ms": 1555.6,
+        "std_ms": 62.2,
+        "in_tokens": 397,
+        "out_tokens": 129.5,
+        "tps": 83.5,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.551,
+        "sample_snippet": "* **Duplicate Charge Reversal:** The $45 duplicate charge will be refunded directly to your original payment method within the 48-Hour Bank"
+      }
+    }
+  },
+  "Network_Short_Short": {
+    "domain": "Network",
+    "complexity": "Short",
+    "kb_density": "Short",
+    "query": "No 5G cellular signal, SOS only displayed.",
+    "streams": {
+      "S1_1.7B_Ctrl": {
+        "median_ms": 706.0,
+        "mean_ms": 706.0,
+        "std_ms": 4.9,
+        "in_tokens": 249,
+        "out_tokens": 105,
+        "tps": 152.3,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.952,
+        "sample_snippet": "- [NET-DOC-1: Cellular Radio Outage Triage SOP] SOS only conditions in metro cells are logged under emergency NOC ticket code CELL-NOC-L2."
+      },
+      "S2_1.7B_Regex": {
+        "median_ms": 534.1,
+        "mean_ms": 534.1,
+        "std_ms": 17.0,
+        "in_tokens": 264,
+        "out_tokens": 79.5,
+        "tps": 152.9,
+        "grounding_pct": 66.7,
+        "token_efficiency": 0.839,
+        "sample_snippet": "- [NET-DOC-1] Cellular Radio Outage Triage SOP: SOS only condition logged under emergency NOC ticket code CELL-NOC-L2   - Core VoLTE-EVS voi"
+      },
+      "S3_1.7B_Jev": {
+        "median_ms": 549.4,
+        "mean_ms": 549.4,
+        "std_ms": 18.0,
+        "in_tokens": 264,
+        "out_tokens": 80,
+        "tps": 150.3,
+        "grounding_pct": 66.7,
+        "token_efficiency": 0.834,
+        "sample_snippet": "- [NET-DOC-1] Cellular Radio Outage Triage SOP: SOS only condition logged under emergency NOC ticket code CELL-NOC-L2   - [APN-BILLING-1] AP"
+      },
+      "S4_7B_Ctrl": {
+        "median_ms": 1333.7,
+        "mean_ms": 1333.7,
+        "std_ms": 24.0,
+        "in_tokens": 246,
+        "out_tokens": 67,
+        "tps": 51.7,
+        "grounding_pct": 33.3,
+        "token_efficiency": 0.497,
+        "sample_snippet": "- This issue is logged under the emergency NOC ticket code CELL-NOC-L2. Our SLA guarantees a 2-hour network triage response. For APEX-5G-MOB"
+      },
+      "S5_7B_Regex": {
+        "median_ms": 1654.4,
+        "mean_ms": 1654.4,
+        "std_ms": 18.6,
+        "in_tokens": 261,
+        "out_tokens": 82,
+        "tps": 50.9,
+        "grounding_pct": 66.7,
+        "token_efficiency": 0.813,
+        "sample_snippet": "- Your issue is logged under the emergency NOC ticket code CELL-NOC-L2. We are currently working on resolving the SOS-only condition in your"
+      },
+      "S6_7B_Jev": {
+        "median_ms": 1474.8,
+        "mean_ms": 1474.8,
+        "std_ms": 335.1,
+        "in_tokens": 261,
+        "out_tokens": 70,
+        "tps": 48.4,
+        "grounding_pct": 50.0,
+        "token_efficiency": 0.714,
+        "sample_snippet": "- We have logged this under the emergency NOC ticket code CELL-NOC-L2. Our SLA ensures a 2-hour network triage response. For APEX-5G-MOBILE-"
+      },
+      "S7_Gemini_Ctrl": {
+        "median_ms": 1828.1,
+        "mean_ms": 1828.1,
+        "std_ms": 92.8,
+        "in_tokens": 235,
+        "out_tokens": 129,
+        "tps": 69.8,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.775,
+        "sample_snippet": "* **Incident Classification:** Logged as an emergency network event under NOC ticket code `CELL-NOC-L2`. * **Account & Network Parameters:**"
+      },
+      "S8_Gemini_Regex": {
+        "median_ms": 2023.1,
+        "mean_ms": 2023.1,
+        "std_ms": 507.1,
+        "in_tokens": 253,
+        "out_tokens": 136,
+        "tps": 68.2,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.735,
+        "sample_snippet": "* **Emergency Ticket Logged**: Incident escalated under emergency NOC ticket code **CELL-NOC-L2** for core VoLTE-EVS voice gateway triage. *"
+      },
+      "S9_Gemini_Jev": {
+        "median_ms": 1689.1,
+        "mean_ms": 1689.1,
+        "std_ms": 290.6,
+        "in_tokens": 253,
+        "out_tokens": 138.5,
+        "tps": 84.5,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.722,
+        "sample_snippet": "* Verify device Access Point Name (APN) is manually set to `broadband.5g.apex` under your cellular network settings for the **APEX-5G-MOBILE"
+      }
+    }
+  },
+  "Network_Short_Mid": {
+    "domain": "Network",
+    "complexity": "Short",
+    "kb_density": "Mid",
+    "query": "No 5G cellular signal, SOS only displayed.",
+    "streams": {
+      "S1_1.7B_Ctrl": {
+        "median_ms": 944.7,
+        "mean_ms": 944.7,
+        "std_ms": 8.9,
+        "in_tokens": 319,
+        "out_tokens": 145,
+        "tps": 155.5,
+        "grounding_pct": 80.0,
+        "token_efficiency": 0.552,
+        "sample_snippet": "- [NET-DOC-1: Cellular Radio Outage Triage SOP | Plan: APEX-5G-MOBILE-PRO | APN: broadband.5g.apex | SLA: 2-Hour Network Triage SLA] SOS Onl"
+      },
+      "S2_1.7B_Regex": {
+        "median_ms": 572.6,
+        "mean_ms": 572.6,
+        "std_ms": 8.9,
+        "in_tokens": 334,
+        "out_tokens": 85,
+        "tps": 151.8,
+        "grounding_pct": 50.0,
+        "token_efficiency": 0.588,
+        "sample_snippet": "- [NET-DOC-1: Cellular Radio Outage Triage SOP] SOS Only conditions in metro cells are logged under emergency NOC ticket code CELL-NOC-L2. C"
+      },
+      "S3_1.7B_Jev": {
+        "median_ms": 530.1,
+        "mean_ms": 530.1,
+        "std_ms": 14.1,
+        "in_tokens": 334,
+        "out_tokens": 80,
+        "tps": 154.8,
+        "grounding_pct": 50.0,
+        "token_efficiency": 0.625,
+        "sample_snippet": "- [NET-DOC-1: Cellular Radio Outage Triage SOP] SOS Only conditions in metro cells are logged under emergency NOC ticket code CELL-NOC-L2. C"
+      },
+      "S4_7B_Ctrl": {
+        "median_ms": 2058.3,
+        "mean_ms": 2058.3,
+        "std_ms": 48.6,
+        "in_tokens": 316,
+        "out_tokens": 104,
+        "tps": 51.3,
+        "grounding_pct": 60.0,
+        "token_efficiency": 0.577,
+        "sample_snippet": "- Your issue is logged under the emergency NOC ticket code CELL-NOC-L2. Our team will triage this according to the 2-Hour Network Triage SLA"
+      },
+      "S5_7B_Regex": {
+        "median_ms": 1621.3,
+        "mean_ms": 1621.3,
+        "std_ms": 102.2,
+        "in_tokens": 331,
+        "out_tokens": 81,
+        "tps": 51.0,
+        "grounding_pct": 60.0,
+        "token_efficiency": 0.741,
+        "sample_snippet": "- We have logged your issue under emergency NOC ticket code CELL-NOC-L2. Our team will triage this according to the 2-Hour Network Triage SL"
+      },
+      "S6_7B_Jev": {
+        "median_ms": 1634.5,
+        "mean_ms": 1634.5,
+        "std_ms": 21.4,
+        "in_tokens": 331,
+        "out_tokens": 78.5,
+        "tps": 49.1,
+        "grounding_pct": 60.0,
+        "token_efficiency": 0.764,
+        "sample_snippet": "- We have logged your issue under emergency NOC ticket code CELL-NOC-L2. Our team will triage this according to the 2-Hour Network Triage SL"
+      },
+      "S7_Gemini_Ctrl": {
+        "median_ms": 2352.4,
+        "mean_ms": 2352.4,
+        "std_ms": 110.4,
+        "in_tokens": 308,
+        "out_tokens": 72.5,
+        "tps": 31.7,
+        "grounding_pct": 50.0,
+        "token_efficiency": 0.69,
+        "sample_snippet": "* **Network Ticket & Escalation:** Logged under emergency NOC ticket code `CELL-NOC-L2` for core VoLTE-EVS voice gateway triage under the ma"
+      },
+      "S8_Gemini_Regex": {
+        "median_ms": 1705.5,
+        "mean_ms": 1705.5,
+        "std_ms": 250.4,
+        "in_tokens": 326,
+        "out_tokens": 140.5,
+        "tps": 83.0,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.712,
+        "sample_snippet": "* **Service & Ticket Details:** Plan **APEX-5G-MOBILE-PRO** is covered under emergency NOC ticket code **CELL-NOC-L2** for metro cell SOS co"
+      },
+      "S9_Gemini_Jev": {
+        "median_ms": 1951.6,
+        "mean_ms": 1951.6,
+        "std_ms": 13.6,
+        "in_tokens": 326,
+        "out_tokens": 150.5,
+        "tps": 77.2,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.664,
+        "sample_snippet": "* **Ticket Classification & SLA:** An emergency NOC incident has been raised under ticket code **CELL-NOC-L2** to address metro cell core Vo"
+      }
+    }
+  },
+  "Network_Short_Long": {
+    "domain": "Network",
+    "complexity": "Short",
+    "kb_density": "Long",
+    "query": "No 5G cellular signal, SOS only displayed.",
+    "streams": {
+      "S1_1.7B_Ctrl": {
+        "median_ms": 933.8,
+        "mean_ms": 933.8,
+        "std_ms": 6.4,
+        "in_tokens": 319,
+        "out_tokens": 145,
+        "tps": 156.4,
+        "grounding_pct": 57.1,
+        "token_efficiency": 0.394,
+        "sample_snippet": "- [NET-DOC-1: Cellular Radio Outage Triage SOP | Plan: APEX-5G-MOBILE-PRO | APN: broadband.5g.apex | SLA: 2-Hour Network Triage SLA] SOS Onl"
+      },
+      "S2_1.7B_Regex": {
+        "median_ms": 575.4,
+        "mean_ms": 575.4,
+        "std_ms": 5.4,
+        "in_tokens": 334,
+        "out_tokens": 85,
+        "tps": 149.6,
+        "grounding_pct": 28.6,
+        "token_efficiency": 0.336,
+        "sample_snippet": "- [NET-DOC-1: Cellular Radio Outage Triage SOP] SOS Only conditions in metro cells are logged under emergency NOC ticket code CELL-NOC-L2. C"
+      },
+      "S3_1.7B_Jev": {
+        "median_ms": 512.2,
+        "mean_ms": 512.2,
+        "std_ms": 0.0,
+        "in_tokens": 334,
+        "out_tokens": 80,
+        "tps": 158.3,
+        "grounding_pct": 28.6,
+        "token_efficiency": 0.358,
+        "sample_snippet": "- [NET-DOC-1: Cellular Radio Outage Triage SOP] SOS Only conditions in metro cells are logged under emergency NOC ticket code CELL-NOC-L2. C"
+      },
+      "S4_7B_Ctrl": {
+        "median_ms": 2022.4,
+        "mean_ms": 2022.4,
+        "std_ms": 12.2,
+        "in_tokens": 316,
+        "out_tokens": 103,
+        "tps": 51.5,
+        "grounding_pct": 42.9,
+        "token_efficiency": 0.417,
+        "sample_snippet": "- Your issue is logged under the emergency NOC ticket code CELL-NOC-L2. Our team will triage this according to the 2-Hour Network Triage SLA"
+      },
+      "S5_7B_Regex": {
+        "median_ms": 1680.8,
+        "mean_ms": 1680.8,
+        "std_ms": 1.1,
+        "in_tokens": 331,
+        "out_tokens": 85,
+        "tps": 51.2,
+        "grounding_pct": 42.9,
+        "token_efficiency": 0.505,
+        "sample_snippet": "- We have logged your issue under emergency NOC ticket code CELL-NOC-L2. Our team will triage this according to the 2-Hour Network Triage SL"
+      },
+      "S6_7B_Jev": {
+        "median_ms": 1650.0,
+        "mean_ms": 1650.0,
+        "std_ms": 5.1,
+        "in_tokens": 331,
+        "out_tokens": 80,
+        "tps": 49.1,
+        "grounding_pct": 42.9,
+        "token_efficiency": 0.536,
+        "sample_snippet": "- We have logged your issue under emergency NOC ticket code CELL-NOC-L2. Our team will triage this according to the 2-Hour Network Triage SL"
+      },
+      "S7_Gemini_Ctrl": {
+        "median_ms": 2034.2,
+        "mean_ms": 2034.2,
+        "std_ms": 679.8,
+        "in_tokens": 308,
+        "out_tokens": 72.5,
+        "tps": 44.9,
+        "grounding_pct": 35.7,
+        "token_efficiency": 0.492,
+        "sample_snippet": "* **Network Incident Triage**: The issue has been routed under emergency NOC ticket code `CELL-NOC-L2` to address Core VoLTE-EVS voice gatew"
+      },
+      "S8_Gemini_Regex": {
+        "median_ms": 3291.7,
+        "mean_ms": 3291.7,
+        "std_ms": 2111.1,
+        "in_tokens": 326,
+        "out_tokens": 74.5,
+        "tps": 40.1,
+        "grounding_pct": 35.7,
+        "token_efficiency": 0.479,
+        "sample_snippet": "* **Incident Classification:** The issue is logged under emergency NOC ticket code `CELL-NOC-L2` for metro cell radio disconnects affecting"
+      },
+      "S9_Gemini_Jev": {
+        "median_ms": 2366.0,
+        "mean_ms": 2366.0,
+        "std_ms": 1026.3,
+        "in_tokens": 326,
+        "out_tokens": 72,
+        "tps": 24.0,
+        "grounding_pct": 35.7,
+        "token_efficiency": 0.496,
+        "sample_snippet": "* Verify device APN"
+      }
+    }
+  },
+  "Network_Mid_Short": {
+    "domain": "Network",
+    "complexity": "Mid",
+    "kb_density": "Short",
+    "query": "My iPhone has dropped from 5G to SOS Only in downtown Austin. Voice calls fail immediately and cellular data will not attach to the network.",
+    "streams": {
+      "S1_1.7B_Ctrl": {
+        "median_ms": 690.2,
+        "mean_ms": 690.2,
+        "std_ms": 10.5,
+        "in_tokens": 267,
+        "out_tokens": 107,
+        "tps": 157.4,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.935,
+        "sample_snippet": "- [NET-DOC-1: Cellular Radio Outriage SOP | Plan: APEX-5G-MOBILE-PRO | APN: broadband.5g.apex | SLA: 2-Hour Network Triage SLA]     - SOS On"
+      },
+      "S2_1.7B_Regex": {
+        "median_ms": 570.2,
+        "mean_ms": 570.2,
+        "std_ms": 32.9,
+        "in_tokens": 282,
+        "out_tokens": 85,
+        "tps": 152.4,
+        "grounding_pct": 100.0,
+        "token_efficiency": 1.176,
+        "sample_snippet": "- [NET-DOC-1: Cellular Radio Outriage SOP | Plan: APEX-5G-MOBILE-PRO | APN: broadband.5g.apex | SLA: 2-Hour Network Triage SLA]     - SOS On"
+      },
+      "S3_1.7B_Jev": {
+        "median_ms": 518.6,
+        "mean_ms": 518.6,
+        "std_ms": 3.5,
+        "in_tokens": 282,
+        "out_tokens": 80,
+        "tps": 157.6,
+        "grounding_pct": 66.7,
+        "token_efficiency": 0.834,
+        "sample_snippet": "- [NET-DOC-1: Cellular Radio Outriage SOP | Plan: APEX-5G-MOBILE-PRO | APN: broadband.5g.apex | SLA: 2-Hour Network Triage SLA]     - SOS On"
+      },
+      "S4_7B_Ctrl": {
+        "median_ms": 2043.3,
+        "mean_ms": 2043.3,
+        "std_ms": 250.9,
+        "in_tokens": 264,
+        "out_tokens": 103,
+        "tps": 51.1,
+        "grounding_pct": 50.0,
+        "token_efficiency": 0.485,
+        "sample_snippet": "- Your issue is logged under the emergency NOC ticket code CELL-NOC-L2. We are prioritizing this based on the APEX-5G-MOBILE-PRO Plan, which"
+      },
+      "S5_7B_Regex": {
+        "median_ms": 1551.5,
+        "mean_ms": 1551.5,
+        "std_ms": 12.7,
+        "in_tokens": 279,
+        "out_tokens": 78,
+        "tps": 51.2,
+        "grounding_pct": 66.7,
+        "token_efficiency": 0.855,
+        "sample_snippet": "- Your issue is logged under the emergency NOC ticket code CELL-NOC-L2. We are currently working within the 2-Hour Network Triage SLA to res"
+      },
+      "S6_7B_Jev": {
+        "median_ms": 1616.3,
+        "mean_ms": 1616.3,
+        "std_ms": 16.3,
+        "in_tokens": 279,
+        "out_tokens": 78,
+        "tps": 49.2,
+        "grounding_pct": 66.7,
+        "token_efficiency": 0.855,
+        "sample_snippet": "- Your issue is logged under the emergency NOC ticket code CELL-NOC-L2. We are currently working within the 2-Hour Network Triage SLA to res"
+      },
+      "S7_Gemini_Ctrl": {
+        "median_ms": 2397.0,
+        "mean_ms": 2397.0,
+        "std_ms": 481.0,
+        "in_tokens": 253,
+        "out_tokens": 137,
+        "tps": 57.7,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.73,
+        "sample_snippet": "* Ticket **CELL-NOC-L2** has been generated for emergency triage of the downtown Austin core VoLTE-EVS voice gateway under your **2-Hour Net"
+      },
+      "S8_Gemini_Regex": {
+        "median_ms": 2104.6,
+        "mean_ms": 2104.6,
+        "std_ms": 45.5,
+        "in_tokens": 271,
+        "out_tokens": 171,
+        "tps": 81.5,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.585,
+        "sample_snippet": "* An emergency NOC ticket has been escalated under incident code **CELL-NOC-L2** for Core VoLTE-EVS voice gateway triage in the downtown Aus"
+      },
+      "S9_Gemini_Jev": {
+        "median_ms": 1742.2,
+        "mean_ms": 1742.2,
+        "std_ms": 134.4,
+        "in_tokens": 271,
+        "out_tokens": 135,
+        "tps": 77.5,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.741,
+        "sample_snippet": "* Incident logged under emergency NOC ticket code **CELL-NOC-L2** for core VoLTE-EVS voice gateway triage in metro cells. * Covered under th"
+      }
+    }
+  },
+  "Network_Mid_Mid": {
+    "domain": "Network",
+    "complexity": "Mid",
+    "kb_density": "Mid",
+    "query": "My iPhone has dropped from 5G to SOS Only in downtown Austin. Voice calls fail immediately and cellular data will not attach to the network.",
+    "streams": {
+      "S1_1.7B_Ctrl": {
+        "median_ms": 1109.6,
+        "mean_ms": 1109.6,
+        "std_ms": 23.6,
+        "in_tokens": 337,
+        "out_tokens": 168,
+        "tps": 153.1,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.595,
+        "sample_snippet": "- [NET-DOC-1: Cellular Radio Outage Triage SOP | Plan: APEX-5G-MOBILE-PRO | APN: broadband.5g.apex | SLA: 2-Hour Network Triage SLA]     - S"
+      },
+      "S2_1.7B_Regex": {
+        "median_ms": 559.8,
+        "mean_ms": 559.8,
+        "std_ms": 4.2,
+        "in_tokens": 352,
+        "out_tokens": 85,
+        "tps": 155.3,
+        "grounding_pct": 40.0,
+        "token_efficiency": 0.471,
+        "sample_snippet": "- [NET-DOC-1: Cellular Radio Outage Triage SOP]     - **SOS Only conditions in metro cells are logged under emergency NOC ticket code** CELL"
+      },
+      "S3_1.7B_Jev": {
+        "median_ms": 520.2,
+        "mean_ms": 520.2,
+        "std_ms": 8.6,
+        "in_tokens": 352,
+        "out_tokens": 80,
+        "tps": 157.6,
+        "grounding_pct": 40.0,
+        "token_efficiency": 0.5,
+        "sample_snippet": "- [NET-DOC-1: Cellular Radio Outage Triage SOP]     - **SOS Only conditions in metro cells are logged under emergency NOC ticket code** CELL"
+      },
+      "S4_7B_Ctrl": {
+        "median_ms": 2077.5,
+        "mean_ms": 2077.5,
+        "std_ms": 56.3,
+        "in_tokens": 334,
+        "out_tokens": 104,
+        "tps": 51.0,
+        "grounding_pct": 60.0,
+        "token_efficiency": 0.577,
+        "sample_snippet": "- Your issue is logged under the emergency NOC ticket code CELL-NOC-L2. We are working within the 2-Hour Network Triage SLA to resolve the i"
+      },
+      "S5_7B_Regex": {
+        "median_ms": 1695.7,
+        "mean_ms": 1695.7,
+        "std_ms": 15.9,
+        "in_tokens": 349,
+        "out_tokens": 85,
+        "tps": 51.2,
+        "grounding_pct": 50.0,
+        "token_efficiency": 0.588,
+        "sample_snippet": "- Your issue is logged under the emergency NOC ticket code CELL-NOC-L2. We are prioritizing this according to our 2-Hour Network Triage SLA."
+      },
+      "S6_7B_Jev": {
+        "median_ms": 1666.2,
+        "mean_ms": 1666.2,
+        "std_ms": 32.9,
+        "in_tokens": 349,
+        "out_tokens": 80,
+        "tps": 49.1,
+        "grounding_pct": 50.0,
+        "token_efficiency": 0.625,
+        "sample_snippet": "- Your issue is logged under the emergency NOC ticket code CELL-NOC-L2. We are prioritizing this according to our 2-Hour Network Triage SLA."
+      },
+      "S7_Gemini_Ctrl": {
+        "median_ms": 1770.2,
+        "mean_ms": 1770.2,
+        "std_ms": 69.0,
+        "in_tokens": 326,
+        "out_tokens": 127,
+        "tps": 71.7,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.787,
+        "sample_snippet": "* **Ticket Logged:** Network incident logged under ticket code **CELL-NOC-L2** for core VoLTE-EVS voice gateway triage. * **Service Level Ag"
+      },
+      "S8_Gemini_Regex": {
+        "median_ms": 2037.2,
+        "mean_ms": 2037.2,
+        "std_ms": 185.6,
+        "in_tokens": 344,
+        "out_tokens": 171,
+        "tps": 83.8,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.585,
+        "sample_snippet": "* **NOC Incident Ticket**: The metro cell tower disconnect has been logged under emergency ticket code **CELL-NOC-L2**. * **Network SLA**: C"
+      },
+      "S9_Gemini_Jev": {
+        "median_ms": 6535.9,
+        "mean_ms": 6535.9,
+        "std_ms": 6853.5,
+        "in_tokens": 344,
+        "out_tokens": 167.5,
+        "tps": 51.0,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.597,
+        "sample_snippet": "* **Emergency Ticket Logged**: Logged under NOC ticket code `CELL-NOC-L2` to resolve the metro core VoLTE-EVS voice gateway failure. * **Res"
+      }
+    }
+  },
+  "Network_Mid_Long": {
+    "domain": "Network",
+    "complexity": "Mid",
+    "kb_density": "Long",
+    "query": "My iPhone has dropped from 5G to SOS Only in downtown Austin. Voice calls fail immediately and cellular data will not attach to the network.",
+    "streams": {
+      "S1_1.7B_Ctrl": {
+        "median_ms": 1092.3,
+        "mean_ms": 1092.3,
+        "std_ms": 5.6,
+        "in_tokens": 337,
+        "out_tokens": 168,
+        "tps": 154.9,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.425,
+        "sample_snippet": "- [NET-DOC-1: Cellular Radio Outage Triage SOP | Plan: APEX-5G-MOBILE-PRO | APN: broadband.5g.apex | SLA: 2-Hour Network Triage SLA]     - S"
+      },
+      "S2_1.7B_Regex": {
+        "median_ms": 552.2,
+        "mean_ms": 552.2,
+        "std_ms": 2.6,
+        "in_tokens": 352,
+        "out_tokens": 85,
+        "tps": 155.9,
+        "grounding_pct": 28.6,
+        "token_efficiency": 0.336,
+        "sample_snippet": "- [NET-DOC-1: Cellular Radio Outage Triage SOP]     - **SOS Only conditions in metro cells are logged under emergency NOC ticket code** CELL"
+      },
+      "S3_1.7B_Jev": {
+        "median_ms": 522.4,
+        "mean_ms": 522.4,
+        "std_ms": 1.1,
+        "in_tokens": 352,
+        "out_tokens": 80,
+        "tps": 155.3,
+        "grounding_pct": 28.6,
+        "token_efficiency": 0.358,
+        "sample_snippet": "- [NET-DOC-1: Cellular Radio Outage Triage SOP]     - **SOS Only conditions in metro cells are logged under emergency NOC ticket code** CELL"
+      },
+      "S4_7B_Ctrl": {
+        "median_ms": 2098.4,
+        "mean_ms": 2098.4,
+        "std_ms": 3.0,
+        "in_tokens": 334,
+        "out_tokens": 107,
+        "tps": 51.5,
+        "grounding_pct": 42.9,
+        "token_efficiency": 0.401,
+        "sample_snippet": "- Your issue is logged under the emergency NOC ticket code CELL-NOC-L2. We are working within the 2-Hour Network Triage SLA to resolve the i"
+      },
+      "S5_7B_Regex": {
+        "median_ms": 1683.8,
+        "mean_ms": 1683.8,
+        "std_ms": 6.6,
+        "in_tokens": 349,
+        "out_tokens": 85,
+        "tps": 51.1,
+        "grounding_pct": 28.6,
+        "token_efficiency": 0.336,
+        "sample_snippet": "- Your issue is logged under the emergency NOC ticket code CELL-NOC-L2. We are prioritizing this according to our 2-Hour Network Triage SLA."
+      },
+      "S6_7B_Jev": {
+        "median_ms": 1662.3,
+        "mean_ms": 1662.3,
+        "std_ms": 18.2,
+        "in_tokens": 349,
+        "out_tokens": 80,
+        "tps": 48.8,
+        "grounding_pct": 28.6,
+        "token_efficiency": 0.358,
+        "sample_snippet": "- Your issue is logged under the emergency NOC ticket code CELL-NOC-L2. We are prioritizing this according to our 2-Hour Network Triage SLA."
+      },
+      "S7_Gemini_Ctrl": {
+        "median_ms": 1828.9,
+        "mean_ms": 1828.9,
+        "std_ms": 21.8,
+        "in_tokens": 326,
+        "out_tokens": 144,
+        "tps": 78.8,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.496,
+        "sample_snippet": "* **Ticket Escalation:** Logged under emergency NOC ticket code **CELL-NOC-L2** for core VoLTE-EVS voice gateway triage. * **Service Level A"
+      },
+      "S8_Gemini_Regex": {
+        "median_ms": 1751.6,
+        "mean_ms": 1751.6,
+        "std_ms": 30.5,
+        "in_tokens": 344,
+        "out_tokens": 181,
+        "tps": 103.3,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.394,
+        "sample_snippet": "* **Incident Logging & Triage SLA:** An emergency network triage ticket has been dispatched under incident code `CELL-NOC-L2` for metro cell"
+      },
+      "S9_Gemini_Jev": {
+        "median_ms": 1793.3,
+        "mean_ms": 1793.3,
+        "std_ms": 26.7,
+        "in_tokens": 344,
+        "out_tokens": 177,
+        "tps": 98.6,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.403,
+        "sample_snippet": "* **Carrier Profile & APN Verification**: Confirm your device cellular settings match Plan code **APEX-5G-MOBILE-PRO** with APN set to `broa"
+      }
+    }
+  },
+  "Network_Long_Short": {
+    "domain": "Network",
+    "complexity": "Long",
+    "kb_density": "Short",
+    "query": "Since 8:00 AM this morning, my primary business phone has been completely disconnected from the cellular grid across the downtown metro corridor. The device status bar displays 'SOS Only' with zero signal bars. I restarted my phone and toggled Airplane mode, but cellular data refuses to attach. I cannot receive two-factor SMS codes or customer phone calls. Is there a local cell tower outage, or is my eSIM corrupted? Please investigate tower status immediately.",
+    "streams": {
+      "S1_1.7B_Ctrl": {
+        "median_ms": 1109.8,
+        "mean_ms": 1109.8,
+        "std_ms": 7.5,
+        "in_tokens": 332,
+        "out_tokens": 170,
+        "tps": 154.8,
+        "grounding_pct": 66.7,
+        "token_efficiency": 0.392,
+        "sample_snippet": "- [NET-DOC-1: Cellular Radio Outage Triage SOP] - The device status bar displays 'SOS Only' with zero signal bars, indicating a potential ce"
+      },
+      "S2_1.7B_Regex": {
+        "median_ms": 555.8,
+        "mean_ms": 555.8,
+        "std_ms": 15.6,
+        "in_tokens": 347,
+        "out_tokens": 85,
+        "tps": 156.5,
+        "grounding_pct": 100.0,
+        "token_efficiency": 1.176,
+        "sample_snippet": "- [NET-DOC-1: Cellular Radio Outage Triage SOP] - Local cell tower outage detected in downtown metro corridor. SOS Only conditions logged un"
+      },
+      "S3_1.7B_Jev": {
+        "median_ms": 525.7,
+        "mean_ms": 525.7,
+        "std_ms": 6.4,
+        "in_tokens": 347,
+        "out_tokens": 80,
+        "tps": 155.8,
+        "grounding_pct": 100.0,
+        "token_efficiency": 1.25,
+        "sample_snippet": "- [NET-DOC-1: Cellular Radio Outage Triage SOP] - Local cell tower outage detected in downtown metro corridor. SOS Only conditions logged un"
+      },
+      "S4_7B_Ctrl": {
+        "median_ms": 2615.8,
+        "mean_ms": 2615.8,
+        "std_ms": 313.8,
+        "in_tokens": 329,
+        "out_tokens": 132.5,
+        "tps": 51.2,
+        "grounding_pct": 66.7,
+        "token_efficiency": 0.503,
+        "sample_snippet": "- Your issue is logged under the emergency NOC ticket code CELL-NOC-L2. We are currently triaging this under the 2-Hour Network Triage SLA f"
+      },
+      "S5_7B_Regex": {
+        "median_ms": 1706.7,
+        "mean_ms": 1706.7,
+        "std_ms": 31.3,
+        "in_tokens": 344,
+        "out_tokens": 85,
+        "tps": 50.9,
+        "grounding_pct": 50.0,
+        "token_efficiency": 0.588,
+        "sample_snippet": "- Your issue is logged under the emergency NOC ticket code CELL-NOC-L2. We are currently triaging this according to the 2-Hour Network Triag"
+      },
+      "S6_7B_Jev": {
+        "median_ms": 1683.7,
+        "mean_ms": 1683.7,
+        "std_ms": 21.1,
+        "in_tokens": 344,
+        "out_tokens": 80,
+        "tps": 48.6,
+        "grounding_pct": 50.0,
+        "token_efficiency": 0.625,
+        "sample_snippet": "- Your issue is logged under the emergency NOC ticket code CELL-NOC-L2. We are currently triaging this according to the 2-Hour Network Triag"
+      },
+      "S7_Gemini_Ctrl": {
+        "median_ms": 1931.7,
+        "mean_ms": 1931.7,
+        "std_ms": 73.6,
+        "in_tokens": 316,
+        "out_tokens": 160,
+        "tps": 83.2,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.625,
+        "sample_snippet": "* **Incident Status & Ticket Code:** The metro corridor \"SOS Only\" condition is logged under emergency NOC ticket code `CELL-NOC-L2`, indica"
+      },
+      "S8_Gemini_Regex": {
+        "median_ms": 1875.9,
+        "mean_ms": 1875.9,
+        "std_ms": 175.5,
+        "in_tokens": 334,
+        "out_tokens": 156,
+        "tps": 83.2,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.641,
+        "sample_snippet": "* An emergency network operations ticket has been logged under code **CELL-NOC-L2** to investigate the metro cell core VoLTE-EVS voice gatew"
+      },
+      "S9_Gemini_Jev": {
+        "median_ms": 2551.3,
+        "mean_ms": 2551.3,
+        "std_ms": 1418.1,
+        "in_tokens": 334,
+        "out_tokens": 165.5,
+        "tps": 78.8,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.604,
+        "sample_snippet": "* **Network Status & Ticket Reference:** The downtown metro corridor is experiencing a core VoLTE-EVS voice gateway disruption causing \"SOS"
+      }
+    }
+  },
+  "Network_Long_Mid": {
+    "domain": "Network",
+    "complexity": "Long",
+    "kb_density": "Mid",
+    "query": "Since 8:00 AM this morning, my primary business phone has been completely disconnected from the cellular grid across the downtown metro corridor. The device status bar displays 'SOS Only' with zero signal bars. I restarted my phone and toggled Airplane mode, but cellular data refuses to attach. I cannot receive two-factor SMS codes or customer phone calls. Is there a local cell tower outage, or is my eSIM corrupted? Please investigate tower status immediately.",
+    "streams": {
+      "S1_1.7B_Ctrl": {
+        "median_ms": 1184.1,
+        "mean_ms": 1184.1,
+        "std_ms": 1.6,
+        "in_tokens": 402,
+        "out_tokens": 180,
+        "tps": 153.8,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.556,
+        "sample_snippet": "- [NET-DOC-1: Cellular Radio Outage Triage SOP | Plan: APEX-5G-MOBILE-PRO | APN: broadband.5g.apex | SLA: 2-Hour Network Triage SLA]     - S"
+      },
+      "S2_1.7B_Regex": {
+        "median_ms": 561.6,
+        "mean_ms": 561.6,
+        "std_ms": 15.3,
+        "in_tokens": 417,
+        "out_tokens": 85,
+        "tps": 155.2,
+        "grounding_pct": 40.0,
+        "token_efficiency": 0.471,
+        "sample_snippet": "- [NET-DOC-1: Cellular Radio Outriage Triage SOP] - SOS Only conditions in metro cells are logged under emergency NOC ticket code CELL-NOC-L"
+      },
+      "S3_1.7B_Jev": {
+        "median_ms": 542.3,
+        "mean_ms": 542.3,
+        "std_ms": 24.2,
+        "in_tokens": 417,
+        "out_tokens": 80,
+        "tps": 151.8,
+        "grounding_pct": 40.0,
+        "token_efficiency": 0.5,
+        "sample_snippet": "- [NET-DOC-1: Cellular Radio Outriage Triage SOP] - SOS Only conditions in metro cells are logged under emergency NOC ticket code CELL-NOC-L"
+      },
+      "S4_7B_Ctrl": {
+        "median_ms": 2662.2,
+        "mean_ms": 2662.2,
+        "std_ms": 193.8,
+        "in_tokens": 399,
+        "out_tokens": 134.5,
+        "tps": 51.4,
+        "grounding_pct": 70.0,
+        "token_efficiency": 0.52,
+        "sample_snippet": "- Your issue is logged under the emergency NOC ticket code CELL-NOC-L2. We are currently investigating a potential local cell tower outage i"
+      },
+      "S5_7B_Regex": {
+        "median_ms": 1714.2,
+        "mean_ms": 1714.2,
+        "std_ms": 40.1,
+        "in_tokens": 414,
+        "out_tokens": 85,
+        "tps": 50.9,
+        "grounding_pct": 40.0,
+        "token_efficiency": 0.471,
+        "sample_snippet": "- Your issue is logged under the emergency NOC ticket code CELL-NOC-L2. We are currently investigating a potential network outage in the dow"
+      },
+      "S6_7B_Jev": {
+        "median_ms": 1703.9,
+        "mean_ms": 1703.9,
+        "std_ms": 28.7,
+        "in_tokens": 414,
+        "out_tokens": 80,
+        "tps": 48.5,
+        "grounding_pct": 40.0,
+        "token_efficiency": 0.5,
+        "sample_snippet": "- Your issue is logged under the emergency NOC ticket code CELL-NOC-L2. We are currently investigating a potential network outage in the dow"
+      },
+      "S7_Gemini_Ctrl": {
+        "median_ms": 1716.0,
+        "mean_ms": 1716.0,
+        "std_ms": 6.1,
+        "in_tokens": 389,
+        "out_tokens": 146.5,
+        "tps": 85.3,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.683,
+        "sample_snippet": "* **Incident Classification & Ticket:** The downtown metro cell tower disconnect is logged under emergency NOC ticket code `CELL-NOC-L2`. *"
+      },
+      "S8_Gemini_Regex": {
+        "median_ms": 1990.1,
+        "mean_ms": 1990.1,
+        "std_ms": 113.2,
+        "in_tokens": 407,
+        "out_tokens": 176.5,
+        "tps": 89.1,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.567,
+        "sample_snippet": "* **Incident Triage & Ticket Code**: The metro corridor cell tower disconnection and core VoLTE-EVS voice gateway issue have been logged und"
+      },
+      "S9_Gemini_Jev": {
+        "median_ms": 1853.4,
+        "mean_ms": 1853.4,
+        "std_ms": 61.2,
+        "in_tokens": 407,
+        "out_tokens": 151.5,
+        "tps": 82.0,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.66,
+        "sample_snippet": "* An emergency NOC ticket has been opened under **CELL-NOC-L2** to address metro corridor tower disconnects affecting core VoLTE-EVS voice g"
+      }
+    }
+  },
+  "Network_Long_Long": {
+    "domain": "Network",
+    "complexity": "Long",
+    "kb_density": "Long",
+    "query": "Since 8:00 AM this morning, my primary business phone has been completely disconnected from the cellular grid across the downtown metro corridor. The device status bar displays 'SOS Only' with zero signal bars. I restarted my phone and toggled Airplane mode, but cellular data refuses to attach. I cannot receive two-factor SMS codes or customer phone calls. Is there a local cell tower outage, or is my eSIM corrupted? Please investigate tower status immediately.",
+    "streams": {
+      "S1_1.7B_Ctrl": {
+        "median_ms": 1196.7,
+        "mean_ms": 1196.7,
+        "std_ms": 18.3,
+        "in_tokens": 402,
+        "out_tokens": 180,
+        "tps": 151.6,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.397,
+        "sample_snippet": "- [NET-DOC-1: Cellular Radio Outage Triage SOP | Plan: APEX-5G-MOBILE-PRO | APN: broadband.5g.apex | SLA: 2-Hour Network Triage SLA]     - S"
+      },
+      "S2_1.7B_Regex": {
+        "median_ms": 546.9,
+        "mean_ms": 546.9,
+        "std_ms": 2.3,
+        "in_tokens": 417,
+        "out_tokens": 85,
+        "tps": 157.5,
+        "grounding_pct": 28.6,
+        "token_efficiency": 0.336,
+        "sample_snippet": "- [NET-DOC-1: Cellular Radio Outriage Triage SOP] - SOS Only conditions in metro cells are logged under emergency NOC ticket code CELL-NOC-L"
+      },
+      "S3_1.7B_Jev": {
+        "median_ms": 517.0,
+        "mean_ms": 517.0,
+        "std_ms": 4.0,
+        "in_tokens": 417,
+        "out_tokens": 80,
+        "tps": 156.9,
+        "grounding_pct": 28.6,
+        "token_efficiency": 0.358,
+        "sample_snippet": "- [NET-DOC-1: Cellular Radio Outriage Triage SOP] - SOS Only conditions in metro cells are logged under emergency NOC ticket code CELL-NOC-L"
+      },
+      "S4_7B_Ctrl": {
+        "median_ms": 2820.8,
+        "mean_ms": 2820.8,
+        "std_ms": 1.8,
+        "in_tokens": 399,
+        "out_tokens": 143,
+        "tps": 51.2,
+        "grounding_pct": 57.1,
+        "token_efficiency": 0.399,
+        "sample_snippet": "- Your issue is logged under the emergency NOC ticket code CELL-NOC-L2. We are currently investigating a potential local cell tower outage i"
+      },
+      "S5_7B_Regex": {
+        "median_ms": 1675.8,
+        "mean_ms": 1675.8,
+        "std_ms": 0.4,
+        "in_tokens": 414,
+        "out_tokens": 85,
+        "tps": 51.3,
+        "grounding_pct": 28.6,
+        "token_efficiency": 0.336,
+        "sample_snippet": "- Your issue is logged under the emergency NOC ticket code CELL-NOC-L2. We are currently investigating a potential network outage in the dow"
+      },
+      "S6_7B_Jev": {
+        "median_ms": 1651.0,
+        "mean_ms": 1651.0,
+        "std_ms": 13.0,
+        "in_tokens": 414,
+        "out_tokens": 80,
+        "tps": 49.1,
+        "grounding_pct": 28.6,
+        "token_efficiency": 0.358,
+        "sample_snippet": "- Your issue is logged under the emergency NOC ticket code CELL-NOC-L2. We are currently investigating a potential network outage in the dow"
+      },
+      "S7_Gemini_Ctrl": {
+        "median_ms": 1917.6,
+        "mean_ms": 1917.6,
+        "std_ms": 133.2,
+        "in_tokens": 389,
+        "out_tokens": 164.5,
+        "tps": 85.8,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.434,
+        "sample_snippet": "* **Network Incident Status:** The \"SOS Only\" state across the downtown metro corridor is tracked under emergency ticket code **CELL-NOC-L2*"
+      },
+      "S8_Gemini_Regex": {
+        "median_ms": 1751.8,
+        "mean_ms": 1751.8,
+        "std_ms": 293.4,
+        "in_tokens": 407,
+        "out_tokens": 148.5,
+        "tps": 86.0,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.481,
+        "sample_snippet": "* An emergency ticket has been dispatched to the Network Operations Center under NOC ticket code `CELL-NOC-L2` to resolve the metro core VoL"
+      },
+      "S9_Gemini_Jev": {
+        "median_ms": 3071.2,
+        "mean_ms": 3071.2,
+        "std_ms": 1736.1,
+        "in_tokens": 407,
+        "out_tokens": 206,
+        "tps": 78.2,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.347,
+        "sample_snippet": "* **Outage Ticket & Incident Tracking**: The downtown metro corridor cellular disconnect is logged under emergency NOC ticket code `CELL-NOC"
+      }
+    }
+  },
+  "Contract_Short_Short": {
+    "domain": "Contract",
+    "complexity": "Short",
+    "kb_density": "Short",
+    "query": "Want to upgrade to 5G Pro plan.",
+    "streams": {
+      "S1_1.7B_Ctrl": {
+        "median_ms": 646.3,
+        "mean_ms": 646.3,
+        "std_ms": 10.0,
+        "in_tokens": 236,
+        "out_tokens": 97,
+        "tps": 153.6,
+        "grounding_pct": 100.0,
+        "token_efficiency": 1.031,
+        "sample_snippet": "- [CONT-DOC-1: 5G Pro Tier Migration SOP | Plan: PLAN-5G-PRO-UNLIM | APN: N/A | SLA: Instant Tier Shift] Upgrade to PLAN-5G-PRO-UNLIM qualif"
+      },
+      "S2_1.7B_Regex": {
+        "median_ms": 573.6,
+        "mean_ms": 573.6,
+        "std_ms": 9.6,
+        "in_tokens": 251,
+        "out_tokens": 85,
+        "tps": 151.8,
+        "grounding_pct": 100.0,
+        "token_efficiency": 1.176,
+        "sample_snippet": "- [CONT-DOC-1: 5G Pro Tier Migration SOP | Plan: PLAN-5G-PRO-UNLIM | APN: N/A | SLA: Instant Tier Shift] Upgrade to PLAN-5G-PRO-UNLIM qualif"
+      },
+      "S3_1.7B_Jev": {
+        "median_ms": 712.9,
+        "mean_ms": 712.9,
+        "std_ms": 54.2,
+        "in_tokens": 251,
+        "out_tokens": 100,
+        "tps": 144.2,
+        "grounding_pct": 100.0,
+        "token_efficiency": 1.0,
+        "sample_snippet": "- [CONT-DOC-1: 5G Pro Tier Migration SOP | Plan: PLAN-5G-PRO-UNLIM | APN: N/A | SLA: Instant Tier Shift] Upgrade to PLAN-5G-PRO-UNLIM qualif"
+      },
+      "S4_7B_Ctrl": {
+        "median_ms": 1138.7,
+        "mean_ms": 1138.7,
+        "std_ms": 13.9,
+        "in_tokens": 233,
+        "out_tokens": 57,
+        "tps": 51.6,
+        "grounding_pct": 100.0,
+        "token_efficiency": 1.754,
+        "sample_snippet": "- Upgrading to PLAN-5G-PRO-UNLIM qualifies you for early termination fee cancellation with waiver code ETF-WAIVE-PROMO. No instant tier shif"
+      },
+      "S5_7B_Regex": {
+        "median_ms": 999.0,
+        "mean_ms": 999.0,
+        "std_ms": 16.8,
+        "in_tokens": 248,
+        "out_tokens": 50,
+        "tps": 51.6,
+        "grounding_pct": 100.0,
+        "token_efficiency": 2.0,
+        "sample_snippet": "- Upgrade to PLAN-5G-PRO-UNLIM qualifies you for early termination fee cancellation with waiver code ETF-WAIVE-PROMO. No immediate action re"
+      },
+      "S6_7B_Jev": {
+        "median_ms": 840.5,
+        "mean_ms": 840.5,
+        "std_ms": 29.7,
+        "in_tokens": 248,
+        "out_tokens": 40,
+        "tps": 50.0,
+        "grounding_pct": 100.0,
+        "token_efficiency": 2.5,
+        "sample_snippet": "- Upgrade to PLAN-5G-PRO-UNLIM qualifies you for early termination fee cancellation under ETF-WAIVE-PROMO. No fee applies. Upgrade will be p"
+      },
+      "S7_Gemini_Ctrl": {
+        "median_ms": 1973.6,
+        "mean_ms": 1973.6,
+        "std_ms": 16.1,
+        "in_tokens": 223,
+        "out_tokens": 91.5,
+        "tps": 46.3,
+        "grounding_pct": 100.0,
+        "token_efficiency": 1.093,
+        "sample_snippet": "* **Plan Code:** PLAN-5G-PRO-UNLIM * **SLA:** Instant Tier Shift (service activates immediately upon confirmation) * **APN:** N/A (no custom"
+      },
+      "S8_Gemini_Regex": {
+        "median_ms": 2123.3,
+        "mean_ms": 2123.3,
+        "std_ms": 373.0,
+        "in_tokens": 241,
+        "out_tokens": 8,
+        "tps": 3.8,
+        "grounding_pct": 0.0,
+        "token_efficiency": 0.0,
+        "sample_snippet": "* **Plan Selection:** Upgrading to plan"
+      },
+      "S9_Gemini_Jev": {
+        "median_ms": 1577.7,
+        "mean_ms": 1577.7,
+        "std_ms": 245.5,
+        "in_tokens": 241,
+        "out_tokens": 93,
+        "tps": 60.1,
+        "grounding_pct": 100.0,
+        "token_efficiency": 1.075,
+        "sample_snippet": "* **Target Plan Code:** PLAN-5G-PRO-UNLIM * **SLA:** Instant Tier Shift (takes effect immediately upon processing) * **APN Setting:** N/A (n"
+      }
+    }
+  },
+  "Contract_Short_Mid": {
+    "domain": "Contract",
+    "complexity": "Short",
+    "kb_density": "Mid",
+    "query": "Want to upgrade to 5G Pro plan.",
+    "streams": {
+      "S1_1.7B_Ctrl": {
+        "median_ms": 1010.8,
+        "mean_ms": 1010.8,
+        "std_ms": 16.2,
+        "in_tokens": 315,
+        "out_tokens": 156,
+        "tps": 156.2,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.641,
+        "sample_snippet": "- [CONT-DOC-1: 5G Pro Tier Migration SOP | Plan: PLAN-5G-PRO-UNLIM | APN: N/A | SLA: Instant Tier Shift] Upgrading to PLAN-5G-PRO-UNLIM qual"
+      },
+      "S2_1.7B_Regex": {
+        "median_ms": 575.2,
+        "mean_ms": 575.2,
+        "std_ms": 23.2,
+        "in_tokens": 330,
+        "out_tokens": 85,
+        "tps": 151.2,
+        "grounding_pct": 80.0,
+        "token_efficiency": 0.941,
+        "sample_snippet": "- [CONT-DOC-1] Upgrade to PLAN-5G-PRO-UNLIM qualifies tenured subscribers for early termination fee cancellation under waiver code ETF-WAIVE"
+      },
+      "S3_1.7B_Jev": {
+        "median_ms": 661.8,
+        "mean_ms": 661.8,
+        "std_ms": 13.6,
+        "in_tokens": 330,
+        "out_tokens": 100,
+        "tps": 154.1,
+        "grounding_pct": 100.0,
+        "token_efficiency": 1.0,
+        "sample_snippet": "- [CONT-DOC-1] Upgrade to PLAN-5G-PRO-UNLIM qualifies tenured subscribers for early termination fee cancellation under waiver code ETF-WAIVE"
+      },
+      "S4_7B_Ctrl": {
+        "median_ms": 1982.1,
+        "mean_ms": 1982.1,
+        "std_ms": 347.5,
+        "in_tokens": 312,
+        "out_tokens": 99.5,
+        "tps": 51.0,
+        "grounding_pct": 100.0,
+        "token_efficiency": 1.005,
+        "sample_snippet": "- Upgrading to PLAN-5G-PRO-UNLIM qualifies you for early termination fee cancellation under ETF-WAIVE-PROMO. - This plan includes instant ti"
+      },
+      "S5_7B_Regex": {
+        "median_ms": 1644.7,
+        "mean_ms": 1644.7,
+        "std_ms": 55.1,
+        "in_tokens": 327,
+        "out_tokens": 82,
+        "tps": 50.9,
+        "grounding_pct": 80.0,
+        "token_efficiency": 0.976,
+        "sample_snippet": "- Upgrade to PLAN-5G-PRO-UNLIM qualifies you for early termination fee cancellation under ETF-WAIVE-PROMO. - Migrating 4 or more lines prese"
+      },
+      "S6_7B_Jev": {
+        "median_ms": 1507.1,
+        "mean_ms": 1507.1,
+        "std_ms": 27.8,
+        "in_tokens": 327,
+        "out_tokens": 72,
+        "tps": 49.0,
+        "grounding_pct": 80.0,
+        "token_efficiency": 1.111,
+        "sample_snippet": "- Upgrade to PLAN-5G-PRO-UNLIM qualifies you for early termination fee cancellation under ETF-WAIVE-PROMO. - Migrating 4 or more lines prese"
+      },
+      "S7_Gemini_Ctrl": {
+        "median_ms": 2861.5,
+        "mean_ms": 2861.5,
+        "std_ms": 607.8,
+        "in_tokens": 300,
+        "out_tokens": 68,
+        "tps": 22.6,
+        "grounding_pct": 40.0,
+        "token_efficiency": 0.588,
+        "sample_snippet": "* **Target Plan Code:** `PLAN-5G-PRO-UNLIM` * **Provisioning SLA:** Instant Tier Shift (APN: N/A) *"
+      },
+      "S8_Gemini_Regex": {
+        "median_ms": 1739.3,
+        "mean_ms": 1739.3,
+        "std_ms": 121.2,
+        "in_tokens": 318,
+        "out_tokens": 8.5,
+        "tps": 4.9,
+        "grounding_pct": 0.0,
+        "token_efficiency": 0.0,
+        "sample_snippet": "* **Target Plan Code:** `PLAN-"
+      },
+      "S9_Gemini_Jev": {
+        "median_ms": 1417.7,
+        "mean_ms": 1417.7,
+        "std_ms": 117.6,
+        "in_tokens": 318,
+        "out_tokens": 113,
+        "tps": 79.4,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.885,
+        "sample_snippet": "* **Target Plan:** PLAN-5G-PRO-UNLIM * **Provisioning SLA:** Instant Tier Shift upon activation * **Early Termination Fee Relief:** Early te"
+      }
+    }
+  },
+  "Contract_Short_Long": {
+    "domain": "Contract",
+    "complexity": "Short",
+    "kb_density": "Long",
+    "query": "Want to upgrade to 5G Pro plan.",
+    "streams": {
+      "S1_1.7B_Ctrl": {
+        "median_ms": 1019.9,
+        "mean_ms": 1019.9,
+        "std_ms": 7.3,
+        "in_tokens": 315,
+        "out_tokens": 156,
+        "tps": 154.1,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.458,
+        "sample_snippet": "- [CONT-DOC-1: 5G Pro Tier Migration SOP | Plan: PLAN-5G-PRO-UNLIM | APN: N/A | SLA: Instant Tier Shift] Upgrading to PLAN-5G-PRO-UNLIM qual"
+      },
+      "S2_1.7B_Regex": {
+        "median_ms": 563.6,
+        "mean_ms": 563.6,
+        "std_ms": 2.5,
+        "in_tokens": 330,
+        "out_tokens": 85,
+        "tps": 152.8,
+        "grounding_pct": 57.1,
+        "token_efficiency": 0.672,
+        "sample_snippet": "- [CONT-DOC-1] Upgrade to PLAN-5G-PRO-UNLIM qualifies tenured subscribers for early termination fee cancellation under waiver code ETF-WAIVE"
+      },
+      "S3_1.7B_Jev": {
+        "median_ms": 655.8,
+        "mean_ms": 655.8,
+        "std_ms": 13.4,
+        "in_tokens": 330,
+        "out_tokens": 100,
+        "tps": 154.2,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.714,
+        "sample_snippet": "- [CONT-DOC-1] Upgrade to PLAN-5G-PRO-UNLIM qualifies tenured subscribers for early termination fee cancellation under waiver code ETF-WAIVE"
+      },
+      "S4_7B_Ctrl": {
+        "median_ms": 1738.3,
+        "mean_ms": 1738.3,
+        "std_ms": 10.0,
+        "in_tokens": 312,
+        "out_tokens": 88,
+        "tps": 51.2,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.811,
+        "sample_snippet": "- Upgrading to PLAN-5G-PRO-UNLIM qualifies you for early termination fee cancellation under ETF-WAIVE-PROMO. - This plan includes instant ti"
+      },
+      "S5_7B_Regex": {
+        "median_ms": 1719.7,
+        "mean_ms": 1719.7,
+        "std_ms": 65.3,
+        "in_tokens": 327,
+        "out_tokens": 85,
+        "tps": 50.0,
+        "grounding_pct": 57.1,
+        "token_efficiency": 0.672,
+        "sample_snippet": "- Upgrade to PLAN-5G-PRO-UNLIM qualifies you for early termination fee cancellation under ETF-WAIVE-PROMO. - Migrating 4 or more lines prese"
+      },
+      "S6_7B_Jev": {
+        "median_ms": 1502.5,
+        "mean_ms": 1502.5,
+        "std_ms": 34.7,
+        "in_tokens": 327,
+        "out_tokens": 72,
+        "tps": 48.6,
+        "grounding_pct": 57.1,
+        "token_efficiency": 0.793,
+        "sample_snippet": "- Upgrade to PLAN-5G-PRO-UNLIM qualifies you for early termination fee cancellation under ETF-WAIVE-PROMO. - Migrating 4 or more lines prese"
+      },
+      "S7_Gemini_Ctrl": {
+        "median_ms": 2590.6,
+        "mean_ms": 2590.6,
+        "std_ms": 48.2,
+        "in_tokens": 300,
+        "out_tokens": 55,
+        "tps": 21.3,
+        "grounding_pct": 21.5,
+        "token_efficiency": 0.391,
+        "sample_snippet": "* **Target Plan Code:** PLAN-5G-PRO-UNLIM * **Provisioning SLA:** Instant Tier Shift (APN: N/A) * **Fee Waivers:** Early termination fees ar"
+      },
+      "S8_Gemini_Regex": {
+        "median_ms": 2450.2,
+        "mean_ms": 2450.2,
+        "std_ms": 738.7,
+        "in_tokens": 318,
+        "out_tokens": 61,
+        "tps": 21.1,
+        "grounding_pct": 35.7,
+        "token_efficiency": 0.585,
+        "sample_snippet": "* Target Plan Code: `"
+      },
+      "S9_Gemini_Jev": {
+        "median_ms": 1672.5,
+        "mean_ms": 1672.5,
+        "std_ms": 52.7,
+        "in_tokens": 318,
+        "out_tokens": 103.5,
+        "tps": 61.9,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.69,
+        "sample_snippet": "* **Plan Code**: PLAN-5G-PRO-UNLIM * **Activation SLA**: Instant Tier Shift upon order submission. * **Early Termination Fee Waiver**: Tenur"
+      }
+    }
+  },
+  "Contract_Mid_Short": {
+    "domain": "Contract",
+    "complexity": "Mid",
+    "kb_density": "Short",
+    "query": "I want to upgrade my 4 lines to the new 5G Pro Unlimited tier and trade in my phones, but I need early termination fees waived.",
+    "streams": {
+      "S1_1.7B_Ctrl": {
+        "median_ms": 688.1,
+        "mean_ms": 688.1,
+        "std_ms": 2.4,
+        "in_tokens": 257,
+        "out_tokens": 105.5,
+        "tps": 155.8,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.948,
+        "sample_snippet": "- [CONT-DOC-1: 5G Pro Tier Migration SOP | Plan: PLAN-5G-PRO-UNLIM | APN: N/A | SLA: Instant Tier Shift] Upgrade to PLAN-5G-PRO-UNLIM to qua"
+      },
+      "S2_1.7B_Regex": {
+        "median_ms": 575.5,
+        "mean_ms": 575.5,
+        "std_ms": 9.3,
+        "in_tokens": 272,
+        "out_tokens": 85,
+        "tps": 150.6,
+        "grounding_pct": 100.0,
+        "token_efficiency": 1.176,
+        "sample_snippet": "- [CONT-DOC-1: 5G Pro Tier Migration SOP | Plan: PLAN-5G-PRO-UNLIM | APN: N/A | SLA: Instant Tier Shift] Upgrade to PLAN-5G-PRO-UNLIM to qua"
+      },
+      "S3_1.7B_Jev": {
+        "median_ms": 696.1,
+        "mean_ms": 696.1,
+        "std_ms": 42.4,
+        "in_tokens": 272,
+        "out_tokens": 100,
+        "tps": 146.2,
+        "grounding_pct": 100.0,
+        "token_efficiency": 1.0,
+        "sample_snippet": "- [CONT-DOC-1: 5G Pro Tier Migration SOP | Plan: PLAN-5G-PRO-UNLIM | APN: N/A | SLA: Instant Tier Shift] Upgrade to PLAN-5G-PRO-UNLIM to qua"
+      },
+      "S4_7B_Ctrl": {
+        "median_ms": 1106.2,
+        "mean_ms": 1106.2,
+        "std_ms": 22.3,
+        "in_tokens": 254,
+        "out_tokens": 55,
+        "tps": 51.3,
+        "grounding_pct": 100.0,
+        "token_efficiency": 1.818,
+        "sample_snippet": "- Upgrade to PLAN-5G-PRO-UNLIM qualifies you for early termination fee cancellation under waiver code ETF-WAIVE-PROMO. Please proceed with t"
+      },
+      "S5_7B_Regex": {
+        "median_ms": 1110.3,
+        "mean_ms": 1110.3,
+        "std_ms": 8.8,
+        "in_tokens": 269,
+        "out_tokens": 52,
+        "tps": 48.0,
+        "grounding_pct": 100.0,
+        "token_efficiency": 1.923,
+        "sample_snippet": "- Upgrade to PLAN-5G-PRO-UNLIM qualifies you for early termination fee cancellation under waiver code ETF-WAIVE-PROMO. Please proceed with t"
+      },
+      "S6_7B_Jev": {
+        "median_ms": 776.2,
+        "mean_ms": 776.2,
+        "std_ms": 11.7,
+        "in_tokens": 269,
+        "out_tokens": 37,
+        "tps": 49.8,
+        "grounding_pct": 100.0,
+        "token_efficiency": 2.703,
+        "sample_snippet": "- Upgrade to PLAN-5G-PRO-UNLIM for your 4 lines and qualify for early termination fee cancellation using waiver code ETF-WAIVE-PROMO."
+      },
+      "S7_Gemini_Ctrl": {
+        "median_ms": 1805.1,
+        "mean_ms": 1805.1,
+        "std_ms": 518.7,
+        "in_tokens": 244,
+        "out_tokens": 101,
+        "tps": 57.8,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.99,
+        "sample_snippet": "* **Target Plan Code:** PLAN-5G-PRO-UNLIM (5G Pro Unlimited). * **Early Termination Fee Waiver:** Early termination fees are fully waived fo"
+      },
+      "S8_Gemini_Regex": {
+        "median_ms": 1815.7,
+        "mean_ms": 1815.7,
+        "std_ms": 49.2,
+        "in_tokens": 262,
+        "out_tokens": 111.5,
+        "tps": 61.5,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.897,
+        "sample_snippet": "* **Target Plan Code:** PLAN-5G-PRO-UNLIM (5G Pro Unlimited tier) * **Fee Waiver Code:** ETF-WAIVE-PROMO (cancels early termination fees acr"
+      },
+      "S9_Gemini_Jev": {
+        "median_ms": 1786.0,
+        "mean_ms": 1786.0,
+        "std_ms": 82.7,
+        "in_tokens": 262,
+        "out_tokens": 46.5,
+        "tps": 26.8,
+        "grounding_pct": 50.0,
+        "token_efficiency": 1.075,
+        "sample_snippet": "* **Target Plan Code**: PLAN-5G-PRO-UNLIM * **Early Termination Fee Waiver**: Applicable to tenured subscribers upgrading all 4 lines under"
+      }
+    }
+  },
+  "Contract_Mid_Mid": {
+    "domain": "Contract",
+    "complexity": "Mid",
+    "kb_density": "Mid",
+    "query": "I want to upgrade my 4 lines to the new 5G Pro Unlimited tier and trade in my phones, but I need early termination fees waived.",
+    "streams": {
+      "S1_1.7B_Ctrl": {
+        "median_ms": 1022.9,
+        "mean_ms": 1022.9,
+        "std_ms": 4.0,
+        "in_tokens": 336,
+        "out_tokens": 155,
+        "tps": 153.4,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.645,
+        "sample_snippet": "- [CONT-DOC-1: 5G Pro Tier Migration SOP | Plan: PLAN-5G-PRO-UNLIM | APN: N/A | SLA: Instant Tier Shift] Upgrade to PLAN-5G-PRO-UNLIM qualif"
+      },
+      "S2_1.7B_Regex": {
+        "median_ms": 566.9,
+        "mean_ms": 566.9,
+        "std_ms": 8.0,
+        "in_tokens": 351,
+        "out_tokens": 85,
+        "tps": 153.4,
+        "grounding_pct": 40.0,
+        "token_efficiency": 0.471,
+        "sample_snippet": "- [CONT-DOC-1: 5G Pro Tier Migration SOP | Plan: PLAN-5G-PRO-UNLIM | APN: N/A | SLA: Instant Tier Shift] Upgrade to PLAN-5G-PRO-UNLIM to qua"
+      },
+      "S3_1.7B_Jev": {
+        "median_ms": 677.1,
+        "mean_ms": 677.1,
+        "std_ms": 29.5,
+        "in_tokens": 351,
+        "out_tokens": 100,
+        "tps": 151.3,
+        "grounding_pct": 100.0,
+        "token_efficiency": 1.0,
+        "sample_snippet": "- [CONT-DOC-1] Upgrade to PLAN-5G-PRO-UNLIM qualifies tenured subscribers for early termination fee cancellation under waiver code ETF-WAIVE"
+      },
+      "S4_7B_Ctrl": {
+        "median_ms": 1935.5,
+        "mean_ms": 1935.5,
+        "std_ms": 19.7,
+        "in_tokens": 333,
+        "out_tokens": 97,
+        "tps": 51.0,
+        "grounding_pct": 80.0,
+        "token_efficiency": 0.825,
+        "sample_snippet": "- Upgrade to PLAN-5G-PRO-UNLIM qualifies you for early termination fee cancellation under waiver code ETF-WAIVE-PROMO. - You are eligible fo"
+      },
+      "S5_7B_Regex": {
+        "median_ms": 1556.0,
+        "mean_ms": 1556.0,
+        "std_ms": 1.6,
+        "in_tokens": 348,
+        "out_tokens": 73,
+        "tps": 48.2,
+        "grounding_pct": 100.0,
+        "token_efficiency": 1.37,
+        "sample_snippet": "- Upgrade to PLAN-5G-PRO-UNLIM for your 4 lines and qualify for early termination fee cancellation with waiver code ETF-WAIVE-PROMO. - Apply"
+      },
+      "S6_7B_Jev": {
+        "median_ms": 1650.2,
+        "mean_ms": 1650.2,
+        "std_ms": 413.7,
+        "in_tokens": 348,
+        "out_tokens": 79,
+        "tps": 49.2,
+        "grounding_pct": 100.0,
+        "token_efficiency": 1.266,
+        "sample_snippet": "- Upgrade to PLAN-5G-PRO-UNLIM for your 4 lines and qualify for early termination fee cancellation using ETF-WAIVE-PROMO. This upgrade also"
+      },
+      "S7_Gemini_Ctrl": {
+        "median_ms": 1787.0,
+        "mean_ms": 1787.0,
+        "std_ms": 116.2,
+        "in_tokens": 321,
+        "out_tokens": 120,
+        "tps": 66.9,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.833,
+        "sample_snippet": "* Upgrade all 4 lines directly to plan code **PLAN-5G-PRO-UNLIM** with an **Instant Tier Shift** SLA. * Apply waiver code **ETF-WAIVE-PROMO*"
+      },
+      "S8_Gemini_Regex": {
+        "median_ms": 1806.5,
+        "mean_ms": 1806.5,
+        "std_ms": 159.0,
+        "in_tokens": 339,
+        "out_tokens": 56,
+        "tps": 32.9,
+        "grounding_pct": 50.0,
+        "token_efficiency": 0.893,
+        "sample_snippet": "* **Plan"
+      },
+      "S9_Gemini_Jev": {
+        "median_ms": 1660.2,
+        "mean_ms": 1660.2,
+        "std_ms": 32.0,
+        "in_tokens": 339,
+        "out_tokens": 109.5,
+        "tps": 65.9,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.913,
+        "sample_snippet": "* **Plan Migration:** Upgrade to plan code **PLAN-5G-PRO-UNLIM** with an SLA of **Instant Tier Shift** across all 4 lines. * **Fee Waiver:**"
+      }
+    }
+  },
+  "Contract_Mid_Long": {
+    "domain": "Contract",
+    "complexity": "Mid",
+    "kb_density": "Long",
+    "query": "I want to upgrade my 4 lines to the new 5G Pro Unlimited tier and trade in my phones, but I need early termination fees waived.",
+    "streams": {
+      "S1_1.7B_Ctrl": {
+        "median_ms": 1011.2,
+        "mean_ms": 1011.2,
+        "std_ms": 1.3,
+        "in_tokens": 336,
+        "out_tokens": 155,
+        "tps": 154.4,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.461,
+        "sample_snippet": "- [CONT-DOC-1: 5G Pro Tier Migration SOP | Plan: PLAN-5G-PRO-UNLIM | APN: N/A | SLA: Instant Tier Shift] Upgrade to PLAN-5G-PRO-UNLIM qualif"
+      },
+      "S2_1.7B_Regex": {
+        "median_ms": 576.4,
+        "mean_ms": 576.4,
+        "std_ms": 28.6,
+        "in_tokens": 351,
+        "out_tokens": 85,
+        "tps": 149.6,
+        "grounding_pct": 28.6,
+        "token_efficiency": 0.336,
+        "sample_snippet": "- [CONT-DOC-1: 5G Pro Tier Migration SOP | Plan: PLAN-5G-PRO-UNLIM | APN: N/A | SLA: Instant Tier Shift] Upgrade to PLAN-5G-PRO-UNLIM to qua"
+      },
+      "S3_1.7B_Jev": {
+        "median_ms": 645.0,
+        "mean_ms": 645.0,
+        "std_ms": 3.7,
+        "in_tokens": 351,
+        "out_tokens": 100,
+        "tps": 156.8,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.714,
+        "sample_snippet": "- [CONT-DOC-1] Upgrade to PLAN-5G-PRO-UNLIM qualifies tenured subscribers for early termination fee cancellation under waiver code ETF-WAIVE"
+      },
+      "S4_7B_Ctrl": {
+        "median_ms": 1914.8,
+        "mean_ms": 1914.8,
+        "std_ms": 0.8,
+        "in_tokens": 333,
+        "out_tokens": 97,
+        "tps": 51.2,
+        "grounding_pct": 57.1,
+        "token_efficiency": 0.589,
+        "sample_snippet": "- Upgrade to PLAN-5G-PRO-UNLIM qualifies you for early termination fee cancellation under waiver code ETF-WAIVE-PROMO. - You are eligible fo"
+      },
+      "S5_7B_Regex": {
+        "median_ms": 1531.2,
+        "mean_ms": 1531.2,
+        "std_ms": 4.1,
+        "in_tokens": 348,
+        "out_tokens": 73,
+        "tps": 48.4,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.978,
+        "sample_snippet": "- Upgrade to PLAN-5G-PRO-UNLIM for your 4 lines and qualify for early termination fee cancellation with waiver code ETF-WAIVE-PROMO. - Apply"
+      },
+      "S6_7B_Jev": {
+        "median_ms": 1374.1,
+        "mean_ms": 1374.1,
+        "std_ms": 25.2,
+        "in_tokens": 348,
+        "out_tokens": 66,
+        "tps": 48.8,
+        "grounding_pct": 71.4,
+        "token_efficiency": 1.082,
+        "sample_snippet": "- Upgrade to PLAN-5G-PRO-UNLIM for your 4 lines and qualify for early termination fee cancellation using ETF-WAIVE-PROMO. This upgrade also"
+      },
+      "S7_Gemini_Ctrl": {
+        "median_ms": 1778.9,
+        "mean_ms": 1778.9,
+        "std_ms": 179.6,
+        "in_tokens": 321,
+        "out_tokens": 106.5,
+        "tps": 60.4,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.67,
+        "sample_snippet": "* **Plan Migration:** Upgrade to plan code `PLAN-5G-PRO-UNLIM` with an instant tier shift SLA. * **Early Termination Fee Waiver:** Early ter"
+      },
+      "S8_Gemini_Regex": {
+        "median_ms": 1831.1,
+        "mean_ms": 1831.1,
+        "std_ms": 133.6,
+        "in_tokens": 339,
+        "out_tokens": 110,
+        "tps": 60.1,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.649,
+        "sample_snippet": "* **Plan Migration:** Your 4 lines are eligible for migration to plan code **PLAN-5G-PRO-UNLIM** with an SLA of **Instant Tier Shift**. * **"
+      },
+      "S9_Gemini_Jev": {
+        "median_ms": 1720.9,
+        "mean_ms": 1720.9,
+        "std_ms": 448.4,
+        "in_tokens": 339,
+        "out_tokens": 104.5,
+        "tps": 62.7,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.683,
+        "sample_snippet": "* **Plan Migration:** Upgrade your 4 lines directly to plan code `PLAN-5G-PRO-UNLIM` with an SLA of Instant Tier Shift. * **Fee Waiver:** Ea"
+      }
+    }
+  },
+  "Contract_Long_Short": {
+    "domain": "Contract",
+    "complexity": "Long",
+    "kb_density": "Short",
+    "query": "I have been an Apex Telecom subscriber for 7 years on our legacy Unlimited Plus plan. I received a promotional mailer offering a trade-in upgrade to the new 5G Pro Unlimited plan with complimentary device subsidies. However, when I look at the online checkout, the cart is charging me a $200 early termination fee for two lines and dropping my 20% loyalty discount. If Apex cannot honor the promotional waiver and preserve my multiline pooling, I will migrate my entire family account to a competitor.",
+    "streams": {
+      "S1_1.7B_Ctrl": {
+        "median_ms": 873.7,
+        "mean_ms": 873.7,
+        "std_ms": 122.8,
+        "in_tokens": 329,
+        "out_tokens": 133.5,
+        "tps": 155.1,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.749,
+        "sample_snippet": "- [CONT-DOC-1: 5G Pro Tier Migration SOP | Plan: PLAN-5G-PRO-UNLIM | APN: N/A | SLA: Instant Tier Shift] Upgrade to PLAN-5G-PRO-UNLIM qualif"
+      },
+      "S2_1.7B_Regex": {
+        "median_ms": 742.6,
+        "mean_ms": 742.6,
+        "std_ms": 22.2,
+        "in_tokens": 346,
+        "out_tokens": 90,
+        "tps": 123.7,
+        "grounding_pct": 100.0,
+        "token_efficiency": 1.111,
+        "sample_snippet": "- [CONT-DOC-1: 5G Pro Tier Migration SOP | Plan: PLAN-5G-PRO-UNLIM | APN: N/A | SLA: Instant Tier Shift]     - The promotional waiver code E"
+      },
+      "S3_1.7B_Jev": {
+        "median_ms": 627.4,
+        "mean_ms": 627.4,
+        "std_ms": 58.9,
+        "in_tokens": 344,
+        "out_tokens": 90,
+        "tps": 146.8,
+        "grounding_pct": 100.0,
+        "token_efficiency": 1.111,
+        "sample_snippet": "- [CONT-DOC-1: 5G Pro Tier Migration SOP | Plan: PLAN-5G-PRO-UNLIM | APN: N/A | SLA: Instant Tier Shift] Upgrade to PLAN-5G-PRO-UNLIM qualif"
+      },
+      "S4_7B_Ctrl": {
+        "median_ms": 1859.4,
+        "mean_ms": 1859.4,
+        "std_ms": 254.1,
+        "in_tokens": 326,
+        "out_tokens": 93.5,
+        "tps": 51.2,
+        "grounding_pct": 100.0,
+        "token_efficiency": 1.07,
+        "sample_snippet": "- You are eligible for the ETF-WAIVE-PROMO waiver code, which cancels the early termination fee for your legacy Unlimited Plus plan migratio"
+      },
+      "S5_7B_Regex": {
+        "median_ms": 1937.0,
+        "mean_ms": 1937.0,
+        "std_ms": 75.3,
+        "in_tokens": 343,
+        "out_tokens": 90,
+        "tps": 47.8,
+        "grounding_pct": 100.0,
+        "token_efficiency": 1.111,
+        "sample_snippet": "- You are eligible for the ETF-WAIVE-PROMO waiver code, which cancels the early termination fee for your legacy Unlimited Plus plan migratio"
+      },
+      "S6_7B_Jev": {
+        "median_ms": 1555.2,
+        "mean_ms": 1555.2,
+        "std_ms": 215.5,
+        "in_tokens": 341,
+        "out_tokens": 74.5,
+        "tps": 49.2,
+        "grounding_pct": 100.0,
+        "token_efficiency": 1.342,
+        "sample_snippet": "- Upgrade to PLAN-5G-PRO-UNLIM qualifies you for early termination fee cancellation under ETF-WAIVE-PROMO. No early termination fee will app"
+      },
+      "S7_Gemini_Ctrl": {
+        "median_ms": 1815.1,
+        "mean_ms": 1815.1,
+        "std_ms": 12.4,
+        "in_tokens": 318,
+        "out_tokens": 179.5,
+        "tps": 98.9,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.557,
+        "sample_snippet": "* **Plan Code & Migration:** Your upgrade to **PLAN-5G-PRO-UNLIM** qualifies under the 5G Pro Tier Migration SOP for an immediate, zero-down"
+      },
+      "S8_Gemini_Regex": {
+        "median_ms": 3857.5,
+        "mean_ms": 3857.5,
+        "std_ms": 3083.6,
+        "in_tokens": 338,
+        "out_tokens": 171,
+        "tps": 65.6,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.585,
+        "sample_snippet": "* **Plan Migration:** Upgrade to plan code **PLAN-5G-PRO-UNLIM** carries an **Instant Tier Shift** SLA. * **Fee Waiver:** Tenured subscriber"
+      },
+      "S9_Gemini_Jev": {
+        "median_ms": 1441.2,
+        "mean_ms": 1441.2,
+        "std_ms": 8.7,
+        "in_tokens": 336,
+        "out_tokens": 70.5,
+        "tps": 49.1,
+        "grounding_pct": 50.0,
+        "token_efficiency": 0.709,
+        "sample_snippet": "* **Plan Migration & Fee Waiver:** Upgrade directly to **PLAN-5G-PRO-UNLIM** using waiver code **ETF-WAIVE-PROMO** to instantly eliminate th"
+      }
+    }
+  },
+  "Contract_Long_Mid": {
+    "domain": "Contract",
+    "complexity": "Long",
+    "kb_density": "Mid",
+    "query": "I have been an Apex Telecom subscriber for 7 years on our legacy Unlimited Plus plan. I received a promotional mailer offering a trade-in upgrade to the new 5G Pro Unlimited plan with complimentary device subsidies. However, when I look at the online checkout, the cart is charging me a $200 early termination fee for two lines and dropping my 20% loyalty discount. If Apex cannot honor the promotional waiver and preserve my multiline pooling, I will migrate my entire family account to a competitor.",
+    "streams": {
+      "S1_1.7B_Ctrl": {
+        "median_ms": 1202.3,
+        "mean_ms": 1202.3,
+        "std_ms": 20.7,
+        "in_tokens": 408,
+        "out_tokens": 180,
+        "tps": 151.4,
+        "grounding_pct": 90.0,
+        "token_efficiency": 0.5,
+        "sample_snippet": "- [CONT-DOC-1: 5G Pro Tier Migration SOP | Plan: PLAN-5G-PRO-UNLIM | APN: N/A | SLA: Instant Tier Shift]     - Upgrading to PLAN-5G-PRO-UNLI"
+      },
+      "S2_1.7B_Regex": {
+        "median_ms": 725.6,
+        "mean_ms": 725.6,
+        "std_ms": 25.7,
+        "in_tokens": 425,
+        "out_tokens": 90,
+        "tps": 129.2,
+        "grounding_pct": 70.0,
+        "token_efficiency": 0.778,
+        "sample_snippet": "- [CONT-DOC-1] Upgrading to PLAN-5G-PRO-UNLIM qualifies tenured subscribers for early termination fee cancellation under waiver code ETF-WAI"
+      },
+      "S3_1.7B_Jev": {
+        "median_ms": 612.9,
+        "mean_ms": 612.9,
+        "std_ms": 40.6,
+        "in_tokens": 423,
+        "out_tokens": 90,
+        "tps": 151.7,
+        "grounding_pct": 80.0,
+        "token_efficiency": 0.889,
+        "sample_snippet": "- [CONT-DOC-1] Upgrade to PLAN-5G-PRO-UNLIM qualifies tenured subscribers for early termination fee cancellation under waiver code ETF-WAIVE"
+      },
+      "S4_7B_Ctrl": {
+        "median_ms": 1395.7,
+        "mean_ms": 1395.7,
+        "std_ms": 325.7,
+        "in_tokens": 405,
+        "out_tokens": 70.5,
+        "tps": 51.7,
+        "grounding_pct": 90.0,
+        "token_efficiency": 1.277,
+        "sample_snippet": "- You are eligible for early termination fee cancellation and preservation of your 20% loyalty discount under the PLAN-5G-PRO-UNLIM migratio"
+      },
+      "S5_7B_Regex": {
+        "median_ms": 1890.8,
+        "mean_ms": 1890.8,
+        "std_ms": 58.9,
+        "in_tokens": 422,
+        "out_tokens": 87,
+        "tps": 47.5,
+        "grounding_pct": 80.0,
+        "token_efficiency": 0.92,
+        "sample_snippet": "- You are eligible for early termination fee cancellation and preservation of your 20% loyalty discount under the PLAN-5G-PRO-UNLIM migratio"
+      },
+      "S6_7B_Jev": {
+        "median_ms": 1810.0,
+        "mean_ms": 1810.0,
+        "std_ms": 26.2,
+        "in_tokens": 420,
+        "out_tokens": 86,
+        "tps": 49.2,
+        "grounding_pct": 70.0,
+        "token_efficiency": 0.814,
+        "sample_snippet": "- You are eligible for the ETF-WAIVE-PROMO waiver, which cancels the early termination fee for your two lines. - Your 20% loyalty discount w"
+      },
+      "S7_Gemini_Ctrl": {
+        "median_ms": 1843.9,
+        "mean_ms": 1843.9,
+        "std_ms": 51.2,
+        "in_tokens": 395,
+        "out_tokens": 157,
+        "tps": 85.3,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.637,
+        "sample_snippet": "* **Early Termination Fee Cancellation**: The early termination fees are fully waived for the upgrade to plan code `PLAN-5G-PRO-UNLIM` using"
+      },
+      "S8_Gemini_Regex": {
+        "median_ms": 2842.7,
+        "mean_ms": 2842.7,
+        "std_ms": 709.2,
+        "in_tokens": 415,
+        "out_tokens": 185.5,
+        "tps": 68.0,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.539,
+        "sample_snippet": "* **Plan Migration & Fee Waiver:** Migrating your lines to **PLAN-5G-PRO-UNLIM** qualifies your account for full early termination fee cance"
+      },
+      "S9_Gemini_Jev": {
+        "median_ms": 1738.8,
+        "mean_ms": 1738.8,
+        "std_ms": 147.3,
+        "in_tokens": 413,
+        "out_tokens": 147.5,
+        "tps": 85.0,
+        "grounding_pct": 100.0,
+        "token_efficiency": 0.678,
+        "sample_snippet": "* **Plan Migration:** Eligible lines will transition directly to **PLAN-5G-PRO-UNLIM** with an Instant Tier Shift SLA. * **Early Termination"
+      }
+    }
+  },
+  "Contract_Long_Long": {
+    "domain": "Contract",
+    "complexity": "Long",
+    "kb_density": "Long",
+    "query": "I have been an Apex Telecom subscriber for 7 years on our legacy Unlimited Plus plan. I received a promotional mailer offering a trade-in upgrade to the new 5G Pro Unlimited plan with complimentary device subsidies. However, when I look at the online checkout, the cart is charging me a $200 early termination fee for two lines and dropping my 20% loyalty discount. If Apex cannot honor the promotional waiver and preserve my multiline pooling, I will migrate my entire family account to a competitor.",
+    "streams": {
+      "S1_1.7B_Ctrl": {
+        "median_ms": 1202.8,
+        "mean_ms": 1202.8,
+        "std_ms": 17.9,
+        "in_tokens": 408,
+        "out_tokens": 180,
+        "tps": 151.6,
+        "grounding_pct": 57.1,
+        "token_efficiency": 0.317,
+        "sample_snippet": "- [CONT-DOC-1: 5G Pro Tier Migration SOP | Plan: PLAN-5G-PRO-UNLIM | APN: N/A | SLA: Instant Tier Shift]     - Upgrading to PLAN-5G-PRO-UNLI"
+      },
+      "S2_1.7B_Regex": {
+        "median_ms": 647.0,
+        "mean_ms": 647.0,
+        "std_ms": 14.8,
+        "in_tokens": 425,
+        "out_tokens": 90,
+        "tps": 141.9,
+        "grounding_pct": 42.9,
+        "token_efficiency": 0.477,
+        "sample_snippet": "- [CONT-DOC-1] Upgrading to PLAN-5G-PRO-UNLIM qualifies tenured subscribers for early termination fee cancellation under waiver code ETF-WAI"
+      },
+      "S3_1.7B_Jev": {
+        "median_ms": 579.8,
+        "mean_ms": 579.8,
+        "std_ms": 2.1,
+        "in_tokens": 423,
+        "out_tokens": 90,
+        "tps": 157.2,
+        "grounding_pct": 57.1,
+        "token_efficiency": 0.634,
+        "sample_snippet": "- [CONT-DOC-1] Upgrade to PLAN-5G-PRO-UNLIM qualifies tenured subscribers for early termination fee cancellation under waiver code ETF-WAIVE"
+      },
+      "S4_7B_Ctrl": {
+        "median_ms": 1649.0,
+        "mean_ms": 1649.0,
+        "std_ms": 5.7,
+        "in_tokens": 405,
+        "out_tokens": 83,
+        "tps": 51.0,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.86,
+        "sample_snippet": "- You are eligible for early termination fee cancellation and preservation of your 20% loyalty discount under the PLAN-5G-PRO-UNLIM migratio"
+      },
+      "S5_7B_Regex": {
+        "median_ms": 1822.7,
+        "mean_ms": 1822.7,
+        "std_ms": 32.7,
+        "in_tokens": 422,
+        "out_tokens": 87,
+        "tps": 48.3,
+        "grounding_pct": 57.1,
+        "token_efficiency": 0.656,
+        "sample_snippet": "- You are eligible for early termination fee cancellation and preservation of your 20% loyalty discount under the PLAN-5G-PRO-UNLIM migratio"
+      },
+      "S6_7B_Jev": {
+        "median_ms": 1856.6,
+        "mean_ms": 1856.6,
+        "std_ms": 11.2,
+        "in_tokens": 420,
+        "out_tokens": 89,
+        "tps": 48.5,
+        "grounding_pct": 57.1,
+        "token_efficiency": 0.642,
+        "sample_snippet": "- You are eligible for the ETF-WAIVE-PROMO waiver, which cancels the early termination fee for your two lines. - Your 20% loyalty discount w"
+      },
+      "S7_Gemini_Ctrl": {
+        "median_ms": 1616.7,
+        "mean_ms": 1616.7,
+        "std_ms": 38.5,
+        "in_tokens": 395,
+        "out_tokens": 175,
+        "tps": 108.4,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.408,
+        "sample_snippet": "* **Plan Migration & SLA**: Your upgrade to **PLAN-5G-PRO-UNLIM** qualifies for an instant tier shift, migrating all lines immediately witho"
+      },
+      "S8_Gemini_Regex": {
+        "median_ms": 1849.2,
+        "mean_ms": 1849.2,
+        "std_ms": 100.7,
+        "in_tokens": 415,
+        "out_tokens": 158.5,
+        "tps": 84.9,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.45,
+        "sample_snippet": "* **Plan Migration:** Upgrade directly to **PLAN-5G-PRO-UNLIM** with an Instant Tier Shift SLA. * **Early Termination Fee Removal:** Apply w"
+      },
+      "S9_Gemini_Jev": {
+        "median_ms": 1475.0,
+        "mean_ms": 1475.0,
+        "std_ms": 130.4,
+        "in_tokens": 413,
+        "out_tokens": 172.5,
+        "tps": 117.8,
+        "grounding_pct": 71.4,
+        "token_efficiency": 0.414,
+        "sample_snippet": "* **Plan Migration:** Your account is eligible to upgrade directly to **PLAN-5G-PRO-UNLIM** with an SLA of Instant Tier Shift. * **Early Ter"
+      }
+    }
+  }
+}

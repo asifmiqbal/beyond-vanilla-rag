@@ -1,0 +1,596 @@
+{
+  "Short_Short": {
+    "query_level": "Short",
+    "kb_level": "Short",
+    "streams": {
+      "S1_Jev_Qwen1.7B": {
+        "median_ms": 238.3,
+        "mean_ms": 239.3,
+        "std_ms": 2.8,
+        "in_tokens": 189,
+        "out_tokens": 36,
+        "tps": 155.3,
+        "grounding_pct": 33.3,
+        "sample_snippet": "- Outside drop cut requires outside-plant splice technician dispatch.   - 24-hour resolution SLA is in effect.   - Please contact support fo"
+      },
+      "S2_Ctrl_Qwen1.7B": {
+        "median_ms": 932.0,
+        "mean_ms": 931.4,
+        "std_ms": 1.6,
+        "in_tokens": 170,
+        "out_tokens": 48,
+        "tps": 52.7,
+        "grounding_pct": 33.3,
+        "sample_snippet": "- Contact Apex Telecom immediately to report the fiber line cut.   - Request dispatch of an outside-plant splice technician for restoration."
+      },
+      "S3_Jev_Qwen7B": {
+        "median_ms": 1797.1,
+        "mean_ms": 1795.1,
+        "std_ms": 4.7,
+        "in_tokens": 187,
+        "out_tokens": 91,
+        "tps": 51.4,
+        "grounding_pct": 33.3,
+        "sample_snippet": "Thank you for notifying us about the fiber line cut outside your premises. We understand the urgency of this issue.  - An outside-plant spli"
+      },
+      "S4_Ctrl_Qwen7B": {
+        "median_ms": 1918.7,
+        "mean_ms": 1920.2,
+        "std_ms": 4.6,
+        "in_tokens": 168,
+        "out_tokens": 98,
+        "tps": 51.7,
+        "grounding_pct": 33.3,
+        "sample_snippet": "Thank you for notifying us about the fiber line cut outside your premises. We understand the urgency of this issue and will dispatch an outs"
+      },
+      "S5_Jev_Gemini": {
+        "median_ms": 1866.9,
+        "mean_ms": 1866.0,
+        "std_ms": 119.7,
+        "in_tokens": 178,
+        "out_tokens": 162.7,
+        "tps": 87.1,
+        "grounding_pct": 33.3,
+        "sample_snippet": "Hello, thank you for reaching out to Apex Telecom.   A blinking red LOS (Loss of Signal) light confirms that your fiber connection has been"
+      },
+      "S6_Ctrl_Gemini": {
+        "median_ms": 1839.8,
+        "mean_ms": 1923.8,
+        "std_ms": 199.9,
+        "in_tokens": 158,
+        "out_tokens": 157,
+        "tps": 81.9,
+        "grounding_pct": 33.3,
+        "sample_snippet": "We are sorry to hear that your fiber line has been cut. A blinking red LOS (Loss of Signal) light confirms that your equipment is not receiv"
+      }
+    }
+  },
+  "Short_Mid": {
+    "query_level": "Short",
+    "kb_level": "Mid",
+    "streams": {
+      "S1_Jev_Qwen1.7B": {
+        "median_ms": 256.8,
+        "mean_ms": 262.0,
+        "std_ms": 9.4,
+        "in_tokens": 269,
+        "out_tokens": 39,
+        "tps": 155.4,
+        "grounding_pct": 25.0,
+        "sample_snippet": "- Immediate dispatch of emergency outside plant splice crew is required.   - Monitor red LOS blinking status.   - Contact support for SLA cr"
+      },
+      "S2_Ctrl_Qwen1.7B": {
+        "median_ms": 1045.2,
+        "mean_ms": 1063.9,
+        "std_ms": 34.2,
+        "in_tokens": 250,
+        "out_tokens": 53.3,
+        "tps": 51.7,
+        "grounding_pct": 50.0,
+        "sample_snippet": "- Immediate action required: Dispatch emergency outside plant splice crew within 4 hours.   - SLA: 24-hour resolution for complete service o"
+      },
+      "S3_Jev_Qwen7B": {
+        "median_ms": 1976.3,
+        "mean_ms": 1985.1,
+        "std_ms": 20.2,
+        "in_tokens": 267,
+        "out_tokens": 100,
+        "tps": 51.1,
+        "grounding_pct": 25.0,
+        "sample_snippet": "Thank you for notifying us about the fiber line cut outside your premises. We understand the urgency of this situation.  - **Immediate Actio"
+      },
+      "S4_Ctrl_Qwen7B": {
+        "median_ms": 2011.5,
+        "mean_ms": 2018.3,
+        "std_ms": 14.3,
+        "in_tokens": 248,
+        "out_tokens": 102,
+        "tps": 51.3,
+        "grounding_pct": 25.0,
+        "sample_snippet": "Thank you for notifying us about the fiber line cut outside your premises. We understand the urgency of this situation.  - Our emergency out"
+      },
+      "S5_Jev_Gemini": {
+        "median_ms": 1963.0,
+        "mean_ms": 1991.0,
+        "std_ms": 54.1,
+        "in_tokens": 260,
+        "out_tokens": 169.7,
+        "tps": 85.3,
+        "grounding_pct": 50.0,
+        "sample_snippet": "A blinking red LOS (Loss of Signal) light confirms that your fiber drop cable has lost its connection due to the physical cut outside. We ha"
+      },
+      "S6_Ctrl_Gemini": {
+        "median_ms": 1902.1,
+        "mean_ms": 1853.3,
+        "std_ms": 105.7,
+        "in_tokens": 240,
+        "out_tokens": 166,
+        "tps": 89.7,
+        "grounding_pct": 50.0,
+        "sample_snippet": "Thank you for reporting this issue. A blinking red LOS (Loss of Signal) light indicates that the optical connection to your home has been in"
+      }
+    }
+  },
+  "Short_Long": {
+    "query_level": "Short",
+    "kb_level": "Long",
+    "streams": {
+      "S1_Jev_Qwen1.7B": {
+        "median_ms": 1237.5,
+        "mean_ms": 1185.0,
+        "std_ms": 104.5,
+        "in_tokens": 288,
+        "out_tokens": 64,
+        "tps": 55.3,
+        "grounding_pct": 16.7,
+        "sample_snippet": "- Dispatch emergency outside plant technician under ticket code GPON-OUTAGE-L3   - Initiate standard repair SLA of 24 hours   - Monitor red"
+      },
+      "S2_Ctrl_Qwen1.7B": {
+        "median_ms": 1057.5,
+        "mean_ms": 1055.6,
+        "std_ms": 25.4,
+        "in_tokens": 269,
+        "out_tokens": 54,
+        "tps": 52.5,
+        "grounding_pct": 16.7,
+        "sample_snippet": "- Emergency technician dispatch required under ticket code GPON-OUTAGE-L3   - Standard repair SLA: 24 hours   - Automatic prorated monthly S"
+      },
+      "S3_Jev_Qwen7B": {
+        "median_ms": 1978.0,
+        "mean_ms": 1990.1,
+        "std_ms": 30.9,
+        "in_tokens": 286,
+        "out_tokens": 100,
+        "tps": 51.2,
+        "grounding_pct": 16.7,
+        "sample_snippet": "Thank you for notifying us about the fiber line cut outside your premises. We understand the urgency of this issue and will dispatch an emer"
+      },
+      "S4_Ctrl_Qwen7B": {
+        "median_ms": 2545.8,
+        "mean_ms": 2515.1,
+        "std_ms": 54.1,
+        "in_tokens": 267,
+        "out_tokens": 128,
+        "tps": 51.4,
+        "grounding_pct": 16.7,
+        "sample_snippet": "Thank you for notifying us about the fiber line cut outside your premises. We understand the urgency of this issue.  - **Immediate Action:**"
+      },
+      "S5_Jev_Gemini": {
+        "median_ms": 1985.2,
+        "mean_ms": 1984.2,
+        "std_ms": 12.5,
+        "in_tokens": 277,
+        "out_tokens": 209.3,
+        "tps": 105.5,
+        "grounding_pct": 38.9,
+        "sample_snippet": "Thank you for reaching out. A blinking red Loss of Signal (LOS) light confirms that your fiber drop line has been physically severed and can"
+      },
+      "S6_Ctrl_Gemini": {
+        "median_ms": 2035.4,
+        "mean_ms": 1993.6,
+        "std_ms": 140.4,
+        "in_tokens": 257,
+        "out_tokens": 193,
+        "tps": 96.9,
+        "grounding_pct": 33.3,
+        "sample_snippet": "I am sorry to hear that your fiber line has been cut. A blinking red LOS (Loss of Signal) light indicates that your equipment is not receivi"
+      }
+    }
+  },
+  "Mid_Short": {
+    "query_level": "Mid",
+    "kb_level": "Short",
+    "streams": {
+      "S1_Jev_Qwen1.7B": {
+        "median_ms": 1128.8,
+        "mean_ms": 1119.9,
+        "std_ms": 24.2,
+        "in_tokens": 208,
+        "out_tokens": 57,
+        "tps": 52.4,
+        "grounding_pct": 33.3,
+        "sample_snippet": "- Report the outage to Apex Telecom immediately.   - Contact the outside-plant splice technician for dispatch.   - Verify the status of the"
+      },
+      "S2_Ctrl_Qwen1.7B": {
+        "median_ms": 876.8,
+        "mean_ms": 879.3,
+        "std_ms": 10.7,
+        "in_tokens": 189,
+        "out_tokens": 45,
+        "tps": 52.7,
+        "grounding_pct": 33.3,
+        "sample_snippet": "- Please contact the outside-plant splice technician for immediate dispatch.   - The optical terminal will require manual intervention to re"
+      },
+      "S3_Jev_Qwen7B": {
+        "median_ms": 1902.0,
+        "mean_ms": 1900.3,
+        "std_ms": 3.4,
+        "in_tokens": 206,
+        "out_tokens": 96.7,
+        "tps": 51.6,
+        "grounding_pct": 0.0,
+        "sample_snippet": "Thank you for reaching out. I understand that your fiber optic drop cable has been severed, which is causing an issue with your internet ser"
+      },
+      "S4_Ctrl_Qwen7B": {
+        "median_ms": 2977.9,
+        "mean_ms": 2816.3,
+        "std_ms": 288.5,
+        "in_tokens": 187,
+        "out_tokens": 143.3,
+        "tps": 51.4,
+        "grounding_pct": 33.3,
+        "sample_snippet": "Thank you for reaching out. I understand that your fiber optic drop cable has been severed, which is causing an issue with your internet ser"
+      },
+      "S5_Jev_Gemini": {
+        "median_ms": 2970.0,
+        "mean_ms": 3788.6,
+        "std_ms": 2374.2,
+        "in_tokens": 198,
+        "out_tokens": 194.3,
+        "tps": 65.7,
+        "grounding_pct": 33.3,
+        "sample_snippet": "We apologize for the inconvenience caused by this damage. A severed fiber drop requires an on-site repair to restore your service.  Here are"
+      },
+      "S6_Ctrl_Gemini": {
+        "median_ms": 2117.1,
+        "mean_ms": 4068.9,
+        "std_ms": 3394.8,
+        "in_tokens": 178,
+        "out_tokens": 189.3,
+        "tps": 68.3,
+        "grounding_pct": 33.3,
+        "sample_snippet": "I am sorry to hear that your fiber line was severed. The blinking red Loss of Signal (LOS) light confirms that the physical connection betwe"
+      }
+    }
+  },
+  "Mid_Mid": {
+    "query_level": "Mid",
+    "kb_level": "Mid",
+    "streams": {
+      "S1_Jev_Qwen1.7B": {
+        "median_ms": 1852.7,
+        "mean_ms": 1865.7,
+        "std_ms": 38.7,
+        "in_tokens": 288,
+        "out_tokens": 95,
+        "tps": 51.8,
+        "grounding_pct": 25.0,
+        "sample_snippet": "- The utility workers have severed the fiber optic drop cable outside your premises.   - The Optical Terminal is displaying a blinking red L"
+      },
+      "S2_Ctrl_Qwen1.7B": {
+        "median_ms": 1571.0,
+        "mean_ms": 1579.2,
+        "std_ms": 24.2,
+        "in_tokens": 269,
+        "out_tokens": 80,
+        "tps": 51.6,
+        "grounding_pct": 25.0,
+        "sample_snippet": "- The utility workers have severed the physical fiber outside your premises.   - An emergency outside plant splice crew must be dispatched w"
+      },
+      "S3_Jev_Qwen7B": {
+        "median_ms": 1966.6,
+        "mean_ms": 1978.3,
+        "std_ms": 25.7,
+        "in_tokens": 286,
+        "out_tokens": 100,
+        "tps": 51.4,
+        "grounding_pct": 8.3,
+        "sample_snippet": "Thank you for reaching out to Apex Telecom. I understand that your fiber optic drop cable was severed by utility workers, and your internet"
+      },
+      "S4_Ctrl_Qwen7B": {
+        "median_ms": 3548.4,
+        "mean_ms": 3551.6,
+        "std_ms": 9.3,
+        "in_tokens": 267,
+        "out_tokens": 180,
+        "tps": 51.0,
+        "grounding_pct": 100.0,
+        "sample_snippet": "Thank you for notifying us of the issue. We understand the urgency of this situation. Based on our records, your service is under the TELCO-"
+      },
+      "S5_Jev_Gemini": {
+        "median_ms": 2068.0,
+        "mean_ms": 2959.2,
+        "std_ms": 1543.7,
+        "in_tokens": 280,
+        "out_tokens": 190.7,
+        "tps": 76.0,
+        "grounding_pct": 50.0,
+        "sample_snippet": "Thank you for reporting this issue. A blinking red LOS (Loss of Signal) light confirms that the physical fiber line has been compromised."
+      },
+      "S6_Ctrl_Gemini": {
+        "median_ms": 1903.3,
+        "mean_ms": 1906.6,
+        "std_ms": 120.1,
+        "in_tokens": 260,
+        "out_tokens": 187.3,
+        "tps": 99.0,
+        "grounding_pct": 50.0,
+        "sample_snippet": "Thank you for contacting Apex Telecom. We apologize for the disruption caused by the severed fiber drop cable. Because this involves physica"
+      }
+    }
+  },
+  "Mid_Long": {
+    "query_level": "Mid",
+    "kb_level": "Long",
+    "streams": {
+      "S1_Jev_Qwen1.7B": {
+        "median_ms": 959.0,
+        "mean_ms": 1174.9,
+        "std_ms": 374.7,
+        "in_tokens": 307,
+        "out_tokens": 59.3,
+        "tps": 52.0,
+        "grounding_pct": 22.2,
+        "sample_snippet": "- Dispatch an emergency outside plant technician under ticket code GPON-OUTAGE-L3   - Initiate a service credit claim if the outage exceeds"
+      },
+      "S2_Ctrl_Qwen1.7B": {
+        "median_ms": 1384.6,
+        "mean_ms": 1385.3,
+        "std_ms": 7.4,
+        "in_tokens": 288,
+        "out_tokens": 71.3,
+        "tps": 52.4,
+        "grounding_pct": 16.7,
+        "sample_snippet": "- Dispatch an emergency outside plant technician under ticket code GPON-OUTAGE-L3.   - Report the outage immediately to ensure timely resolu"
+      },
+      "S3_Jev_Qwen7B": {
+        "median_ms": 1962.4,
+        "mean_ms": 1965.5,
+        "std_ms": 7.5,
+        "in_tokens": 305,
+        "out_tokens": 100,
+        "tps": 51.5,
+        "grounding_pct": 16.7,
+        "sample_snippet": "Thank you for reaching out. I understand that your fiber optic drop cable has been severed, causing an internet outage. Here\u2019s what we will"
+      },
+      "S4_Ctrl_Qwen7B": {
+        "median_ms": 3073.0,
+        "mean_ms": 3072.9,
+        "std_ms": 3.8,
+        "in_tokens": 286,
+        "out_tokens": 155.7,
+        "tps": 51.0,
+        "grounding_pct": 16.7,
+        "sample_snippet": "Thank you for reaching out. I understand that your fiber optic drop cable has been severed, causing an internet outage. This situation requi"
+      },
+      "S5_Jev_Gemini": {
+        "median_ms": 2011.5,
+        "mean_ms": 5793.4,
+        "std_ms": 6582.8,
+        "in_tokens": 297,
+        "out_tokens": 216,
+        "tps": 77.6,
+        "grounding_pct": 33.3,
+        "sample_snippet": "Thank you for contacting Apex Telecom. We apologize for the disruption caused by the severed fiber line.   Here are the details and next ste"
+      },
+      "S6_Ctrl_Gemini": {
+        "median_ms": 2110.1,
+        "mean_ms": 2866.8,
+        "std_ms": 1497.4,
+        "in_tokens": 277,
+        "out_tokens": 209.3,
+        "tps": 83.5,
+        "grounding_pct": 33.3,
+        "sample_snippet": "We apologize for the disruption caused by this severed fiber line. Because a blinking red LOS (Loss of Signal) light confirms a physical bre"
+      }
+    }
+  },
+  "Long_Short": {
+    "query_level": "Long",
+    "kb_level": "Short",
+    "streams": {
+      "S1_Jev_Qwen1.7B": {
+        "median_ms": 1566.6,
+        "mean_ms": 1543.4,
+        "std_ms": 61.4,
+        "in_tokens": 272,
+        "out_tokens": 80,
+        "tps": 52.9,
+        "grounding_pct": 0.0,
+        "sample_snippet": "- **Issue Description**: Fiber internet service went completely dead 45 minutes ago due to municipal excavation, resulting in a severed fibe"
+      },
+      "S2_Ctrl_Qwen1.7B": {
+        "median_ms": 2360.3,
+        "mean_ms": 2367.3,
+        "std_ms": 18.0,
+        "in_tokens": 253,
+        "out_tokens": 119.3,
+        "tps": 51.1,
+        "grounding_pct": 33.3,
+        "sample_snippet": "- **Issue Description**: Fiber internet service went completely dead 45 minutes ago due to municipal excavation, resulting in a severed fibe"
+      },
+      "S3_Jev_Qwen7B": {
+        "median_ms": 1575.1,
+        "mean_ms": 1580.3,
+        "std_ms": 16.4,
+        "in_tokens": 270,
+        "out_tokens": 80,
+        "tps": 51.6,
+        "grounding_pct": 0.0,
+        "sample_snippet": "Thank you for reaching out and for your patience. We understand the urgency of this situation for your home business. Based on the informati"
+      },
+      "S4_Ctrl_Qwen7B": {
+        "median_ms": 2891.6,
+        "mean_ms": 2786.0,
+        "std_ms": 183.5,
+        "in_tokens": 251,
+        "out_tokens": 141,
+        "tps": 51.1,
+        "grounding_pct": 0.0,
+        "sample_snippet": "Thank you for reaching out and for your patience. Based on the information provided, it appears that the issue is related to an outside drop"
+      },
+      "S5_Jev_Gemini": {
+        "median_ms": 2153.0,
+        "mean_ms": 2156.9,
+        "std_ms": 247.9,
+        "in_tokens": 261,
+        "out_tokens": 212.7,
+        "tps": 99.3,
+        "grounding_pct": 44.4,
+        "sample_snippet": "Thank you for contacting Apex Telecom. We apologize for the disruption caused by the municipal construction, and we understand the urgency o"
+      },
+      "S6_Ctrl_Gemini": {
+        "median_ms": 2116.9,
+        "mean_ms": 2150.4,
+        "std_ms": 126.5,
+        "in_tokens": 241,
+        "out_tokens": 233,
+        "tps": 108.5,
+        "grounding_pct": 33.3,
+        "sample_snippet": "Thank you for reaching out and providing those specific details.   A flashing red LOS (Loss of Signal) light confirms that your Optical Netw"
+      }
+    }
+  },
+  "Long_Mid": {
+    "query_level": "Long",
+    "kb_level": "Mid",
+    "streams": {
+      "S1_Jev_Qwen1.7B": {
+        "median_ms": 1563.4,
+        "mean_ms": 1578.8,
+        "std_ms": 28.7,
+        "in_tokens": 352,
+        "out_tokens": 80,
+        "tps": 51.9,
+        "grounding_pct": 0.0,
+        "sample_snippet": "- **Issue Description**: Fiber internet service completely went dead 45 minutes ago due to municipal excavation. Physical fiber severance oc"
+      },
+      "S2_Ctrl_Qwen1.7B": {
+        "median_ms": 565.6,
+        "mean_ms": 581.5,
+        "std_ms": 32.0,
+        "in_tokens": 333,
+        "out_tokens": 86,
+        "tps": 153.8,
+        "grounding_pct": 50.0,
+        "sample_snippet": "- The fiber drop cable was severed by municipal excavation crews, requiring immediate emergency dispatch of an outside plant splice crew."
+      },
+      "S3_Jev_Qwen7B": {
+        "median_ms": 1570.3,
+        "mean_ms": 1596.8,
+        "std_ms": 46.3,
+        "in_tokens": 350,
+        "out_tokens": 80,
+        "tps": 51.4,
+        "grounding_pct": 0.0,
+        "sample_snippet": "Thank you for reaching out and for your patience. We understand the urgency of this situation for your home business. Here\u2019s what we will do"
+      },
+      "S4_Ctrl_Qwen7B": {
+        "median_ms": 3536.3,
+        "mean_ms": 3552.8,
+        "std_ms": 30.4,
+        "in_tokens": 331,
+        "out_tokens": 180,
+        "tps": 51.1,
+        "grounding_pct": 50.0,
+        "sample_snippet": "Thank you for reaching out and for the detailed information. Based on the situation you've described, here are the steps we will take:  - **"
+      },
+      "S5_Jev_Gemini": {
+        "median_ms": 1914.3,
+        "mean_ms": 1926.9,
+        "std_ms": 127.3,
+        "in_tokens": 343,
+        "out_tokens": 216,
+        "tps": 112.4,
+        "grounding_pct": 58.3,
+        "sample_snippet": "Thank you for contacting Apex Telecom. We sincerely apologize for the disruption to your home business. A blinking red LOS (Loss of Signal)"
+      },
+      "S6_Ctrl_Gemini": {
+        "median_ms": 1906.0,
+        "mean_ms": 2021.5,
+        "std_ms": 267.9,
+        "in_tokens": 323,
+        "out_tokens": 222.3,
+        "tps": 111.2,
+        "grounding_pct": 50.0,
+        "sample_snippet": "Dear Customer,  Thank you for contacting Apex Telecom. We apologize for the disruption to your home business caused by the municipal excavat"
+      }
+    }
+  },
+  "Long_Long": {
+    "query_level": "Long",
+    "kb_level": "Long",
+    "streams": {
+      "S1_Jev_Qwen1.7B": {
+        "median_ms": 1553.4,
+        "mean_ms": 1543.7,
+        "std_ms": 18.9,
+        "in_tokens": 371,
+        "out_tokens": 80,
+        "tps": 52.5,
+        "grounding_pct": 0.0,
+        "sample_snippet": "- **Issue Description**: Fiber internet service completely went dead 45 minutes ago due to municipal excavation, with the fiber drop cable s"
+      },
+      "S2_Ctrl_Qwen1.7B": {
+        "median_ms": 884.8,
+        "mean_ms": 891.2,
+        "std_ms": 14.5,
+        "in_tokens": 352,
+        "out_tokens": 134.7,
+        "tps": 153.0,
+        "grounding_pct": 16.7,
+        "sample_snippet": "- **Issue Description**: Fiber internet service completely went dead 45 minutes ago due to municipal excavation, with the physical fiber dro"
+      },
+      "S3_Jev_Qwen7B": {
+        "median_ms": 1571.4,
+        "mean_ms": 1571.1,
+        "std_ms": 0.9,
+        "in_tokens": 369,
+        "out_tokens": 80,
+        "tps": 51.6,
+        "grounding_pct": 0.0,
+        "sample_snippet": "Thank you for reaching out and for your patience. We apologize for the inconvenience caused by the recent excavation work. Based on the info"
+      },
+      "S4_Ctrl_Qwen7B": {
+        "median_ms": 3542.6,
+        "mean_ms": 3552.8,
+        "std_ms": 18.6,
+        "in_tokens": 350,
+        "out_tokens": 180,
+        "tps": 51.1,
+        "grounding_pct": 16.7,
+        "sample_snippet": "Thank you for reaching out and for your patience. Based on the information provided, it appears that a physical drop severance has occurred,"
+      },
+      "S5_Jev_Gemini": {
+        "median_ms": 1978.8,
+        "mean_ms": 2083.2,
+        "std_ms": 232.3,
+        "in_tokens": 360,
+        "out_tokens": 216,
+        "tps": 104.5,
+        "grounding_pct": 44.4,
+        "sample_snippet": "Thank you for reaching out and providing those specific details. A rapidly blinking red LOS (Loss of Signal) light confirms that your ONT is"
+      },
+      "S6_Ctrl_Gemini": {
+        "median_ms": 2094.6,
+        "mean_ms": 2446.0,
+        "std_ms": 634.1,
+        "in_tokens": 340,
+        "out_tokens": 288,
+        "tps": 121.6,
+        "grounding_pct": 44.4,
+        "sample_snippet": "Dear Valued Customer,  Thank you for contacting Apex Telecom. We sincerely apologize for the service disruption caused by the municipal exca"
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+# Environment variables & secrets (NEVER COMMIT)
+.env
+*.env
+.env.*
+!.env.example
+
+# Python cache & bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE & Editor caches
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Large local vector indexes or model checkpoints
+*.gguf
+*.bin
+knowledge_base/lancedb/
+knowledge_base/markdown/
+knowledge_base/parquet/
+*.parquet
+Docs/paper_preview.html
+scratch_*.py
+scratch/

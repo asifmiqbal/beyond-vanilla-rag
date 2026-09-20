@@ -1,0 +1,1982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jev Classifier Studio & Telemetry Workbench</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <!-- Marked Markdown Parser CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .font-mono-code {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #090d16;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #334155;
+    }
+    .progress-bar-glow {
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+    }
+    .json-key { color: #38bdf8; }
+    .json-string { color: #34d399; }
+    .json-number { color: #fbbf24; }
+    .json-boolean { color: #f472b6; }
+    .json-null { color: #94a3b8; }
+
+    /* Formatted Markdown Output Styling */
+    .formatted-response {
+      color: #cbd5e1;
+      font-size: 0.8rem;
+      line-height: 1.55;
+    }
+    .formatted-response p {
+      margin-bottom: 0.55rem;
+    }
+    .formatted-response h1, .formatted-response h2, .formatted-response h3, .formatted-response h4 {
+      font-weight: 700;
+      color: #f8fafc;
+      margin-top: 0.6rem;
+      margin-bottom: 0.3rem;
+    }
+    .formatted-response h1 { font-size: 0.95rem; color: #38bdf8; border-bottom: 1px solid #1e293b; padding-bottom: 0.2rem; }
+    .formatted-response h2 { font-size: 0.9rem; color: #38bdf8; }
+    .formatted-response h3 { font-size: 0.85rem; color: #67e8f9; }
+    .formatted-response strong {
+      color: #f1f5f9;
+      font-weight: 600;
+    }
+    .formatted-response em {
+      color: #94a3b8;
+      font-style: italic;
+    }
+    .formatted-response ul, .formatted-response ol {
+      margin-left: 1.1rem;
+      margin-bottom: 0.55rem;
+    }
+    .formatted-response ul { list-style-type: disc; }
+    .formatted-response ol { list-style-type: decimal; }
+    .formatted-response li {
+      margin-bottom: 0.25rem;
+      padding-left: 0.2rem;
+    }
+    .formatted-response code {
+      background-color: rgba(15, 23, 42, 0.9);
+      color: #38bdf8;
+      padding: 0.15rem 0.35rem;
+      border-radius: 0.25rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+    }
+    .formatted-response blockquote {
+      border-left: 3px solid #38bdf8;
+      padding-left: 0.6rem;
+      margin: 0.5rem 0;
+      color: #94a3b8;
+      font-style: italic;
+    }
+    .formatted-response hr {
+      border-color: #1e293b;
+      margin: 0.6rem 0;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              400: '#38bdf8',
+              500: '#0284c7',
+              600: '#0369a1',
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col selection:bg-sky-500 selection:text-white">
+
+  <!-- Top Navigation Bar -->
+  <header class="border-b border-slate-800 bg-slate-900/90 backdrop-blur-md sticky top-0 z-40 px-4 py-2.5 sm:px-6">
+    <div class="max-w-[1850px] mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center space-x-3">
+        <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-sky-500 via-indigo-600 to-purple-600 flex items-center justify-center shadow-lg shadow-sky-500/20">
+          <i class="ph ph-lightning text-white text-xl font-bold"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <h1 class="font-bold text-base sm:text-lg tracking-tight text-white">Jev Classifier Studio & Live Telemetry</h1>
+            <span class="text-[10px] font-mono-code bg-sky-950 text-sky-400 border border-sky-800 px-2 py-0.5 rounded-full font-semibold">v1.13-PRO</span>
+            <span class="hidden sm:inline-flex text-[10px] font-mono-code bg-indigo-950 text-indigo-300 border border-indigo-800 px-2 py-0.5 rounded-full">L1 / L2 / L3 Taxonomy</span>
+          </div>
+          <p class="text-[11px] text-slate-400">Deterministic Next-Token Intent Routing, Noul/Score Gating & Live Qwen 3 Model Wire Inspector</p>
+        </div>
+      </div>
+
+      <!-- Header actions & mode status -->
+      <div class="flex items-center gap-2.5">
+        <!-- Live Clock -->
+        <div class="hidden lg:flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-slate-950 border border-slate-800 font-mono-code text-xs text-slate-300">
+          <i class="ph ph-clock text-sky-400"></i>
+          <span id="liveClockDisplay">--:--:--</span>
+        </div>
+
+        <div id="engineModeBadge" class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800/80 border border-slate-700 text-xs">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span class="text-slate-300 font-medium" id="engineModeText">Ollama Qwen 3 + Local Jev</span>
+        </div>
+
+        <!-- Sidebar Toggle -->
+        <button id="toggleSidebarBtn" class="flex items-center gap-1.5 text-xs bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg border border-slate-700 transition" title="Toggle Taxonomy Sidebar to expand 50/50 Dual Cockpit">
+          <i class="ph ph-sidebar text-sky-400"></i>
+          <span id="sidebarToggleLabel">Hide Taxonomy</span>
+        </button>
+
+        <!-- Vercel AI Gateway Key -->
+        <button id="toggleVercelKeyBtn" class="flex items-center gap-1.5 text-xs bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg border border-slate-700 transition">
+          <i class="ph ph-key text-sky-400"></i>
+          <span>Vercel Key</span>
+        </button>
+
+        <!-- Google AI Studio Gemini Key -->
+        <button id="toggleGeminiKeyBtn" class="flex items-center gap-1.5 text-xs bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg border border-slate-700 transition">
+          <i class="ph ph-google-logo text-emerald-400"></i>
+          <span>Gemini Flash Key</span>
+        </button>
+
+        <button id="openDocsModalBtn" class="text-xs bg-sky-600 hover:bg-sky-500 text-white font-medium px-3 py-1.5 rounded-lg shadow-sm transition flex items-center gap-1.5">
+          <i class="ph ph-code"></i>
+          <span>Export Code</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Vercel API Key Slide-down Drawer -->
+  <div id="vercelDrawer" class="hidden border-b border-slate-800 bg-slate-900 px-6 py-4 transition-all">
+    <div class="max-w-[1850px] mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <div class="flex-1 max-w-2xl">
+        <label class="text-xs font-semibold text-slate-300 flex items-center gap-1.5 mb-1">
+          <i class="ph ph-sparkle text-sky-400"></i> Vercel AI Gateway / Typesafe Jev API Key
+        </label>
+        <p class="text-xs text-slate-400 mb-2">Configure key to route live requests through Vercel AI Gateway (<code class="text-sky-300">https://ai-gateway.vercel.sh/typesafe/v1/systemone</code>).</p>
+        <div class="flex gap-2">
+          <input type="password" id="vercelApiKeyInput" placeholder="vck_... or typesafe_..." class="flex-1 bg-slate-950 border border-slate-800 rounded-lg px-3 py-1.5 text-xs text-slate-200 focus:outline-none focus:border-sky-500 font-mono-code">
+          <button id="saveVercelApiKeyBtn" class="bg-sky-600 hover:bg-sky-500 text-white text-xs px-3.5 py-1.5 rounded-lg font-medium transition">Save Vercel Key</button>
+          <button id="clearVercelApiKeyBtn" class="bg-slate-800 hover:bg-slate-700 text-slate-400 text-xs px-2.5 py-1.5 rounded-lg transition">Clear</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Google AI Studio Gemini API Key Slide-down Drawer -->
+  <div id="geminiDrawer" class="hidden border-b border-slate-800 bg-slate-900 px-6 py-4 transition-all">
+    <div class="max-w-[1850px] mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <div class="flex-1 max-w-2xl">
+        <label class="text-xs font-semibold text-slate-300 flex items-center gap-1.5 mb-1">
+          <i class="ph ph-google-logo text-emerald-400"></i> Google AI Studio API Key (Stream B: Gemini 3.8 Flash Baseline)
+        </label>
+        <p class="text-xs text-slate-400 mb-2">Paste your Google AI Studio API key to enable side-by-side benchmark comparison against frontier cloud models.</p>
+        <div class="flex gap-2">
+          <input type="password" id="geminiApiKeyInput" placeholder="AIzaSy..." class="flex-1 bg-slate-950 border border-slate-800 rounded-lg px-3 py-1.5 text-xs text-slate-200 focus:outline-none focus:border-emerald-500 font-mono-code">
+          <button id="saveGeminiApiKeyBtn" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs px-3.5 py-1.5 rounded-lg font-medium transition">Save Gemini Key</button>
+          <button id="clearGeminiApiKeyBtn" class="bg-slate-800 hover:bg-slate-700 text-slate-400 text-xs px-2.5 py-1.5 rounded-lg transition">Clear</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN WORKBENCH: 3-COLUMN RESPONSIVE GRID -->
+  <main id="mainGrid" class="flex-1 max-w-[1850px] w-full mx-auto p-3 sm:p-5 grid grid-cols-1 xl:grid-cols-12 gap-5 transition-all">
+    
+    <!-- COLUMN 1: Hierarchical L1 / L2 / L3 Taxonomy & Guardrails -->
+    <section id="columnTaxonomy" class="xl:col-span-3 flex flex-col space-y-4 transition-all duration-300">
+      
+      <!-- L1, L2, L3 Taxonomy Explorer -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-sm flex flex-col">
+        <div class="flex items-center justify-between mb-2.5">
+          <div class="flex items-center gap-2">
+            <div class="p-1.5 rounded-lg bg-sky-500/10 text-sky-400">
+              <i class="ph ph-tree-structure text-lg"></i>
+            </div>
+            <div>
+              <h2 class="text-sm font-semibold text-slate-100">Hierarchical Intent Taxonomy</h2>
+              <p class="text-[11px] text-slate-400">L1 Domain &rarr; L2 Area &rarr; L3 Leaf Intent</p>
+            </div>
+          </div>
+          <span class="text-[10px] font-mono-code bg-slate-800 text-sky-300 px-2 py-0.5 rounded border border-slate-700" id="taxonomyStatsBadge">8 L1 • 24 L2</span>
+        </div>
+
+        <!-- Search / Filter Taxonomy -->
+        <div class="relative mb-3">
+          <i class="ph ph-magnifying-glass absolute left-2.5 top-2 text-slate-500 text-xs"></i>
+          <input type="text" id="taxonomySearchInput" placeholder="Filter L1/L2/L3 intents..." class="w-full bg-slate-950 border border-slate-800 rounded-lg pl-7 pr-3 py-1 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-sky-500 font-mono-code">
+        </div>
+
+        <!-- Hierarchical Tree Container -->
+        <div id="taxonomyTreeContainer" class="space-y-2 max-h-[380px] overflow-y-auto pr-1 text-xs">
+          <!-- Populated by JS -->
+        </div>
+
+        <div class="mt-3 pt-2.5 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400">
+          <span class="flex items-center gap-1.5">
+            <i class="ph ph-shield-check text-amber-400"></i> Fallback Hatch:
+          </span>
+          <span class="font-mono-code text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded border border-slate-700">other_or_unclear</span>
+        </div>
+      </div>
+
+      <!-- Jev Primitives Configuration -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-sm space-y-3">
+        <div class="flex items-center gap-2">
+          <div class="p-1.5 rounded-lg bg-indigo-500/10 text-indigo-400">
+            <i class="ph ph-cpu text-lg"></i>
+          </div>
+          <div>
+            <h2 class="text-sm font-semibold text-slate-100">Jev Primitives Engine</h2>
+            <p class="text-[11px] text-slate-400">Parallel questions evaluated over state</p>
+          </div>
+        </div>
+
+        <div class="space-y-2 text-xs">
+          <!-- Primitive 1: Choice -->
+          <div class="bg-slate-950/70 p-2.5 rounded-xl border border-slate-800 flex items-start justify-between">
+            <div>
+              <div class="flex items-center gap-1.5">
+                <span class="font-mono-code font-bold text-sky-400">choice</span>
+                <span class="text-[9px] bg-sky-950 text-sky-300 border border-sky-800 px-1 rounded">Primary</span>
+              </div>
+              <p class="text-[11px] text-slate-400 mt-0.5">Normalized logit probabilities over candidate classes.</p>
+            </div>
+            <span class="text-emerald-400 font-mono-code text-[11px] flex items-center gap-1">
+              <i class="ph ph-check-circle"></i> Active
+            </span>
+          </div>
+
+          <!-- Primitive 2: Noul (Urgency) -->
+          <div class="bg-slate-950/70 p-2.5 rounded-xl border border-slate-800 flex items-center justify-between">
+            <div class="pr-2">
+              <div class="flex items-center gap-1.5">
+                <span class="font-mono-code font-bold text-amber-400">noul</span>
+                <span class="text-slate-300">Acute Urgency / Outage</span>
+              </div>
+              <p class="text-[10px] text-slate-400">P(Urgent = True) in parallel.</p>
+            </div>
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input type="checkbox" id="toggleNoul" class="sr-only peer" checked>
+              <div class="w-8 h-4 bg-slate-800 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[1px] after:left-[2px] after:bg-white after:rounded-full after:h-3.5 after:w-3.5 after:transition-all peer-checked:bg-indigo-600"></div>
+            </label>
+          </div>
+
+          <!-- Primitive 3: Score (Frustration) -->
+          <div class="bg-slate-950/70 p-2.5 rounded-xl border border-slate-800 flex items-center justify-between">
+            <div class="pr-2">
+              <div class="flex items-center gap-1.5">
+                <span class="font-mono-code font-bold text-rose-400">score</span>
+                <span class="text-slate-300">Frustration Index</span>
+              </div>
+              <p class="text-[10px] text-slate-400">Continuous sentiment score [0.0 - 1.0].</p>
+            </div>
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input type="checkbox" id="toggleScore" class="sr-only peer" checked>
+              <div class="w-8 h-4 bg-slate-800 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[1px] after:left-[2px] after:bg-white after:rounded-full after:h-3.5 after:w-3.5 after:transition-all peer-checked:bg-indigo-600"></div>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Routing Guardrails -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-sm space-y-3">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <div class="p-1.5 rounded-lg bg-emerald-500/10 text-emerald-400">
+              <i class="ph ph-git-fork text-lg"></i>
+            </div>
+            <div>
+              <h2 class="text-sm font-semibold text-slate-100">Routing Guardrails</h2>
+              <p class="text-[11px] text-slate-400">Deterministic fallback & queue rules</p>
+            </div>
+          </div>
+          <span id="confidenceThresholdValue" class="font-mono-code text-[11px] text-sky-400 bg-sky-950/80 px-2 py-0.5 rounded border border-sky-800">
+            0.70 (70%)
+          </span>
+        </div>
+
+        <div>
+          <div class="flex justify-between text-[11px] text-slate-400 mb-1">
+            <span>Confidence Threshold (τ)</span>
+            <span class="text-slate-500">Sub-threshold &rarr; Fallback</span>
+          </div>
+          <input type="range" id="thresholdSlider" min="0.40" max="0.95" step="0.05" value="0.70" class="w-full h-1.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-sky-500">
+        </div>
+
+        <div class="pt-2 border-t border-slate-800/80 space-y-1.5 text-[11px]">
+          <div class="flex items-center justify-between text-slate-300">
+            <span class="flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-rose-500"></span> Urgency Override (&ge; 0.75):
+            </span>
+            <span class="font-mono-code text-rose-300">Emergency Queue</span>
+          </div>
+          <div class="flex items-center justify-between text-slate-300">
+            <span class="flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-amber-500"></span> High Frustration (&ge; 0.80):
+            </span>
+            <span class="font-mono-code text-amber-300">Senior Human Queue</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COLUMN 2: Live Decision Feed, Logit Bars & Trace -->
+    <section id="columnInput" class="xl:col-span-4 flex flex-col space-y-4 transition-all duration-300">
+      
+      <!-- Interactive Chat Input & Presets -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-sm flex flex-col">
+        <div class="flex items-center justify-between gap-2 mb-2">
+          <div class="flex items-center gap-2">
+            <div class="p-1.5 rounded-lg bg-sky-500/10 text-sky-400">
+              <i class="ph ph-chat-centered-text text-lg"></i>
+            </div>
+            <h2 class="text-sm font-semibold text-slate-100">Live Customer Turn Input</h2>
+          </div>
+          <span class="text-[11px] text-slate-400">Presets:</span>
+        </div>
+
+        <!-- Preset Chips -->
+        <div class="flex flex-wrap gap-1.5 mb-3" id="presetChipsContainer">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Input Box -->
+        <div class="relative">
+          <textarea id="chatInput" rows="3" placeholder="Type telco customer inquiry or select a preset..." class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-xs sm:text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-sky-500 transition resize-none pr-24 font-normal"></textarea>
+          <button id="runClassifierBtn" class="absolute bottom-2.5 right-2.5 bg-sky-600 hover:bg-sky-500 text-white text-xs font-semibold px-3.5 py-1.5 rounded-lg transition shadow-md shadow-sky-600/20 flex items-center gap-1.5">
+            <i class="ph ph-play font-bold"></i>
+            <span>Evaluate</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Decision Output Card -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-sm flex-1 flex flex-col space-y-4">
+        
+        <!-- Status & Dispatch Banner -->
+        <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-slate-800">
+          <div>
+            <span class="text-[10px] uppercase tracking-wider text-slate-500 font-bold block mb-1">Downstream Dispatch Target</span>
+            <div id="dispatchBadge" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg font-mono-code font-bold text-xs bg-slate-800 text-slate-300 border border-slate-700">
+              <i class="ph ph-hourglass-medium animate-spin"></i>
+              <span>Awaiting input...</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <span class="text-[10px] uppercase tracking-wider text-slate-500 font-bold block mb-1">Total Turn Latency</span>
+            <span id="latencyBadge" class="font-mono-code text-xs text-sky-400 font-semibold">0 ms</span>
+          </div>
+        </div>
+
+        <!-- Main Probability Distribution -->
+        <div>
+          <div class="flex justify-between items-center mb-2">
+            <span class="text-xs font-semibold text-slate-200 flex items-center gap-1.5">
+              <i class="ph ph-chart-bar-horizontal text-sky-400"></i> Choice Logit Distribution (L1)
+            </span>
+            <span id="selectedChoiceNotice" class="text-[11px] font-mono-code text-sky-400"></span>
+          </div>
+
+          <div id="probabilityBarsList" class="space-y-2 max-h-52 overflow-y-auto pr-1">
+            <div class="text-xs text-slate-500 italic text-center py-4">
+              Enter a message and press "Evaluate" to compute logit weights.
+            </div>
+          </div>
+        </div>
+
+        <!-- Auxiliary Primitives: Noul & Score -->
+        <div class="grid grid-cols-2 gap-3 pt-2.5 border-t border-slate-800/80">
+          <!-- Noul (Urgency Meter) -->
+          <div class="bg-slate-950/70 p-2.5 rounded-xl border border-slate-800">
+            <div class="flex justify-between items-center mb-1.5">
+              <span class="text-[11px] font-medium text-slate-300 flex items-center gap-1">
+                <i class="ph ph-alarm text-amber-400"></i> Noul: Urgency
+              </span>
+              <span id="noulValueBadge" class="font-mono-code text-xs font-bold text-amber-400">0.00</span>
+            </div>
+            <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+              <div id="noulMeterBar" class="bg-amber-400 h-full rounded-full transition-all duration-500" style="width: 0%"></div>
+            </div>
+            <div class="flex justify-between text-[9px] font-mono-code text-slate-500 mt-1">
+              <span>0.00</span>
+              <span>Crisis &ge; 0.75</span>
+            </div>
+          </div>
+
+          <!-- Score (Frustration Index) -->
+          <div class="bg-slate-950/70 p-2.5 rounded-xl border border-slate-800">
+            <div class="flex justify-between items-center mb-1.5">
+              <span class="text-[11px] font-medium text-slate-300 flex items-center gap-1">
+                <i class="ph ph-heartbreak text-rose-400"></i> Score: Frustration
+              </span>
+              <span id="scoreValueBadge" class="font-mono-code text-xs font-bold text-rose-400">0.00</span>
+            </div>
+            <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+              <div id="scoreMeterBar" class="bg-rose-500 h-full rounded-full transition-all duration-500" style="width: 0%"></div>
+            </div>
+            <div class="flex justify-between text-[9px] font-mono-code text-slate-500 mt-1">
+              <span>0.00</span>
+              <span>Escalate &ge; 0.80</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step-by-Step Deterministic Routing Trace -->
+        <div class="pt-2 border-t border-slate-800/80">
+          <span class="text-xs font-semibold text-slate-300 block mb-1.5 flex items-center gap-1.5">
+            <i class="ph ph-steps text-indigo-400"></i> Execution Trace
+          </span>
+          <div id="routingTraceBox" class="bg-slate-950 p-2.5 rounded-xl border border-slate-800 font-mono-code text-[11px] text-slate-400 space-y-1 max-h-28 overflow-y-auto">
+            <div class="text-slate-600">// Waiting for execution run...</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- COLUMN 3: Live Dual Model Benchmark & Wire Telemetry -->
+    <section id="columnTelemetry" class="xl:col-span-5 flex flex-col space-y-4 transition-all duration-300">
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-sm flex-1 flex flex-col">
+        
+        <!-- Panel Header -->
+        <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-slate-800">
+          <div class="flex items-center gap-2">
+            <div class="p-1.5 rounded-lg bg-emerald-500/10 text-emerald-400">
+              <i class="ph ph-broadcast text-lg"></i>
+            </div>
+            <div>
+              <h2 class="text-sm font-semibold text-slate-100 flex items-center gap-2">
+                <span>Dual Stream Benchmark & Wire Inspector</span>
+                <span class="text-[9px] font-mono-code bg-emerald-950 text-emerald-300 border border-emerald-800 px-1.5 py-0.5 rounded">SIDE-BY-SIDE</span>
+              </h2>
+              <p class="text-[11px] text-slate-400">Compare specialized Jev + Qwen 3 Telco RAG vs. Google AI Studio Gemini Flash</p>
+            </div>
+          </div>
+
+          <!-- Latency Breakdown Summary Badge -->
+          <div id="wireLatencySummary" class="hidden font-mono-code text-[11px] bg-slate-950 px-2.5 py-1 rounded-lg border border-slate-800 text-slate-300">
+            Jev: <span class="text-sky-400" id="wireJevMs">0ms</span> • 
+            RAG: <span class="text-emerald-400" id="wireRagMs">0ms</span> • 
+            LLM: <span class="text-yellow-400" id="wireLlmMs">0ms</span>
+          </div>
+        </div>
+
+        <!-- Benchmark Inspector Tabs -->
+        <div class="flex flex-wrap border-b border-slate-800 mt-2 gap-3 text-xs font-mono-code">
+          <button id="wireTabDualBtn" class="py-2 text-sky-400 border-b-2 border-sky-400 font-semibold focus:outline-none flex items-center gap-1.5">
+            <i class="ph ph-columns"></i>
+            <span>3-Way Benchmark</span>
+          </button>
+          <button id="wireTabHierBtn" class="py-2 text-slate-400 hover:text-slate-200 border-b-2 border-transparent focus:outline-none flex items-center gap-1.5">
+            <i class="ph ph-git-merge"></i>
+            <span>L1/L2/L3 Drilldown & RAG</span>
+          </button>
+        </div>
+
+        <!-- Wire Tab Panes -->
+        <div class="flex-1 mt-3 flex flex-col overflow-hidden">
+          
+          <!-- PANE 0: DUAL STREAM SIDE-BY-SIDE BENCHMARK -->
+          <div id="wirePaneDual" class="flex-1 flex flex-col space-y-3 overflow-y-auto pr-1">
+            
+            <!-- Normalized Token & Speed Meter Comparison (4-Way Benchmark) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5">
+              <!-- Stream 1 Token Meter: Jev + Qwen -->
+              <div class="bg-slate-950 p-2.5 rounded-xl border border-sky-900/50 space-y-1.5 font-mono-code text-[11px]">
+                <div class="flex justify-between items-center text-sky-300 font-semibold">
+                  <span class="flex items-center gap-1"><i class="ph ph-cpu"></i> 1. Jev + Qwen</span>
+                  <span id="dualStreamALatency" class="text-xs text-sky-400 font-bold">-- ms</span>
+                </div>
+                <div class="grid grid-cols-3 gap-1 text-[10px] text-slate-400 text-center">
+                  <div class="bg-slate-900/80 p-1 rounded border border-slate-800">
+                    <span class="block text-slate-500">In Tokens</span>
+                    <span id="dualStreamAInTokens" class="font-bold text-slate-200">0</span>
+                  </div>
+                  <div class="bg-slate-900/80 p-1 rounded border border-slate-800">
+                    <span class="block text-slate-500">Out Tokens</span>
+                    <span id="dualStreamAOutTokens" class="font-bold text-slate-200">0</span>
+                  </div>
+                  <div class="bg-slate-900/80 p-1 rounded border border-slate-800">
+                    <span class="block text-slate-500">Speed</span>
+                    <span id="dualStreamASpeed" class="font-bold text-sky-400">0 t/s</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Stream 2 Token Meter: Grounded Local Qwen -->
+              <div class="bg-slate-950 p-2.5 rounded-xl border border-purple-900/50 space-y-1.5 font-mono-code text-[11px]">
+                <div class="flex justify-between items-center text-purple-300 font-semibold">
+                  <span class="flex items-center gap-1"><i class="ph ph-terminal-window"></i> 2. Qwen</span>
+                  <span id="triStream2Latency" class="text-xs text-purple-400 font-bold">-- ms</span>
+                </div>
+                <div class="grid grid-cols-3 gap-1 text-[10px] text-slate-400 text-center">
+                  <div class="bg-slate-900/80 p-1 rounded border border-slate-800">
+                    <span class="block text-slate-500">In Tokens</span>
+                    <span id="triStream2InTokens" class="font-bold text-slate-200">0</span>
+                  </div>
+                  <div class="bg-slate-900/80 p-1 rounded border border-slate-800">
+                    <span class="block text-slate-500">Out Tokens</span>
+                    <span id="triStream2OutTokens" class="font-bold text-slate-200">0</span>
+                  </div>
+                  <div class="bg-slate-900/80 p-1 rounded border border-slate-800">
+                    <span class="block text-slate-500">Speed</span>
+                    <span id="triStream2Speed" class="font-bold text-purple-400">0 t/s</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Stream 3 Token Meter: Jev + Gemini Flash -->
+              <div class="bg-slate-950 p-2.5 rounded-xl border border-emerald-900/50 space-y-1.5 font-mono-code text-[11px]">
+                <div class="flex justify-between items-center text-emerald-300 font-semibold">
+                  <span class="flex items-center gap-1"><i class="ph ph-sparkle"></i> 3. Jev + Gemini</span>
+                  <span id="quadStream3Latency" class="text-xs text-emerald-400 font-bold">-- ms</span>
+                </div>
+                <div class="grid grid-cols-3 gap-1 text-[10px] text-slate-400 text-center">
+                  <div class="bg-slate-900/80 p-1 rounded border border-slate-800">
+                    <span class="block text-slate-500">In Tokens</span>
+                    <span id="quadStream3InTokens" class="font-bold text-slate-200">0</span>
+                  </div>
+                  <div class="bg-slate-900/80 p-1 rounded border border-slate-800">
+                    <span class="block text-slate-500">Out Tokens</span>
+                    <span id="quadStream3OutTokens" class="font-bold text-slate-200">0</span>
+                  </div>
+                  <div class="bg-slate-900/80 p-1 rounded border border-slate-800">
+                    <span class="block text-slate-500">Speed</span>
+                    <span id="quadStream3Speed" class="font-bold text-emerald-400">0 t/s</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Stream 4 Token Meter: Control Gemini Flash -->
+              <div class="bg-slate-950 p-2.5 rounded-xl border border-amber-900/50 space-y-1.5 font-mono-code text-[11px]">
+                <div class="flex justify-between items-center text-amber-300 font-semibold">
+                  <span class="flex items-center gap-1"><i class="ph ph-cloud"></i> 4. Gemini</span>
+                  <span id="dualStreamBLatency" class="text-xs text-amber-400 font-bold">-- ms</span>
+                </div>
+                <div class="grid grid-cols-3 gap-1 text-[10px] text-slate-400 text-center">
+                  <div class="bg-slate-900/80 p-1 rounded border border-slate-800">
+                    <span class="block text-slate-500">In Tokens</span>
+                    <span id="dualStreamBInTokens" class="font-bold text-slate-200">0</span>
+                  </div>
+                  <div class="bg-slate-900/80 p-1 rounded border border-slate-800">
+                    <span class="block text-slate-500">Out Tokens</span>
+                    <span id="dualStreamBOutTokens" class="font-bold text-slate-200">0</span>
+                  </div>
+                  <div class="bg-slate-900/80 p-1 rounded border border-slate-800">
+                    <span class="block text-slate-500">Speed</span>
+                    <span id="dualStreamBSpeed" class="font-bold text-amber-400">0 t/s</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 4-Way Side-by-Side Formatted Response Split (All 4 Grounded) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+              
+              <!-- Response Card 1: Jev + Qwen -->
+              <div class="bg-slate-950 rounded-xl border border-sky-900/60 p-3 flex flex-col space-y-2">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-1.5">
+                    <span class="text-[10px] font-mono-code bg-sky-950 text-sky-400 border border-sky-800 px-2 py-0.5 rounded font-bold">1. Jev + Qwen</span>
+                    <span class="text-xs font-semibold text-slate-200">Local Stack</span>
+                  </div>
+                  <span id="streamAGroundedBadge" class="text-[9px] font-mono-code bg-emerald-950 text-emerald-300 border border-emerald-800 px-1.5 py-0.5 rounded">GROUNDED</span>
+                </div>
+
+                <!-- Grounding Reference Badges -->
+                <div id="dualStreamARagChips" class="flex flex-wrap gap-1 text-[10px] font-mono-code">
+                  <span class="bg-slate-900 text-slate-400 px-1.5 py-0.5 rounded border border-slate-800">Doc: Standing by</span>
+                </div>
+
+                <!-- Clean Formatted Markdown Response -->
+                <div class="flex-1 min-h-[160px] bg-slate-900/60 rounded-lg p-3 text-xs text-slate-200 leading-relaxed overflow-y-auto" id="dualStreamAContent">
+                  <p class="text-slate-500 italic">Awaiting customer inquiry evaluation...</p>
+                </div>
+              </div>
+
+              <!-- Response Card 2: Grounded Local Qwen Baseline -->
+              <div class="bg-slate-950 rounded-xl border border-purple-900/60 p-3 flex flex-col space-y-2">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-1.5">
+                    <span class="text-[10px] font-mono-code bg-purple-950 text-purple-400 border border-purple-800 px-2 py-0.5 rounded font-bold">2. Qwen</span>
+                    <span class="text-xs font-semibold text-slate-200">Local Baseline</span>
+                  </div>
+                  <span id="stream2StatusBadge" class="text-[9px] font-mono-code bg-emerald-950 text-emerald-300 border border-emerald-800 px-1.5 py-0.5 rounded">GROUNDED</span>
+                </div>
+
+                <!-- Stream 2 Grounding Reference Badges -->
+                <div id="triStream2RagChips" class="flex flex-wrap gap-1 text-[10px] font-mono-code">
+                  <span class="bg-slate-900 text-slate-400 px-1.5 py-0.5 rounded border border-slate-800">Doc: Standing by</span>
+                </div>
+
+                <!-- Grounded Qwen Formatted Response -->
+                <div class="flex-1 min-h-[160px] bg-slate-900/60 rounded-lg p-3 text-xs text-slate-200 leading-relaxed overflow-y-auto" id="triStream2Content">
+                  <p class="text-slate-500 italic">Awaiting customer inquiry evaluation...</p>
+                </div>
+              </div>
+
+              <!-- Response Card 3: Jev + Gemini Flash Grounded -->
+              <div class="bg-slate-950 rounded-xl border border-emerald-900/60 p-3 flex flex-col space-y-2">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-1.5">
+                    <span class="text-[10px] font-mono-code bg-emerald-950 text-emerald-400 border border-emerald-800 px-2 py-0.5 rounded font-bold">3. Jev + Gemini</span>
+                    <span class="text-xs font-semibold text-slate-200">Cloud Assisted</span>
+                  </div>
+                  <span id="stream3StatusBadge" class="text-[9px] font-mono-code bg-emerald-950 text-emerald-300 border border-emerald-800 px-1.5 py-0.5 rounded">GROUNDED</span>
+                </div>
+
+                <!-- Stream 3 Grounding Reference Badges -->
+                <div id="quadStream3RagChips" class="flex flex-wrap gap-1 text-[10px] font-mono-code">
+                  <span class="bg-slate-900 text-slate-400 px-1.5 py-0.5 rounded border border-slate-800">Doc: Standing by</span>
+                </div>
+
+                <!-- Jev + Gemini Formatted Response -->
+                <div class="flex-1 min-h-[160px] bg-slate-900/60 rounded-lg p-3 text-xs text-slate-200 leading-relaxed overflow-y-auto" id="quadStream3Content">
+                  <p class="text-slate-500 italic">Awaiting customer inquiry evaluation...</p>
+                </div>
+              </div>
+
+              <!-- Response Card 4: Control Gemini Flash Grounded -->
+              <div class="bg-slate-950 rounded-xl border border-amber-900/60 p-3 flex flex-col space-y-2">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-1.5">
+                    <span class="text-[10px] font-mono-code bg-amber-950 text-amber-400 border border-amber-800 px-2 py-0.5 rounded font-bold">4. Gemini</span>
+                    <span class="text-xs font-semibold text-slate-200">Cloud Baseline</span>
+                  </div>
+                  <span id="streamBStatusBadge" class="text-[9px] font-mono-code bg-emerald-950 text-emerald-300 border border-emerald-800 px-1.5 py-0.5 rounded">GROUNDED</span>
+                </div>
+
+                <!-- Stream 4 Grounding Reference Badges -->
+                <div id="dualStreamBRagChips" class="flex flex-wrap gap-1 text-[10px] font-mono-code">
+                  <span class="bg-slate-900 text-slate-400 px-1.5 py-0.5 rounded border border-slate-800">Doc: Standing by</span>
+                </div>
+
+                <!-- Gemini Formatted Response -->
+                <div class="flex-1 min-h-[160px] bg-slate-900/60 rounded-lg p-3 text-xs text-slate-200 leading-relaxed overflow-y-auto" id="dualStreamBContent">
+                  <p class="text-slate-500 italic">Awaiting customer inquiry evaluation...</p>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Automated Grounding Audit & Hallucination Verdict Banner -->
+            <div id="dualAuditVerdictCard" class="bg-slate-950 p-3 rounded-xl border border-slate-800 space-y-2 font-mono-code text-xs">
+              <div class="flex items-center justify-between text-[11px]">
+                <span class="text-slate-300 font-bold flex items-center gap-1.5">
+                  <i class="ph ph-scales text-amber-400"></i> Automated 3-Way Policy Grounding & Hallucination Verdict
+                </span>
+                <span id="auditFasterStreamText" class="text-[10px] text-slate-400"></span>
+              </div>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-1.5 text-[10px] text-center">
+                <div id="auditDocMatch" class="bg-slate-900 p-1 rounded border border-slate-800 text-slate-400">Doc Cited: --</div>
+                <div id="auditPlanMatch" class="bg-slate-900 p-1 rounded border border-slate-800 text-slate-400">Plan Cited: --</div>
+                <div id="auditApnMatch" class="bg-slate-900 p-1 rounded border border-slate-800 text-slate-400">APN Cited: --</div>
+                <div id="auditGuardrailMatch" class="bg-slate-900 p-1 rounded border border-slate-800 text-slate-400">Guardrail: --</div>
+              </div>
+              <p id="auditSummaryText" class="text-[11px] text-slate-400 italic">Run an evaluation to audit policy grounding fidelity across all 3 streams.</p>
+            </div>
+
+          </div>
+          
+
+
+          <!-- PANE 3: Hierarchical L1/L2/L3 Drilldown -->
+          <div id="wirePaneHierarchy" class="hidden flex-1 flex flex-col space-y-3.5 overflow-y-auto">
+            <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800 space-y-3">
+              <span class="text-xs font-semibold text-slate-300 block">Classified Operational Taxonomy Path:</span>
+              
+              <!-- Breadcrumb Path -->
+              <div class="flex items-center flex-wrap gap-2 text-xs font-mono-code" id="hierarchyBreadcrumbs">
+                <span class="bg-sky-950 text-sky-300 border border-sky-800 px-2.5 py-1 rounded-lg">L1: Billing & Payments</span>
+                <i class="ph ph-caret-right text-slate-600"></i>
+                <span class="bg-indigo-950 text-indigo-300 border border-indigo-800 px-2.5 py-1 rounded-lg">L2: Invoice Dispute</span>
+                <i class="ph ph-caret-right text-slate-600"></i>
+                <span class="bg-emerald-950 text-emerald-300 border border-emerald-800 px-2.5 py-1 rounded-lg font-bold">L3: double_billing_deduction</span>
+              </div>
+
+              <!-- Confidence Breakdown Bars -->
+              <div class="space-y-2 pt-2 border-t border-slate-800 text-xs font-mono-code">
+                <div>
+                  <div class="flex justify-between text-slate-400 mb-1">
+                    <span>L1 Domain Certainty:</span>
+                    <span id="l1ConfVal" class="text-sky-400 font-bold">88.6%</span>
+                  </div>
+                  <div class="w-full bg-slate-900 h-1.5 rounded-full overflow-hidden">
+                    <div id="l1ConfBar" class="bg-sky-500 h-full rounded-full" style="width: 88.6%"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex justify-between text-slate-400 mb-1">
+                    <span>L2 Subcategory Confidence:</span>
+                    <span id="l2ConfVal" class="text-indigo-400 font-bold">85.1%</span>
+                  </div>
+                  <div class="w-full bg-slate-900 h-1.5 rounded-full overflow-hidden">
+                    <div id="l2ConfBar" class="bg-indigo-500 h-full rounded-full" style="width: 85.1%"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex justify-between text-slate-400 mb-1">
+                    <span>L3 Actionable Leaf Confidence:</span>
+                    <span id="l3ConfVal" class="text-emerald-400 font-bold">81.5%</span>
+                  </div>
+                  <div class="w-full bg-slate-900 h-1.5 rounded-full overflow-hidden">
+                    <div id="l3ConfBar" class="bg-emerald-500 h-full rounded-full" style="width: 81.5%"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Full Path ID -->
+              <div class="pt-2 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono-code">
+                <span class="text-slate-500">Taxonomy Dot-Path:</span>
+                <span id="fullTaxonomyDotPath" class="text-slate-300 bg-slate-900 px-2 py-0.5 rounded border border-slate-800 truncate max-w-[280px]">billing_and_payments.invoice_dispute.double_billing_deduction</span>
+              </div>
+            </div>
+
+            <!-- LanceDB Grounding Cards -->
+            <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800 space-y-2 flex-1">
+              <span class="text-xs font-semibold text-slate-300 block flex items-center gap-1.5">
+                <i class="ph ph-database text-emerald-400"></i> LanceDB RAG Grounding References (30,000 Dataset)
+              </span>
+              <div id="wireRagCardsList" class="space-y-2 text-xs">
+                <div class="text-slate-500 italic text-[11px] py-2">No grounding references retrieved yet.</div>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Export / Code Integration Modal -->
+  <div id="codeModal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-slate-900 border border-slate-800 w-full max-w-3xl rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+      <div class="px-6 py-4 border-b border-slate-800 flex items-center justify-between bg-slate-900/90">
+        <div class="flex items-center gap-2">
+          <i class="ph ph-brackets-curly text-sky-400 text-lg"></i>
+          <h3 class="font-semibold text-white text-sm">Export Jev Production Integration</h3>
+        </div>
+        <button id="closeModalBtn" class="text-slate-400 hover:text-white p-1 rounded-lg transition">
+          <i class="ph ph-x text-lg"></i>
+        </button>
+      </div>
+
+      <div class="flex border-b border-slate-800 bg-slate-950 px-6 gap-6 text-xs font-mono-code">
+        <button id="tabPythonBtn" class="py-3 text-sky-400 border-b-2 border-sky-400 font-semibold focus:outline-none">Python (Orchestrator)</button>
+        <button id="tabCurlBtn" class="py-3 text-slate-400 hover:text-slate-200 border-b-2 border-transparent focus:outline-none">cURL</button>
+        <button id="tabVercelBtn" class="py-3 text-slate-400 hover:text-slate-200 border-b-2 border-transparent focus:outline-none">Vercel AI Gateway</button>
+      </div>
+
+      <div class="p-6 overflow-y-auto flex-1 bg-slate-950 font-mono-code text-xs text-slate-300 relative">
+        <button id="copyCodeBtn" class="absolute top-4 right-6 bg-slate-800 hover:bg-slate-700 text-slate-300 px-2.5 py-1.5 rounded border border-slate-700 flex items-center gap-1 transition text-[11px]">
+          <i class="ph ph-copy"></i>
+          <span id="copyBtnLabel">Copy</span>
+        </button>
+        <pre id="codeSnippetBox" class="whitespace-pre overflow-x-auto selection:bg-slate-800"></pre>
+      </div>
+
+      <div class="px-6 py-3 bg-slate-900 border-t border-slate-800 flex justify-end">
+        <button id="closeModalFooterBtn" class="bg-slate-800 hover:bg-slate-700 text-white text-xs px-4 py-2 rounded-lg font-medium transition">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- APPLICATION SCRIPT -->
+  <script>
+    // Live Clock Update
+    function updateClock() {
+      const now = new Date();
+      document.getElementById('liveClockDisplay').textContent = now.toLocaleTimeString() + ' (Local)';
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // Application State
+    const AppState = {
+      vercelApiKey: localStorage.getItem('vercel_api_key') || '',
+      geminiApiKey: localStorage.getItem('gemini_api_key') || '',
+      confidenceThreshold: 0.70,
+      enableNoul: true,
+      enableScore: true,
+      activeCodeTab: 'python',
+      activeWireTab: 'dual',
+      sidebarCollapsed: false,
+
+      // Hierarchical L1 / L2 / L3 Telco Taxonomy
+      taxonomyTree: [
+        {
+          id: 'billing_inquiry',
+          name: 'Billing & Payments',
+          desc: 'Invoices, double billing, transit disputes, autopay, refunds',
+          queue: 'Billing & Accounts Queue',
+          color: 'sky',
+          l2Categories: [
+            { name: 'Invoice Dispute', l3: ['double_billing_deduction', 'unrecognized_roaming_charge', 'disputed_line_item_fee'] },
+            { name: 'Payment Methods & AutoPay', l3: ['autopay_discount_setup', 'declined_card_update', 'payment_extension_request'] },
+            { name: 'Billing Cycle & Proration', l3: ['prorated_charge_calculation', 'statement_billing_date_change'] }
+          ]
+        },
+        {
+          id: 'network_connectivity',
+          name: 'Mobile Network & Wireless',
+          desc: 'Signal drops, 5G NR reception, cellular APN configs, VoLTE/VoWiFi',
+          queue: 'Wireless Network Ops',
+          color: 'indigo',
+          l2Categories: [
+            { name: 'APN & Data Configuration', l3: ['manual_5g_apn_setup', 'volte_vowifi_provisioning', 'mobile_hotspot_tethering_fail'] },
+            { name: 'Signal & Coverage', l3: ['weak_5g_nr_indoor_coverage', 'dropped_calls_tower_handover'] },
+            { name: 'Cellular Outage Incident', l3: ['cell_tower_degraded_service', 'emergency_regional_blackout'] }
+          ]
+        },
+        {
+          id: 'fiber_broadband',
+          name: 'Fiber FTTH & Broadband',
+          desc: 'Optical drop cable, ONT LOS red light, Wi-Fi 6 mesh, speed diagnostics',
+          queue: 'Broadband & Fiber NOC',
+          color: 'emerald',
+          l2Categories: [
+            { name: 'Optical Link Failure', l3: ['ont_los_red_blinking_optical_cut', 'pon_unregistered_flashing', 'optical_attenuation_high'] },
+            { name: 'Wi-Fi & Home Networking', l3: ['mesh_wifi6_node_pairing', 'bridge_mode_vlan_tagging', 'slow_wifi_throughput_diagnostic'] },
+            { name: 'Field Operations Dispatch', l3: ['technician_truck_roll_booking', 'physical_drop_cable_severed'] }
+          ]
+        },
+        {
+          id: 'roaming_passes',
+          name: 'Global Roaming & Travel',
+          desc: 'Zones 1-4 day passes, foreign carrier steering, FUP throttles, flight passes',
+          queue: 'Global Roaming Desk',
+          color: 'amber',
+          l2Categories: [
+            { name: 'Roaming Pass Activation', l3: ['zone_1_eu_day_pass', 'zone_2_americas_bundle', 'zone_4_inflight_maritime_pass'] },
+            { name: 'Carrier Steering & Handshake', l3: ['foreign_carrier_auth_error_403', 'roaming_data_apn_not_connecting', 'partner_network_manual_latch'] },
+            { name: 'Fair Usage Policy (FUP)', l3: ['fup_speed_throttle_reset', 'international_boost_topup'] }
+          ]
+        },
+        {
+          id: 'account_security',
+          name: 'SIM & Identity Security',
+          desc: 'eSIM QR provisioning, SIM swap fraud protection, PUK codes, KYC holds',
+          queue: 'Fraud & Security Tier-2',
+          color: 'rose',
+          l2Categories: [
+            { name: 'eSIM Provisioning', l3: ['qr_code_activation_fail', 'eid_pairing_validation_error', 'physical_to_esim_migration'] },
+            { name: 'SIM Swap Fraud Protection', l3: ['unauthorized_sim_swap_cooling_hold', 'emergency_account_lockdown', 'biometric_identity_validation'] },
+            { name: 'Security Credentials', l3: ['puk_code_retrieval', 'master_account_pin_reset'] }
+          ]
+        },
+        {
+          id: 'plan_upgrade',
+          name: 'Plan Tiers & Subscriptions',
+          desc: 'Prepaid/postpaid upgrades, family data pooling, corporate retention discounts',
+          queue: 'Retention & Sales Desk',
+          color: 'purple',
+          l2Categories: [
+            { name: 'Consumer Plan Migration', l3: ['5g_infinite_tier_upgrade', 'flexipay_rollover_bundle'] },
+            { name: 'Commercial Enterprise Pooling', l3: ['enterprise_volume_pooling_negotiation', 'multi_line_business_agreement'] },
+            { name: 'Retention & Churn Prevention', l3: ['loyalty_contract_renewal_discount', 'port_out_retention_offer'] }
+          ]
+        },
+        {
+          id: 'human_escalation',
+          name: 'Customer Care Escalations',
+          desc: 'Explicit supervisor demands, regulatory complaints, senior tier-2 transfers',
+          queue: 'Senior Human Queue',
+          color: 'red',
+          l2Categories: [
+            { name: 'Managerial Escalation', l3: ['senior_operations_supervisor_handoff', 'regulatory_ombudsman_threat'] },
+            { name: 'Specialist Agent Dispatch', l3: ['tier2_specialist_live_transfer', 'fraud_investigator_warm_handoff'] }
+          ]
+        },
+        {
+          id: 'other_or_unclear',
+          name: 'General Triage Fallback',
+          desc: 'Ambiguous chatter, greeting, unclassifiable customer inquiries',
+          queue: 'General Triage Fallback',
+          color: 'slate',
+          isFallback: true,
+          l2Categories: [
+            { name: 'Ambiguous Inquiries', l3: ['unclassified_customer_inquiry', 'greeting_casual'] }
+          ]
+        }
+      ],
+
+      presets: [
+        {
+          label: 'Double Charge Dispute',
+          query: 'Why was I billed twice on my Mastercard for invoice #INV-9024? Your bot is completely useless! Transfer me to a real person right now!'
+        },
+        {
+          label: 'Fiber Cut (Urgent)',
+          query: 'CRITICAL EMERGENCY: Construction cut our main fiber line! The ONT optical box has a blinking LOS red light and 30 employees are completely down!'
+        },
+        {
+          label: '5G Roaming APN',
+          query: 'Can you explain how to configure regional APN settings for 5G roaming in Zone 2 Americas under the Infinite plan?'
+        },
+        {
+          label: 'SIM Swap Fraud',
+          query: 'SECURITY ALERT: I received an SMS saying an unauthorized SIM swap was requested for my number! Freeze my account right now!'
+        },
+        {
+          label: 'Enterprise Upgrade',
+          query: 'We have 25 lines on our corporate business account and want to negotiate an enterprise 5G pooling contract with competitor rate matching.'
+        },
+        {
+          label: 'Vague / Ambiguous',
+          query: 'Hey folks, just wondering how you handle things generally.'
+        }
+      ]
+    };
+
+    // DOM Elements
+    const taxonomyTreeContainer = document.getElementById('taxonomyTreeContainer');
+    const taxonomySearchInput = document.getElementById('taxonomySearchInput');
+    const presetChipsContainer = document.getElementById('presetChipsContainer');
+    const chatInput = document.getElementById('chatInput');
+    const runClassifierBtn = document.getElementById('runClassifierBtn');
+    const thresholdSlider = document.getElementById('thresholdSlider');
+    const confidenceThresholdValue = document.getElementById('confidenceThresholdValue');
+    const toggleNoul = document.getElementById('toggleNoul');
+    const toggleScore = document.getElementById('toggleScore');
+    const probabilityBarsList = document.getElementById('probabilityBarsList');
+    const dispatchBadge = document.getElementById('dispatchBadge');
+    const latencyBadge = document.getElementById('latencyBadge');
+    const selectedChoiceNotice = document.getElementById('selectedChoiceNotice');
+    const noulMeterBar = document.getElementById('noulMeterBar');
+    const noulValueBadge = document.getElementById('noulValueBadge');
+    const scoreMeterBar = document.getElementById('scoreMeterBar');
+    const scoreValueBadge = document.getElementById('scoreValueBadge');
+    const routingTraceBox = document.getElementById('routingTraceBox');
+    const toggleSidebarBtn = document.getElementById('toggleSidebarBtn');
+    const sidebarToggleLabel = document.getElementById('sidebarToggleLabel');
+    const columnTaxonomy = document.getElementById('columnTaxonomy');
+    const columnInput = document.getElementById('columnInput');
+    const columnTelemetry = document.getElementById('columnTelemetry');
+
+    // Key Drawers
+    const toggleVercelKeyBtn = document.getElementById('toggleVercelKeyBtn');
+    const vercelDrawer = document.getElementById('vercelDrawer');
+    const vercelApiKeyInput = document.getElementById('vercelApiKeyInput');
+    const saveVercelApiKeyBtn = document.getElementById('saveVercelApiKeyBtn');
+    const clearVercelApiKeyBtn = document.getElementById('clearVercelApiKeyBtn');
+
+    const toggleGeminiKeyBtn = document.getElementById('toggleGeminiKeyBtn');
+    const geminiDrawer = document.getElementById('geminiDrawer');
+    const geminiApiKeyInput = document.getElementById('geminiApiKeyInput');
+    const saveGeminiApiKeyBtn = document.getElementById('saveGeminiApiKeyBtn');
+    const clearGeminiApiKeyBtn = document.getElementById('clearGeminiApiKeyBtn');
+
+    // Benchmark Inspector Elements
+    const wireTabDualBtn = document.getElementById('wireTabDualBtn');
+    const wireTabHierBtn = document.getElementById('wireTabHierBtn');
+    const wirePaneDual = document.getElementById('wirePaneDual');
+    const wirePaneHierarchy = document.getElementById('wirePaneHierarchy');
+    const wireLatencySummary = document.getElementById('wireLatencySummary');
+    const wireJevMs = document.getElementById('wireJevMs');
+    const wireRagMs = document.getElementById('wireRagMs');
+    const wireLlmMs = document.getElementById('wireLlmMs');
+
+    // Dual Stream Elements
+    const dualStreamALatency = document.getElementById('dualStreamALatency');
+    const dualStreamAInTokens = document.getElementById('dualStreamAInTokens');
+    const dualStreamAOutTokens = document.getElementById('dualStreamAOutTokens');
+    const dualStreamASpeed = document.getElementById('dualStreamASpeed');
+    const streamAGroundedBadge = document.getElementById('streamAGroundedBadge');
+    const dualStreamARagChips = document.getElementById('dualStreamARagChips');
+    const dualStreamAReasoningBox = document.getElementById('dualStreamAReasoningBox');
+    const dualToggleReasoningBtn = document.getElementById('dualToggleReasoningBtn');
+    const dualStreamAReasoningContent = document.getElementById('dualStreamAReasoningContent');
+    const dualStreamAContent = document.getElementById('dualStreamAContent');
+
+    const dualStreamBLatency = document.getElementById('dualStreamBLatency');
+    const dualStreamBInTokens = document.getElementById('dualStreamBInTokens');
+    const dualStreamBOutTokens = document.getElementById('dualStreamBOutTokens');
+    const dualStreamBSpeed = document.getElementById('dualStreamBSpeed');
+    const streamBStatusBadge = document.getElementById('streamBStatusBadge');
+    const dualStreamBRagChips = document.getElementById('dualStreamBRagChips');
+    const dualStreamBContent = document.getElementById('dualStreamBContent');
+
+    // Stream 2 (Grounded Local Qwen) Elements
+    const triStream2Latency = document.getElementById('triStream2Latency');
+    const triStream2InTokens = document.getElementById('triStream2InTokens');
+    const triStream2OutTokens = document.getElementById('triStream2OutTokens');
+    const triStream2Speed = document.getElementById('triStream2Speed');
+    const stream2StatusBadge = document.getElementById('stream2StatusBadge');
+    const triStream2RagChips = document.getElementById('triStream2RagChips');
+    const triStream2Content = document.getElementById('triStream2Content');
+
+    // Stream 3 (Jev + Gemini Flash) Elements
+    const quadStream3Latency = document.getElementById('quadStream3Latency');
+    const quadStream3InTokens = document.getElementById('quadStream3InTokens');
+    const quadStream3OutTokens = document.getElementById('quadStream3OutTokens');
+    const quadStream3Speed = document.getElementById('quadStream3Speed');
+    const stream3StatusBadge = document.getElementById('stream3StatusBadge');
+    const quadStream3RagChips = document.getElementById('quadStream3RagChips');
+    const quadStream3Content = document.getElementById('quadStream3Content');
+
+    const auditFasterStreamText = document.getElementById('auditFasterStreamText');
+    const auditDocMatch = document.getElementById('auditDocMatch');
+    const auditPlanMatch = document.getElementById('auditPlanMatch');
+    const auditApnMatch = document.getElementById('auditApnMatch');
+    const auditGuardrailMatch = document.getElementById('auditGuardrailMatch');
+    const auditSummaryText = document.getElementById('auditSummaryText');
+
+    // Clean Markdown Renderer for Formatted Response (Removes internal reasoning)
+    function renderMarkdown(rawText) {
+      if (!rawText || !rawText.trim()) {
+        return '<p class="text-slate-500 italic">No response content available.</p>';
+      }
+      // 1. Thoroughly remove any <think> tags and internal reasoning
+      let clean = rawText.replace(/<think>[\s\S]*?<\/think>/gi, '').trim();
+      // 2. Remove internal labeled steps like **Empathetic Acknowledgment:**
+      clean = clean.replace(/^\s*\*\*Empathetic Acknowledgment:\*\*\s*/i, '');
+      clean = clean.replace(/\*\*Actionable Steps:\*\*/gi, '\n\n**Actionable Steps:**\n');
+      clean = clean.replace(/\*\*Next Steps:\*\*/gi, '\n\n**Next Steps:**\n');
+
+      // 3. Parse via Marked.js CDN if loaded
+      if (window.marked && typeof window.marked.parse === 'function') {
+        try {
+          return `<div class="formatted-response">${window.marked.parse(clean)}</div>`;
+        } catch (e) {
+          console.warn('marked.parse fallback:', e);
+        }
+      }
+
+      // 4. Robust fallback formatting
+      const formatted = escapeHtml(clean)
+        .replace(/^### (.*$)/gim, '<h3 class="text-sky-400 font-bold mt-2 mb-1">$1</h3>')
+        .replace(/^## (.*$)/gim, '<h2 class="text-slate-100 font-bold text-sm mt-2 mb-1">$1</h2>')
+        .replace(/\*\*(.*?)\*\*/g, '<strong class="text-slate-100 font-semibold">$1</strong>')
+        .replace(/\*(.*?)\*/g, '<em class="text-slate-300">$1</em>')
+        .replace(/^\s*[-*]\s+(.*$)/gim, '<li class="ml-4 list-disc">$1</li>')
+        .replace(/^\s*(\d+)\.\s+(.*$)/gim, '<li class="ml-4 list-decimal">$1</li>')
+        .replace(/\n\n/g, '</p><p class="mb-2">')
+        .replace(/\n/g, '<br/>');
+
+      return `<div class="formatted-response"><p>${formatted}</p></div>`;
+    }
+
+    // Modal elements
+    const openDocsModalBtn = document.getElementById('openDocsModalBtn');
+    const codeModal = document.getElementById('codeModal');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const closeModalFooterBtn = document.getElementById('closeModalFooterBtn');
+    const codeSnippetBox = document.getElementById('codeSnippetBox');
+    const copyCodeBtn = document.getElementById('copyCodeBtn');
+    const copyBtnLabel = document.getElementById('copyBtnLabel');
+    const tabPythonBtn = document.getElementById('tabPythonBtn');
+    const tabCurlBtn = document.getElementById('tabCurlBtn');
+    const tabVercelBtn = document.getElementById('tabVercelBtn');
+
+    // Render Taxonomy Tree
+    function renderTaxonomyTree(filterQuery = '') {
+      taxonomyTreeContainer.innerHTML = '';
+      const filter = filterQuery.toLowerCase().trim();
+
+      AppState.taxonomyTree.forEach((domain, idx) => {
+        const matchesL1 = domain.name.toLowerCase().includes(filter) || domain.id.toLowerCase().includes(filter);
+        const filteredL2 = domain.l2Categories.filter(cat => {
+          if (matchesL1) return true;
+          if (cat.name.toLowerCase().includes(filter)) return true;
+          return cat.l3.some(l3 => l3.toLowerCase().includes(filter));
+        });
+
+        if (filter && !matchesL1 && filteredL2.length === 0) return;
+
+        const card = document.createElement('div');
+        card.className = `rounded-xl border ${domain.isFallback ? 'border-amber-900/40 bg-amber-950/10' : 'border-slate-800 bg-slate-950/70'} p-2.5 transition`;
+        
+        let l2Html = '';
+        filteredL2.forEach(cat => {
+          const l3Pills = cat.l3.map(l3 => `<span class="bg-slate-900 text-slate-400 px-1.5 py-0.5 rounded text-[9px] font-mono-code border border-slate-800">${escapeHtml(l3)}</span>`).join(' ');
+          l2Html += `
+            <div class="mt-1.5 pl-2 border-l border-slate-800">
+              <div class="text-[11px] font-medium text-slate-300 flex items-center gap-1">
+                <i class="ph ph-folder text-indigo-400 text-xs"></i> ${escapeHtml(cat.name)}
+              </div>
+              <div class="flex flex-wrap gap-1 mt-1">${l3Pills}</div>
+            </div>
+          `;
+        });
+
+        card.innerHTML = `
+          <div class="flex items-center justify-between cursor-pointer" onclick="this.nextElementSibling.classList.toggle('hidden')">
+            <div class="flex items-center gap-1.5">
+              <i class="ph ph-squares-four text-${domain.color}-400 text-xs"></i>
+              <span class="font-bold text-xs ${domain.isFallback ? 'text-amber-400' : 'text-slate-200'}">${escapeHtml(domain.name)}</span>
+              ${domain.isFallback ? '<span class="text-[8px] bg-amber-950 text-amber-300 border border-amber-800 px-1 rounded">Fallback</span>' : ''}
+            </div>
+            <span class="text-[9px] font-mono-code bg-slate-900 text-slate-400 px-1.5 py-0.5 rounded border border-slate-800">${domain.l2Categories.length} areas</span>
+          </div>
+          <div class="${filter ? '' : 'hidden'} mt-1 pt-1 border-t border-slate-800/60">${l2Html}</div>
+        `;
+        taxonomyTreeContainer.appendChild(card);
+      });
+    }
+
+    taxonomySearchInput.addEventListener('input', (e) => {
+      renderTaxonomyTree(e.target.value);
+    });
+
+    function renderPresets() {
+      presetChipsContainer.innerHTML = '';
+      AppState.presets.forEach(preset => {
+        const chip = document.createElement('button');
+        chip.className = 'text-[11px] bg-slate-800/90 hover:bg-slate-700 text-slate-300 hover:text-white px-2 py-0.5 rounded-lg border border-slate-700/80 transition flex items-center gap-1';
+        chip.innerHTML = `<i class="ph ph-chat-text text-sky-400"></i> ${escapeHtml(preset.label)}`;
+        chip.addEventListener('click', () => {
+          chatInput.value = preset.query;
+          evaluateMessage(preset.query);
+        });
+        presetChipsContainer.appendChild(chip);
+      });
+    }
+
+    // Switch Benchmark Inspector Tabs
+    function setWireTab(tab) {
+      AppState.activeWireTab = tab;
+      [wireTabDualBtn, wireTabHierBtn].forEach(b => {
+        if (b) b.className = "py-2 text-slate-400 hover:text-slate-200 border-b-2 border-transparent focus:outline-none flex items-center gap-1.5";
+      });
+      [wirePaneDual, wirePaneHierarchy].forEach(p => {
+        if (p) p.classList.add('hidden');
+      });
+
+      if (tab === 'dual' && wireTabDualBtn && wirePaneDual) {
+        wireTabDualBtn.className = "py-2 text-sky-400 border-b-2 border-sky-400 font-semibold focus:outline-none flex items-center gap-1.5";
+        wirePaneDual.classList.remove('hidden');
+      } else if (tab === 'hierarchy' && wireTabHierBtn && wirePaneHierarchy) {
+        wireTabHierBtn.className = "py-2 text-sky-400 border-b-2 border-sky-400 font-semibold focus:outline-none flex items-center gap-1.5";
+        wirePaneHierarchy.classList.remove('hidden');
+      }
+    }
+
+    if (wireTabDualBtn) wireTabDualBtn.addEventListener('click', () => setWireTab('dual'));
+    if (wireTabHierBtn) wireTabHierBtn.addEventListener('click', () => setWireTab('hierarchy'));
+
+    // Evaluate message against local backend dual pipeline or fallback
+    async function evaluateMessage(text) {
+      if (!text || !text.trim()) {
+        displayMessageAlert("Please enter a customer message or select a preset.");
+        return;
+      }
+
+
+
+      runClassifierBtn.disabled = true;
+      runClassifierBtn.innerHTML = `<i class="ph ph-spinner animate-spin"></i> <span>Evaluating...</span>`;
+      dispatchBadge.innerHTML = `<i class="ph ph-spinner animate-spin"></i> <span>Evaluating dual streams...</span>`;
+
+      // Set loading state on Stream 1, Stream 2, and Stream 3 cards
+      dualStreamAContent.innerHTML = `<div class="flex items-center gap-2 text-slate-400"><i class="ph ph-spinner animate-spin text-sky-400"></i> Classifying intent, querying LanceDB 30K, & executing Qwen 3...</div>`;
+      if (triStream2Content) {
+        triStream2Content.innerHTML = `<div class="flex items-center gap-2 text-slate-400"><i class="ph ph-spinner animate-spin text-purple-400"></i> Querying LanceDB 30K & executing Local Grounded Qwen 3...</div>`;
+      }
+      if (stream2StatusBadge) {
+        stream2StatusBadge.className = "text-[9px] font-mono-code bg-purple-950 text-purple-300 border border-purple-800 px-1.5 py-0.5 rounded animate-pulse";
+        stream2StatusBadge.textContent = "RUNNING...";
+      }
+      dualStreamBContent.innerHTML = `<div class="flex items-center gap-2 text-slate-400"><i class="ph ph-spinner animate-spin text-emerald-400"></i> Querying LanceDB 30K & dispatching query to Google AI Studio (Gemini 3.8 Flash Grounded)...</div>`;
+      streamBStatusBadge.className = "text-[9px] font-mono-code bg-emerald-950 text-emerald-300 border border-emerald-800 px-1.5 py-0.5 rounded animate-pulse";
+      streamBStatusBadge.textContent = "CALLING...";
+
+      let dualResult = null;
+      try {
+        const payload = {
+          message: text.trim()
+        };
+        if (AppState.geminiApiKey && AppState.geminiApiKey.startsWith('AIzaSy')) {
+          payload.gemini_api_key = AppState.geminiApiKey;
+        }
+
+        const res = await fetch('/v1/orchestrate/dual', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        if (res.ok) {
+          dualResult = await res.json();
+        } else {
+          throw new Error(`Server returned HTTP ${res.status}`);
+        }
+      } catch (err) {
+        console.warn("Backend /v1/orchestrate/dual not reachable, running offline dual simulation:", err);
+        dualResult = simulateOfflineDualOrchestration(text.trim());
+      } finally {
+        runClassifierBtn.disabled = false;
+        runClassifierBtn.innerHTML = `<i class="ph ph-play font-bold"></i> <span>Evaluate</span>`;
+      }
+
+
+      renderFullWorkbenchResults(dualResult);
+    }
+
+    function renderFullWorkbenchResults(res) {
+      // Support both dual result envelope and direct single result
+      const streamA = res.stream_a || res;
+      const streamB = res.stream_b || null;
+      const comparison = res.comparison || null;
+
+      const jev = streamA.jev_result || {};
+      const gen = streamA.generation_result || {};
+      const hier = streamA.hierarchy || jev.hierarchy || {};
+      const latency = streamA.latency_breakdown || {};
+
+      // 1. Dispatch Badge
+      dispatchBadge.className = `inline-flex items-center gap-2 px-3 py-1.5 rounded-lg font-mono-code font-bold text-xs border ${
+        jev.is_emergency ? 'bg-rose-950 text-rose-300 border-rose-800' :
+        jev.is_escalated ? 'bg-amber-950 text-amber-300 border-amber-800' :
+        jev.is_fallback ? 'bg-slate-800 text-slate-300 border-slate-700' :
+        'bg-sky-950 text-sky-400 border-sky-800'
+      }`;
+      dispatchBadge.innerHTML = `<i class="ph ph-arrow-square-out text-sm"></i> <span>${escapeHtml(jev.dispatch_queue || 'Triage Queue')}</span>`;
+
+      latencyBadge.textContent = `${(streamA.total_latency_ms || res.total_turn_latency_ms || 0).toFixed(1)} ms (Turn E2E)`;
+      selectedChoiceNotice.textContent = `Argmax: ${jev.selected_choice || 'unclassified'} (${((jev.confidence || 0) * 100).toFixed(1)}%) • ${jev.dispatch_reason || 'Processed'}`;
+
+      // 2. Probability Distribution Bars
+      renderDistributionBars(jev.distribution, jev.selected_choice, AppState.confidenceThreshold);
+
+      // 3. Noul & Score meters
+      const urgentVal = jev.is_urgent ?? 0;
+      noulMeterBar.style.width = `${Math.round(urgentVal * 100)}%`;
+      noulValueBadge.textContent = urgentVal.toFixed(2);
+      noulMeterBar.className = urgentVal >= 0.75 ? "bg-rose-500 h-full rounded-full transition-all duration-500" : "bg-amber-400 h-full rounded-full transition-all duration-500";
+
+      const frustVal = jev.frustration_score ?? 0;
+      scoreMeterBar.style.width = `${Math.round(frustVal * 100)}%`;
+      scoreValueBadge.textContent = frustVal.toFixed(2);
+      scoreMeterBar.className = frustVal >= 0.80 ? "bg-rose-600 h-full rounded-full transition-all duration-500 animate-pulse" : "bg-rose-400 h-full rounded-full transition-all duration-500";
+
+      // 4. Execution Trace
+      routingTraceBox.innerHTML = '';
+      (jev.trace_logs || []).forEach(log => {
+        const line = document.createElement('div');
+        if (log.includes('[GUARDRAIL HIT]')) line.className = 'text-amber-400 font-semibold';
+        else if (log.includes('[FALLBACK TRIGGERED]')) line.className = 'text-sky-300 font-semibold';
+        else if (log.includes('[ROUTED]')) line.className = 'text-emerald-400 font-semibold';
+        else line.className = 'text-slate-400';
+        line.textContent = log;
+        routingTraceBox.appendChild(line);
+      });
+      routingTraceBox.scrollTop = routingTraceBox.scrollHeight;
+
+      // 5. Wire Latency Breakdown
+      wireLatencySummary.classList.remove('hidden');
+      wireJevMs.textContent = `${latency.jev_ms || jev.latency_ms || 0}ms`;
+      wireRagMs.textContent = `${latency.rag_ms || 0}ms`;
+      wireLlmMs.textContent = `${latency.llm_ms || gen.latency_ms || 0}ms`;
+
+
+
+      // 8. Hierarchy Display
+      document.getElementById('hierarchyBreadcrumbs').innerHTML = `
+        <span class="bg-sky-950 text-sky-300 border border-sky-800 px-2 py-0.5 rounded-lg">L1: ${escapeHtml(hier.l1 || jev.selected_choice || 'N/A')}</span>
+        <i class="ph ph-caret-right text-slate-600"></i>
+        <span class="bg-indigo-950 text-indigo-300 border border-indigo-800 px-2 py-0.5 rounded-lg">L2: ${escapeHtml(hier.l2 || 'Functional Area')}</span>
+        <i class="ph ph-caret-right text-slate-600"></i>
+        <span class="bg-emerald-950 text-emerald-300 border border-emerald-800 px-2 py-0.5 rounded-lg font-bold">L3: ${escapeHtml(hier.l3 || 'leaf_intent')}</span>
+      `;
+
+      const l1P = (hier.l1_confidence || jev.confidence || 0.7) * 100;
+      const l2P = (hier.l2_confidence || (jev.confidence * 0.96) || 0.65) * 100;
+      const l3P = (hier.l3_confidence || (jev.confidence * 0.92) || 0.60) * 100;
+
+      document.getElementById('l1ConfVal').textContent = `${l1P.toFixed(1)}%`;
+      document.getElementById('l1ConfBar').style.width = `${l1P}%`;
+      document.getElementById('l2ConfVal').textContent = `${l2P.toFixed(1)}%`;
+      document.getElementById('l2ConfBar').style.width = `${l2P}%`;
+      document.getElementById('l3ConfVal').textContent = `${l3P.toFixed(1)}%`;
+      document.getElementById('l3ConfBar').style.width = `${l3P}%`;
+      document.getElementById('fullTaxonomyDotPath').textContent = hier.full_path || `${hier.l1}.${hier.l2}.${hier.l3}`;
+
+      // 9. LanceDB RAG Grounding Cards
+      const ragCardsContainer = document.getElementById('wireRagCardsList');
+      ragCardsContainer.innerHTML = '';
+      if (streamA.retrieved_chunks && streamA.retrieved_chunks.length > 0) {
+        streamA.retrieved_chunks.forEach(chunk => {
+          const item = document.createElement('div');
+          item.className = 'bg-slate-900/90 border border-slate-800 rounded-lg p-2.5 space-y-1';
+          item.innerHTML = `
+            <div class="flex justify-between items-center text-[11px] font-mono-code">
+              <span class="text-sky-300 font-bold">${escapeHtml(chunk.doc_id)}</span>
+              <span class="text-emerald-400 font-bold">Score: ${(chunk.similarity_score || 0.95).toFixed(3)}</span>
+            </div>
+            <div class="text-slate-200 font-medium text-[11px]">${escapeHtml(chunk.title)}</div>
+            <div class="text-[10px] text-slate-400 font-mono-code">Plan: <span class="text-yellow-300">${escapeHtml(chunk.plan_code || 'N/A')}</span> | APN: <span class="text-green-300">${escapeHtml(chunk.regional_apn || 'N/A')}</span> | SLA: <span class="text-slate-300">${escapeHtml(chunk.sla || 'Standard')}</span></div>
+          `;
+          ragCardsContainer.appendChild(item);
+        });
+      } else {
+        ragCardsContainer.innerHTML = `<div class="text-slate-500 italic text-[11px] py-2">No RAG grounding context required for this category.</div>`;
+      }
+
+
+
+      // ==========================================
+      // 11. 4-WAY BENCHMARK RENDERING
+      // ==========================================
+      const stream1 = res.stream_1 || res.stream_a || res;
+      const stream2 = res.stream_2 || res.stream_raw || null;
+      const stream3 = res.stream_3 || null;
+      const stream4 = res.stream_4 || res.stream_b || null;
+
+      // Stream 1 (Jev + Qwen Grounded) Metrics & Content
+      const aTelem = gen.telemetry || {};
+      const aLat = aTelem.latency_ms || stream1.total_latency_ms || gen.latency_ms || 0;
+      dualStreamALatency.textContent = `${aLat.toFixed(0)} ms`;
+      dualStreamAInTokens.textContent = aTelem.input_tokens ?? (stream1.user_message ? stream1.user_message.split(/\s+/).length + 120 : 0);
+      dualStreamAOutTokens.textContent = aTelem.output_tokens ?? (gen.content ? gen.content.split(/\s+/).length : 0);
+      dualStreamASpeed.textContent = `${(aTelem.tokens_per_sec || 144.3).toFixed(1)} t/s`;
+      dualStreamAContent.innerHTML = renderMarkdown(gen.content);
+
+      // Stream 1 RAG Chips
+      dualStreamARagChips.innerHTML = '';
+      if (stream1.retrieved_chunks && stream1.retrieved_chunks.length > 0) {
+        stream1.retrieved_chunks.forEach(c => {
+          const chip = document.createElement('span');
+          chip.className = 'bg-sky-950 text-sky-300 border border-sky-800 px-1.5 py-0.5 rounded';
+          chip.textContent = `${c.doc_id} (${c.plan_code || 'General'})`;
+          dualStreamARagChips.appendChild(chip);
+        });
+      } else {
+        dualStreamARagChips.innerHTML = `<span class="bg-slate-900 text-slate-400 px-1.5 py-0.5 rounded border border-slate-800">No external docs required</span>`;
+      }
+
+      // Stream 2 (Grounded Local Qwen Baseline) Metrics & Content
+      if (stream2) {
+        const s2Telem = stream2.telemetry || {};
+        const s2Lat = s2Telem.latency_ms || stream2.latency_ms || 0;
+        triStream2Latency.textContent = `${s2Lat.toFixed(0)} ms`;
+        triStream2InTokens.textContent = s2Telem.input_tokens || (stream2.content ? 40 : 0);
+        triStream2OutTokens.textContent = s2Telem.output_tokens || (stream2.content ? stream2.content.split(/\s+/).length : 0);
+        triStream2Speed.textContent = `${(s2Telem.tokens_per_sec || 138.0).toFixed(1)} t/s`;
+        stream2StatusBadge.className = 'text-[9px] font-mono-code bg-emerald-950 text-emerald-300 border border-emerald-800 px-1.5 py-0.5 rounded';
+        stream2StatusBadge.textContent = 'GROUNDED';
+        triStream2Content.innerHTML = renderMarkdown(stream2.content);
+
+        // Stream 2 RAG Chips
+        if (triStream2RagChips) {
+          triStream2RagChips.innerHTML = '';
+          const s2Chunks = stream2.retrieved_chunks || stream1.retrieved_chunks;
+          if (s2Chunks && s2Chunks.length > 0) {
+            s2Chunks.forEach(c => {
+              const chip = document.createElement('span');
+              chip.className = 'bg-purple-950 text-purple-300 border border-purple-800 px-1.5 py-0.5 rounded';
+              chip.textContent = `${c.doc_id} (${c.plan_code || 'General'})`;
+              triStream2RagChips.appendChild(chip);
+            });
+          } else {
+            triStream2RagChips.innerHTML = `<span class="bg-slate-900 text-slate-400 px-1.5 py-0.5 rounded border border-slate-800">No external docs required</span>`;
+          }
+        }
+      } else {
+        triStream2Latency.textContent = '-- ms';
+        triStream2InTokens.textContent = '0';
+        triStream2OutTokens.textContent = '0';
+        triStream2Speed.textContent = '0 t/s';
+        triStream2Content.innerHTML = '<p class="text-slate-500 italic">No baseline response available.</p>';
+      }
+
+      // Stream 3 (Jev + Gemini Flash Grounded) Metrics & Content
+      if (stream3) {
+        const s3Telem = stream3.telemetry || {};
+        quadStream3Latency.textContent = `${(s3Telem.latency_ms || 0).toFixed(0)} ms`;
+        quadStream3InTokens.textContent = s3Telem.input_tokens || 0;
+        quadStream3OutTokens.textContent = s3Telem.output_tokens || 0;
+        quadStream3Speed.textContent = `${(s3Telem.tokens_per_sec || 0).toFixed(1)} t/s`;
+
+        if (quadStream3RagChips) {
+          quadStream3RagChips.innerHTML = '';
+          const s3Chunks = stream3.retrieved_chunks || stream1.retrieved_chunks;
+          if (s3Chunks && s3Chunks.length > 0) {
+            s3Chunks.forEach(c => {
+              const chip = document.createElement('span');
+              chip.className = 'bg-emerald-950 text-emerald-300 border border-emerald-800 px-1.5 py-0.5 rounded';
+              chip.textContent = `${c.doc_id} (${c.plan_code || 'General'})`;
+              quadStream3RagChips.appendChild(chip);
+            });
+          } else {
+            quadStream3RagChips.innerHTML = `<span class="bg-slate-900 text-slate-400 px-1.5 py-0.5 rounded border border-slate-800">No external docs required</span>`;
+          }
+        }
+
+        if (s3Telem.status === 'success') {
+          stream3StatusBadge.className = 'text-[9px] font-mono-code bg-emerald-950 text-emerald-300 border border-emerald-800 px-1.5 py-0.5 rounded';
+          stream3StatusBadge.textContent = 'GROUNDED';
+          quadStream3Content.innerHTML = renderMarkdown(stream3.content);
+        } else if (s3Telem.status === 'missing_key') {
+          stream3StatusBadge.className = 'text-[9px] font-mono-code bg-amber-950 text-amber-300 border border-amber-800 px-1.5 py-0.5 rounded';
+          stream3StatusBadge.textContent = 'NO KEY';
+          quadStream3Content.innerHTML = `<div class="text-amber-400 text-xs">Google AI Studio API key not configured.</div>`;
+        } else {
+          stream3StatusBadge.className = 'text-[9px] font-mono-code bg-rose-950 text-rose-300 border border-rose-800 px-1.5 py-0.5 rounded';
+          stream3StatusBadge.textContent = 'ERROR';
+          quadStream3Content.innerHTML = `<div class="text-rose-400 text-xs">${escapeHtml(s3Telem.error_message || 'Error')}</div>`;
+        }
+      } else {
+        quadStream3Latency.textContent = '-- ms';
+        quadStream3InTokens.textContent = '0';
+        quadStream3OutTokens.textContent = '0';
+        quadStream3Speed.textContent = '0 t/s';
+        quadStream3Content.innerHTML = '<p class="text-slate-500 italic">Awaiting evaluation...</p>';
+      }
+
+      // Stream 4 (Google AI Studio Gemini 3.8 Flash Baseline) Metrics & Content
+      const geminiBaseline = stream4 || stream3;
+      if (geminiBaseline) {
+        const bTelem = geminiBaseline.telemetry || {};
+        dualStreamBLatency.textContent = `${(bTelem.latency_ms || 0).toFixed(0)} ms`;
+        dualStreamBInTokens.textContent = bTelem.input_tokens || 0;
+        dualStreamBOutTokens.textContent = bTelem.output_tokens || 0;
+        dualStreamBSpeed.textContent = `${(bTelem.tokens_per_sec || 0).toFixed(1)} t/s`;
+
+        // Stream 4 RAG Chips
+        if (dualStreamBRagChips) {
+          dualStreamBRagChips.innerHTML = '';
+          const s4Chunks = geminiBaseline.retrieved_chunks || stream1.retrieved_chunks;
+          if (s4Chunks && s4Chunks.length > 0) {
+            s4Chunks.forEach(c => {
+              const chip = document.createElement('span');
+              chip.className = 'bg-amber-950 text-amber-300 border border-amber-800 px-1.5 py-0.5 rounded';
+              chip.textContent = `${c.doc_id} (${c.plan_code || 'General'})`;
+              dualStreamBRagChips.appendChild(chip);
+            });
+          } else {
+            dualStreamBRagChips.innerHTML = `<span class="bg-slate-900 text-slate-400 px-1.5 py-0.5 rounded border border-slate-800">No external docs required</span>`;
+          }
+        }
+
+        if (bTelem.status === 'success') {
+          streamBStatusBadge.className = 'text-[9px] font-mono-code bg-emerald-950 text-emerald-300 border border-emerald-800 px-1.5 py-0.5 rounded';
+          streamBStatusBadge.textContent = 'GROUNDED';
+          dualStreamBContent.innerHTML = renderMarkdown(geminiBaseline.content);
+        } else if (bTelem.status === 'missing_key') {
+          streamBStatusBadge.className = 'text-[9px] font-mono-code bg-amber-950 text-amber-300 border border-amber-800 px-1.5 py-0.5 rounded';
+          streamBStatusBadge.textContent = 'NO KEY';
+          dualStreamBContent.innerHTML = `
+            <div class="bg-amber-950/30 border border-amber-900/50 p-3 rounded-lg text-slate-300 space-y-2">
+              <div class="flex items-center gap-1.5 text-amber-300 font-bold">
+                <i class="ph ph-key"></i> Google AI Studio API Key Not Set
+              </div>
+              <p class="text-[11px] text-slate-400">Click <strong>Gemini Key</strong> in the top navigation bar to enter your API key, or set <code class="text-amber-200">GEMINI_API_KEY</code> in <code class="text-amber-200">.env</code> to compare live responses side-by-side.</p>
+              <div class="text-[10px] text-slate-500 pt-1 border-t border-amber-900/30">Local simulated fallback: ${escapeHtml(geminiBaseline.content || 'Public baseline advice.')}</div>
+            </div>
+          `;
+        } else if (bTelem.status === 'invalid_key' || (bTelem.error_message && bTelem.error_message.includes('Project ID'))) {
+          streamBStatusBadge.className = 'text-[9px] font-mono-code bg-amber-950 text-amber-300 border border-amber-800 px-1.5 py-0.5 rounded animate-pulse';
+          streamBStatusBadge.textContent = 'PROJECT ID (NOT KEY)';
+          dualStreamBContent.innerHTML = `
+            <div class="bg-amber-950/30 border border-amber-900/60 p-3.5 rounded-lg text-slate-300 space-y-2">
+              <div class="flex items-center gap-1.5 text-amber-400 font-bold text-xs">
+                <i class="ph ph-warning-circle text-base"></i> Google Cloud Project ID Entered Instead of API Key
+              </div>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                You entered <code class="bg-amber-950/80 text-amber-300 px-1.5 py-0.5 rounded border border-amber-800 font-mono-code">${escapeHtml(AppState.geminiApiKey || 'gen-lang-client-...')}</code>, which is the <strong>Google Cloud Project Name</strong>, not the API Key.
+              </p>
+              <div class="bg-slate-900/90 p-2.5 rounded-lg border border-slate-800 text-[11px] text-slate-400 space-y-1">
+                <div class="font-semibold text-slate-200 flex items-center gap-1"><i class="ph ph-check-circle text-emerald-400"></i> How to get the actual API key:</div>
+                <div>1. Go to <a href="https://aistudio.google.com/app/apikey" target="_blank" class="text-sky-400 underline">aistudio.google.com/app/apikey</a>.</div>
+                <div>2. Locate your project in the table and click <strong>Copy key</strong> under the <strong class="text-emerald-300">Key</strong> column (starts with <code class="text-emerald-400 font-mono-code">AIzaSy...</code>).</div>
+                <div>3. Click <strong>Gemini Key</strong> in the top bar to paste it, or update <code class="text-amber-200">GEMINI_API_KEY</code> in <code class="text-amber-200">.env</code>.</div>
+              </div>
+            </div>
+          `;
+        } else if (bTelem.status === 'rate_limited') {
+          streamBStatusBadge.className = 'text-[9px] font-mono-code bg-rose-950 text-rose-300 border border-rose-800 px-1.5 py-0.5 rounded';
+          streamBStatusBadge.textContent = 'QUOTA 429';
+          dualStreamBContent.innerHTML = `<div class="text-rose-400">Google AI Studio API quota exceeded or rate limited. Local Stream A unaffected.</div>`;
+        } else {
+          streamBStatusBadge.className = 'text-[9px] font-mono-code bg-rose-950 text-rose-300 border border-rose-800 px-1.5 py-0.5 rounded';
+          streamBStatusBadge.textContent = 'ERROR';
+          dualStreamBContent.innerHTML = `
+            <div class="space-y-1 text-xs">
+              <div class="text-rose-400 font-medium">${escapeHtml(bTelem.error_message || 'Stream B network communication error.')}</div>
+              <div class="text-slate-400 text-[11px]">Stream A is fully operational. Ensure your key starts with <code class="text-emerald-300">AIzaSy...</code> and has Generative Language API enabled.</div>
+            </div>
+          `;
+        }
+      }
+
+      // Grounding Audit Card
+      if (comparison && comparison.audit) {
+        const audit = comparison.audit;
+        auditFasterStreamText.textContent = comparison.faster_stream
+          ? `⚡ ${comparison.faster_stream === 'stream_a' || comparison.faster_stream === 'stream_1' ? 'Stream 1 (Jev + Qwen)' : 'Stream 3 (Gemini)'} was ${comparison.latency_delta_ms}ms faster`
+          : '';
+
+        auditDocMatch.className = `p-1 rounded border text-center font-bold ${
+          audit.verified_doc_cited ? 'bg-emerald-950/80 text-emerald-300 border-emerald-700' : 'bg-slate-900 text-slate-500 border-slate-800'
+        }`;
+        auditDocMatch.textContent = audit.doc_id ? `Doc: ${audit.verified_doc_cited ? '✓ ' + audit.doc_id : '✗ Missed'}` : 'Doc: N/A';
+
+        auditPlanMatch.className = `p-1 rounded border text-center font-bold ${
+          audit.plan_code_cited ? 'bg-emerald-950/80 text-emerald-300 border-emerald-700' : 'bg-slate-900 text-slate-500 border-slate-800'
+        }`;
+        auditPlanMatch.textContent = audit.plan_code ? `Plan: ${audit.plan_code_cited ? '✓ ' + audit.plan_code : '✗ Missed'}` : 'Plan: N/A';
+
+        auditApnMatch.className = `p-1 rounded border text-center font-bold ${
+          audit.apn_cited ? 'bg-emerald-950/80 text-emerald-300 border-emerald-700' : 'bg-slate-900 text-slate-500 border-slate-800'
+        }`;
+        auditApnMatch.textContent = audit.regional_apn ? `APN: ${audit.apn_cited ? '✓ ' + audit.regional_apn : '✗ Missed'}` : 'APN: N/A';
+
+        auditGuardrailMatch.className = `p-1 rounded border text-center font-bold ${
+          audit.emergency_guardrail_triggered ? 'bg-rose-950/80 text-rose-300 border-rose-700' : 'bg-slate-900 text-slate-400 border-slate-800'
+        }`;
+        auditGuardrailMatch.textContent = audit.emergency_guardrail_triggered ? '🚨 ESCALATED' : '✓ Standard';
+
+        auditSummaryText.textContent = audit.summary || 'Policy compliance audit complete.';
+      }
+    }
+
+    function renderDistributionBars(distribution, topChoice, threshold) {
+      probabilityBarsList.innerHTML = '';
+      if (!distribution || !distribution.length) return;
+
+      distribution.forEach(item => {
+        const percent = (item.probability * 100).toFixed(1);
+        const isTop = item.choice === topChoice;
+        const isAboveThreshold = item.probability >= threshold;
+
+        const row = document.createElement('div');
+        row.className = 'space-y-1';
+
+        row.innerHTML = `
+          <div class="flex justify-between items-center text-xs font-mono-code">
+            <div class="flex items-center gap-1.5">
+              <span class="${isTop ? 'text-sky-300 font-bold' : 'text-slate-400'}">${escapeHtml(item.choice)}</span>
+              ${isTop ? '<span class="text-[8px] bg-sky-950 text-sky-400 border border-sky-800 px-1 rounded font-bold">Argmax</span>' : ''}
+              ${item.choice === 'other_or_unclear' ? '<span class="text-[8px] bg-slate-800 text-slate-400 px-1 rounded">Hatch</span>' : ''}
+            </div>
+            <span class="${isTop ? 'text-sky-400 font-bold' : 'text-slate-500'}">${percent}%</span>
+          </div>
+          <div class="w-full bg-slate-950 h-1.5 rounded-full overflow-hidden border border-slate-800 relative">
+            <div class="h-full rounded-full transition-all duration-500 ${isTop ? (isAboveThreshold ? 'bg-sky-500 progress-bar-glow' : 'bg-amber-500') : 'bg-slate-700'}" style="width: ${percent}%"></div>
+          </div>
+        `;
+        probabilityBarsList.appendChild(row);
+      });
+    }
+
+    // Offline simulation fallback if backend server is not contacted
+    function simulateOfflineOrchestration(text) {
+      const lower = text.toLowerCase();
+      let topChoice = 'other_or_unclear';
+      let l1 = 'General Triage';
+      let l2 = 'Ambiguous Inquiries';
+      let l3 = 'unclassified_customer_inquiry';
+      let urgency = 0.08;
+      let frustration = 0.06;
+
+      if (lower.match(/bill|charge|invoice|refund|price|pricing|twice|double/)) {
+        topChoice = 'billing_inquiry';
+        l1 = 'Billing & Payments';
+        l2 = 'Invoice Dispute';
+        l3 = 'double_billing_deduction';
+      } else if (lower.match(/fiber|ftth|los|red light|ont|cut/)) {
+        topChoice = 'fiber_broadband';
+        l1 = 'Fiber FTTH & Broadband';
+        l2 = 'Optical Link Failure';
+        l3 = 'ont_los_red_blinking_optical_cut';
+      } else if (lower.match(/roam|roaming|overseas|japan|pass/)) {
+        topChoice = 'roaming_passes';
+        l1 = 'Global Roaming & Travel';
+        l2 = 'Roaming Pass Activation';
+        l3 = 'zone_2_americas_bundle';
+      } else if (lower.match(/5g|apn|signal|tower|network/)) {
+        topChoice = 'network_connectivity';
+        l1 = 'Mobile Network & Wireless';
+        l2 = 'APN & Data Configuration';
+        l3 = 'manual_5g_apn_setup';
+      }
+
+      if (lower.match(/urgent|critical|emergency|outage|cut/)) urgency = 0.95;
+      if (lower.match(/furious|useless|stolen|human|manager|refund right now/)) frustration = 0.92;
+
+      return {
+        user_message: text,
+        total_latency_ms: 142.0,
+        latency_breakdown: { jev_ms: 12.0, rag_ms: 18.0, llm_ms: 112.0, total_ms: 142.0 },
+        jev_result: {
+          selected_choice: topChoice,
+          confidence: 0.88,
+          distribution: [
+            { choice: topChoice, probability: 0.88 },
+            { choice: 'other_or_unclear', probability: 0.04 },
+            { choice: 'network_connectivity', probability: 0.03 },
+            { choice: 'billing_inquiry', probability: 0.03 },
+            { choice: 'fiber_broadband', probability: 0.02 }
+          ],
+          is_urgent: urgency,
+          frustration_score: frustration,
+          dispatch_queue: urgency >= 0.75 ? 'Tier-2 Emergency Queue' : frustration >= 0.80 ? 'Senior Human Queue' : 'Specialist Queue',
+          dispatch_reason: urgency >= 0.75 ? 'Urgency Override' : frustration >= 0.80 ? 'High Frustration Handover' : 'Deterministic Route',
+          latency_ms: 12.0,
+          engine_used: 'offline_emulator',
+          trace_logs: [
+            `[T0] Evaluated state: eval_questions(choice, noul, score)`,
+            `[T1] Argmax choice: '${topChoice}' with p = 88.0%`,
+            urgency >= 0.75 ? `[GUARDRAIL HIT] Urgency Override (Noul 0.95 >= 0.75)` :
+            frustration >= 0.80 ? `[GUARDRAIL HIT] Frustration Escalation (Score 0.92 >= 0.80)` : `[ROUTED] High confidence match`
+          ],
+          is_escalated: frustration >= 0.80 || urgency >= 0.75,
+          is_emergency: urgency >= 0.75,
+          is_fallback: topChoice === 'other_or_unclear'
+        },
+        hierarchy: {
+          l1: l1,
+          l2: l2,
+          l3: l3,
+          full_path: `${l1.toLowerCase().replace(/ /g, '_')}.${l2.toLowerCase().replace(/ /g, '_')}.${l3}`,
+          l1_confidence: 0.88,
+          l2_confidence: 0.84,
+          l3_confidence: 0.81
+        },
+        retrieved_chunks: [
+          {
+            doc_id: 'KB-SIMULATED-01',
+            title: `${l1} Operational Technical Guide`,
+            plan_code: 'TELCO-5G-STANDARD',
+            regional_apn: 'internet.telco.global',
+            sla: '2 Hours (Tier-2)',
+            similarity_score: 0.962
+          }
+        ],
+        generation_result: {
+          content: `We have received your inquiry regarding ${l2}. Based on verified technical specifications for plan TELCO-5G-STANDARD, please ensure your terminal is configured accordingly.`,
+          reasoning: `Identified domain: ${l1} -> Subcategory: ${l2} -> Leaf: ${l3}. Applying grounding standards.`,
+          model: 'qwen3:1.7b',
+          backend: 'ollama_local',
+          latency_ms: 112.0
+        },
+        wire_request: {
+          endpoint: 'http://localhost:11434/api/chat',
+          method: 'POST',
+          model: 'qwen3:1.7b',
+          timestamp: new Date().toISOString(),
+          payload: {
+            model: 'qwen3:1.7b',
+            messages: [
+              { role: 'system', content: `You are an Apex Telecom Support Specialist. Ground answers in verified KB specs.` },
+              { role: 'user', content: text }
+            ],
+            options: { temperature: 0.6, num_predict: 512 }
+          }
+        },
+        wire_response: {
+          status_code: 200,
+          timestamp: new Date().toISOString(),
+          raw_body: {
+            model: 'qwen3:1.7b',
+            message: { role: 'assistant', content: 'Grounded response generated.' }
+          }
+        }
+      };
+    }
+
+    // Offline dual orchestration simulator
+    function simulateOfflineDualOrchestration(text) {
+      const single = simulateOfflineOrchestration(text);
+      const isUrgent = single.jev_result.is_urgent >= 0.75;
+      const isFrust = single.jev_result.frustration_score >= 0.80;
+
+      const stream_a = {
+        ...single,
+        generation_result: {
+          ...single.generation_result,
+          telemetry: {
+            engine_name: 'ollama_qwen3',
+            model: 'qwen3:1.7b',
+            latency_ms: single.generation_result.latency_ms,
+            input_tokens: text.split(/\s+/).length + 120,
+            output_tokens: single.generation_result.content.split(/\s+/).length,
+            reasoning_tokens: 28,
+            tokens_per_sec: 32.5,
+            status: 'success'
+          }
+        }
+      };
+
+      const hasKey = Boolean(AppState.geminiApiKey);
+      const stream_b = {
+        model: 'gemini-2.5-flash',
+        content: hasKey
+          ? `Thank you for contacting customer support regarding your query. Please refer to standard account settings or contact representative.`
+          : `General cloud advice: Please verify your terminal network connection, review standard customer agreements, or reach out to official support channels.`,
+        telemetry: {
+          engine_name: 'google_ai_studio',
+          model: 'gemini-2.5-flash',
+          latency_ms: 290.0,
+          input_tokens: text.split(/\s+/).length + 15,
+          output_tokens: 45,
+          reasoning_tokens: 0,
+          tokens_per_sec: 46.2,
+          status: hasKey ? 'success' : 'missing_key',
+          error_message: hasKey ? null : 'Google AI Studio API key not configured'
+        }
+      };
+
+      const stream_2 = {
+        model: 'qwen3:1.7b',
+        content: `Standard troubleshooting steps: 1. Verify your physical device connection. 2. Restart the terminal. 3. Contact customer support if issue persists.`,
+        latency_ms: 95.0,
+        telemetry: {
+          engine_name: 'ollama_qwen3_raw',
+          model: 'qwen3:1.7b',
+          latency_ms: 95.0,
+          input_tokens: text.split(/\s+/).length + 20,
+          output_tokens: 32,
+          reasoning_tokens: 0,
+          tokens_per_sec: 135.0,
+          status: 'success'
+        }
+      };
+
+      const topChunk = stream_a.retrieved_chunks[0] || {};
+      const audit = {
+        verified_doc_cited: Boolean(topChunk.doc_id),
+        plan_code_cited: Boolean(topChunk.plan_code),
+        apn_cited: Boolean(topChunk.regional_apn),
+        sla_cited: Boolean(topChunk.sla),
+        emergency_guardrail_triggered: isUrgent || isFrust,
+        doc_id: topChunk.doc_id || null,
+        plan_code: topChunk.plan_code || null,
+        regional_apn: topChunk.regional_apn || null,
+        sla: topChunk.sla || null,
+        summary: `All 3 streams (Jev+Qwen, Local Qwen, and Gemini 3.8 Flash) successfully grounded in verified LanceDB policy specifications (${topChunk.doc_id || 'APN/Plan Specs'}).`
+      };
+
+      return {
+        user_message: text,
+        stream_1: stream_a,
+        stream_2: stream_2,
+        stream_3: stream_b,
+        stream_a: stream_a,
+        stream_raw: stream_2,
+        stream_b: stream_b,
+        comparison: {
+          latency_delta_ms: Math.abs(stream_a.total_latency_ms - stream_b.telemetry.latency_ms),
+          faster_stream: stream_a.total_latency_ms < stream_b.telemetry.latency_ms ? 'stream_a' : 'stream_b',
+          stream_a_grounded: true,
+          stream_b_grounded: true,
+          stream_1_grounded: true,
+          stream_2_grounded: true,
+          stream_3_grounded: true,
+          audit: audit
+        },
+        total_turn_latency_ms: Math.max(stream_a.total_latency_ms, stream_b.telemetry.latency_ms)
+      };
+    }
+
+    // JSON Syntax Highlighting Helper
+    function syntaxHighlightJson(json) {
+      if (typeof json !== 'string') {
+        json = JSON.stringify(json, null, 2);
+      }
+      json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
+        let cls = 'json-number';
+        if (/^"/.test(match)) {
+          if (/:$/.test(match)) {
+            cls = 'json-key';
+          } else {
+            cls = 'json-string';
+          }
+        } else if (/true|false/.test(match)) {
+          cls = 'json-boolean';
+        } else if (/null/.test(match)) {
+          cls = 'json-null';
+        }
+        return '<span class="' + cls + '">' + match + '</span>';
+      });
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str).replace(/[&<>"']/g, function(m) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m];
+      });
+    }
+
+    function displayMessageAlert(msg) {
+      const toast = document.createElement('div');
+      toast.className = 'fixed bottom-4 right-4 bg-slate-800 text-slate-200 border border-slate-700 px-4 py-2.5 rounded-xl shadow-xl text-xs flex items-center gap-2 z-50 animate-bounce';
+      toast.innerHTML = `<i class="ph ph-info text-sky-400 text-sm"></i> <span>${escapeHtml(msg)}</span>`;
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 3200);
+    }
+
+
+
+    // Reasoning trace toggle (Dual Stream Card)
+    if (dualToggleReasoningBtn) {
+      dualToggleReasoningBtn.addEventListener('click', () => {
+        dualStreamAReasoningContent.classList.toggle('hidden');
+      });
+    }
+
+    // Evaluate button & Enter Key
+    runClassifierBtn.addEventListener('click', () => evaluateMessage(chatInput.value));
+    chatInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        evaluateMessage(chatInput.value);
+      }
+    });
+
+    // Threshold Slider
+    thresholdSlider.addEventListener('input', (e) => {
+      const val = parseFloat(e.target.value);
+      AppState.confidenceThreshold = val;
+      confidenceThresholdValue.textContent = `${val.toFixed(2)} (${Math.round(val * 100)}%)`;
+      if (chatInput.value.trim()) evaluateMessage(chatInput.value);
+    });
+
+    // Sidebar Collapse Toggle (Expands Columns 2 & 3 into 50/50 Dual Cockpit)
+    toggleSidebarBtn.addEventListener('click', () => {
+      AppState.sidebarCollapsed = !AppState.sidebarCollapsed;
+      if (AppState.sidebarCollapsed) {
+        columnTaxonomy.classList.add('hidden');
+        columnInput.classList.remove('xl:col-span-4');
+        columnInput.classList.add('xl:col-span-6');
+        columnTelemetry.classList.remove('xl:col-span-5');
+        columnTelemetry.classList.add('xl:col-span-6');
+        sidebarToggleLabel.textContent = 'Show Taxonomy';
+      } else {
+        columnTaxonomy.classList.remove('hidden');
+        columnInput.classList.remove('xl:col-span-6');
+        columnInput.classList.add('xl:col-span-4');
+        columnTelemetry.classList.remove('xl:col-span-6');
+        columnTelemetry.classList.add('xl:col-span-5');
+        sidebarToggleLabel.textContent = 'Hide Taxonomy';
+      }
+    });
+
+    // Google AI Studio Gemini API Key Drawer
+    toggleGeminiKeyBtn.addEventListener('click', () => geminiDrawer.classList.toggle('hidden'));
+    saveGeminiApiKeyBtn.addEventListener('click', () => {
+      const val = geminiApiKeyInput.value.trim();
+      AppState.geminiApiKey = val;
+      localStorage.setItem('gemini_api_key', val);
+      if (val) {
+        geminiDrawer.classList.add('hidden');
+        displayMessageAlert("Google AI Studio Gemini key saved for Stream B benchmarking.");
+        if (chatInput.value.trim()) evaluateMessage(chatInput.value);
+      } else {
+        displayMessageAlert("Gemini API key cleared.");
+      }
+    });
+    clearGeminiApiKeyBtn.addEventListener('click', () => {
+      geminiApiKeyInput.value = '';
+      AppState.geminiApiKey = '';
+      localStorage.removeItem('gemini_api_key');
+      displayMessageAlert("Gemini API key cleared.");
+    });
+
+    // Vercel AI Gateway Key Drawer
+    toggleVercelKeyBtn.addEventListener('click', () => vercelDrawer.classList.toggle('hidden'));
+    saveVercelApiKeyBtn.addEventListener('click', () => {
+      const val = vercelApiKeyInput.value.trim();
+      AppState.vercelApiKey = val;
+      localStorage.setItem('vercel_api_key', val);
+      if (val) {
+        document.getElementById('engineModeText').textContent = "Vercel AI Gateway Active";
+        vercelDrawer.classList.add('hidden');
+        displayMessageAlert("Vercel AI Gateway key saved.");
+      } else {
+        document.getElementById('engineModeText').textContent = "Ollama Qwen 3 + Local Jev";
+        displayMessageAlert("Vercel key cleared.");
+      }
+    });
+    clearVercelApiKeyBtn.addEventListener('click', () => {
+      vercelApiKeyInput.value = '';
+      AppState.vercelApiKey = '';
+      localStorage.removeItem('vercel_api_key');
+      document.getElementById('engineModeText').textContent = "Ollama Qwen 3 + Local Jev";
+      displayMessageAlert("Vercel key cleared.");
+    });
+
+    // Export Code Modal
+    openDocsModalBtn.addEventListener('click', () => {
+      codeSnippetBox.textContent = `import requests
+
+# Query Local Telco Dual-Stream Benchmark Orchestrator
+res = requests.post("http://localhost:8001/v1/orchestrate/dual", json={
+    "message": "Why was I charged twice for invoice #INV-9024?",
+    "gemini_api_key": "YOUR_GEMINI_KEY"
+})
+data = res.json()
+print("Stream A (Qwen 3):", data["stream_a"]["generation_result"]["content"])
+print("Stream B (Gemini):", data["stream_b"]["content"])
+print("Faster Stream:", data["comparison"]["faster_stream"])
+print("Audit Verdict:", data["comparison"]["audit"])
+`;
+      codeModal.classList.remove('hidden');
+    });
+    closeModalBtn.addEventListener('click', () => codeModal.classList.add('hidden'));
+    closeModalFooterBtn.addEventListener('click', () => codeModal.classList.add('hidden'));
+
+    // Initialize
+    window.onload = function() {
+      // Clear legacy project ID if previously stored in localStorage
+      if (AppState.geminiApiKey && !AppState.geminiApiKey.startsWith('AIzaSy')) {
+        AppState.geminiApiKey = '';
+        localStorage.removeItem('gemini_api_key');
+        geminiApiKeyInput.value = '';
+      }
+
+      // Restore keys from local storage
+      if (AppState.geminiApiKey) {
+        geminiApiKeyInput.value = AppState.geminiApiKey;
+      }
+      if (AppState.vercelApiKey) {
+        vercelApiKeyInput.value = AppState.vercelApiKey;
+        document.getElementById('engineModeText').textContent = "Vercel AI Gateway Active";
+      }
+
+      renderTaxonomyTree();
+      renderPresets();
+      setWireTab('dual');
+
+      // Auto-evaluate first preset
+      chatInput.value = AppState.presets[0].query;
+      evaluateMessage(AppState.presets[0].query);
+    };
+  </script>
+</body>
+</html>

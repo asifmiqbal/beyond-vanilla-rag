@@ -129,7 +129,7 @@ sequenceDiagram
 
 ### 1. Installation
 ```bash
-git clone https://github.com/logic42ai/beyond-vanilla-rag.git
+git clone https://github.com/asifmiqbal/beyond-vanilla-rag.git
 cd beyond-vanilla-rag
 pip install -r requirements.txt
 ```
@@ -172,7 +172,7 @@ python scripts/reproduce_all.py
 
 ## Acknowledgments & Funding Disclosure
 
-This research was conceived, executed, and independently funded by **Logic42 AI** (`logic42.ai`). All local compute hardware, engineering labor, and Frontier Cloud API expenditures (Google AI Studio) were funded directly by Logic42 AI.
+This research was conceived, executed, and independently funded by **Logic42 Lab** (`logic42.ai`). All local compute hardware, engineering labor, and Frontier Cloud API expenditures (Google AI Studio) were funded directly by Logic42 Lab.
 
 The author acknowledges **TypeSafe AI** for providing early developer platform access and an initial $5 API credit used during preliminary pilot testing of the Jev SystemOne API. The empirical design, methodology, results analysis, and conclusions were conducted independently with zero editorial intervention or sponsorship from TypeSafe AI.
 

@@ -6,6 +6,7 @@ Founder, Logic42 Lab
 
 *Technical Report & Empirical Benchmark — Logic42 Lab*  
 **Publication Date:** September 20, 2026 | **Version:** v1.0.0  
+**Open-Source Repository:** [https://github.com/asifmiqbal/beyond-vanilla-rag](https://github.com/asifmiqbal/beyond-vanilla-rag)  
 *Preprint. Work in progress.*  
 
 ---
@@ -364,6 +365,15 @@ Figure 7 models enterprise operating expenditure (\$ USD) as monthly query volum
 
 ---
 
+### 8.8 Figure 8: The Interactive Telemetry Studio & Factorial Benchmark Workbench
+To support interactive auditability, continuous empirical verification, and live engineering demonstration of the 324-condition factorial matrix, we developed and open-sourced an interactive telemetry workbench (`Docs/jev_intent_classifier_studio.html`). The workbench executes the three experimental regimes concurrently against live local models or offline empirical matrix traces.
+
+![Figure 8: Interactive 3-Regime Benchmark Studio Cockpit](studio_ui_screenshot.png)
+
+*Observations:* Figure 8 displays a representative enterprise turn evaluated across the three regimes under the Small Local (Qwen 1.7B) tier with the Zero-Fluff Invariant active. Vanilla RAG Control ($T_{\text{max}}=180$) consumes 128 output tokens at 1,059 ms latency with 100% grounding recall. Compiled Regex Trie ($T_{\text{max}}=80$) cuts latency to 336.2 ms (-68.3%), but incurs a severe -40.0% grounding recall penalty due to tail entity truncation (visible via the crossed-out target chips for `sla-credit-auto` and `$25`). Conversely, TypeSafe AI Jev triggers an instant automated NOC dispatch action in $<1\text{ ms}$, executes the prompt in 592.2 ms, and completely recovers 100% grounding recall with record factual token efficiency ($\eta = 1.351$).
+
+---
+
 ## 9. Architectural Synthesis: The Calibrated 80/20 Enterprise Hybrid Router
 
 Based on the empirical Pareto frontier, we formalize the **Calibrated 80/20 Enterprise Hybrid Router**:
@@ -456,8 +466,10 @@ A mission-critical system must provide deterministic failure guarantees. We defi
 ## 14. Reproducibility Statement
 
 To guarantee full empirical reproducibility under the ACM/IEEE Open Science guidelines:
-- **Full Benchmark Code & Dataset:** Open-sourced under the MIT License at the repository root ([`expanded_multidomain_results.json`](../expanded_multidomain_results.json)).
-- **Master Reproduction Command:** All inferential statistics, empirical tables, and 7 publication figures can be reproduced with a single command:
+- **Public GitHub Repository:** The complete benchmark codebase, raw experimental logs, interactive studio cockpit, and reproduction scripts are open-sourced under the MIT License at [https://github.com/asifmiqbal/beyond-vanilla-rag](https://github.com/asifmiqbal/beyond-vanilla-rag).
+- **Benchmark Raw Telemetry:** Full factorial traces across all 324 runs are permanently committed at [`expanded_multidomain_results.json`](../expanded_multidomain_results.json).
+- **Interactive Telemetry Studio:** The interactive 3-regime audit workbench is located at [`Docs/jev_intent_classifier_studio.html`](jev_intent_classifier_studio.html) for local or hosted in-browser replication.
+- **Master Reproduction Command:** All inferential statistics, empirical tables, and publication figures can be reproduced with a single command:
   ```bash
   python scripts/reproduce_all.py
   ```

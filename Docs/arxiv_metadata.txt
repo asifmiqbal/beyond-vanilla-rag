@@ -1,0 +1,20 @@
+# arXiv Submission Metadata
+
+## Title
+Beyond Vanilla RAG: How Pre-Generation Decision Models Reshape Latency, Token Economy, and Grounding in Local SLMs and Frontier LLMs
+
+## Authors
+Asif Muhammad Iqbal
+
+## Abstract (Strictly ASCII, 1,819 characters / limit 1,920)
+Building enterprise customer support and incident triage systems with Retrieval-Augmented Generation (RAG) exposes a fundamental tension between generation latency, token expenditure, and grounding fidelity. While practitioners routinely deploy unconstrained Vanilla RAG or rigid Regex-assisted pipelines, recent advances introduce Decision Models--lightweight, sub-millisecond classification engines designed to evaluate intent, urgency, and token budgets before generative decoding begins.
+
+We present an empirical benchmark across 324 full-factorial conditions (4 domains, 3 query complexities, 3 knowledge base densities, 3 model architectures, and 3 triage regimes). We evaluate Small Local (Qwen 1.7B), Medium Local (Qwen 2.5 7B, 4-bit), and Frontier Cloud (Gemini 3.8 Flash) under three regimes: Vanilla RAG (Control), Compiled Regex Trie, and TypeSafe AI Jev (Calibrated Decision Model) on an NVIDIA RTX 4070 GPU and Google AI Studio.
+
+Key findings show: (1) Compiled Regex cuts SLM latency from 905.2 ms to 567.5 ms (37.3% speedup) but drops grounding recall from 83.1% to 60.7% (-22.4%); (2) The Jev Decision Model matches Regex latency (576.2 ms vs. 567.5 ms) while recovering recall to 65.7% (+5.0% over Regex overall, +18.0% in Contracts) and achieving study-record token efficiency (eta = 0.930 vs. 0.804 for Vanilla, p = 0.0133); (3) Paired with the Zero-Fluff Invariant, Jev makes local 1.7B SLMs enterprise-viable, delivering verified dispatch codes in 526 ms to 576 ms at zero cloud API cost; and (4) While frontier cloud latency is WAN-dominated (~1.5s transit), Jev preserves reasoning fidelity (73.2% vs. 70.4% for Regex), enables sub-millisecond dispatch, and powers an 80/20 Hybrid Router that offloads 80% of routine traffic to local SLMs, achieving a 79.1% net enterprise FinOps cost reduction.
+
+## Comments (Optional)
+15 pages, 8 figures, 9 tables. Full open-source benchmark suite, traces, and interactive studio at https://github.com/asifmiqbal/beyond-vanilla-rag
+
+## ACM-Class (Optional)
+H.3.3; I.2.7
